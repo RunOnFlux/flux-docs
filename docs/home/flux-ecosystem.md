@@ -1,45 +1,69 @@
 # Flux Ecosystem
 
-This GitBook focuses exclusively on **Cloud-centric products** built on the Flux blockchain. For everything else in the Flux Suite—wallets, AI tools, and the decentralized exchange—see the links under **More Products** below.
+The Flux ecosystem is a comprehensive suite of Web3 infrastructure products and services built on decentralized blockchain technology. This documentation focuses primarily on **cloud-centric products** that enable developers and businesses to deploy applications on decentralized infrastructure. For additional Flux products—including wallets, AI tools, and decentralized exchange—see the **More Products** section below.
+
+***
+
+## What is Flux?
+
+Flux is a decentralized computing network consisting of over **10,000 community-operated nodes** across **66 countries**, providing censorship-resistant cloud infrastructure that rivals traditional providers like AWS and GCP at up to **90% lower cost**. The network is powered by the FLUX cryptocurrency and operates through a Proof-of-Work blockchain that coordinates resources, verifies transactions, and distributes rewards.
 
 ***
 
 ### Core Cloud Services
 
-A unified portfolio of decentralized compute and storage products—designed for any Dockerized application, AI workload, or blockchain node.
+A unified portfolio of decentralized compute, storage, and GPU rental products designed for Docker containers, AI workloads, blockchain validators, and any cloud-native application.
 
 #### FluxCloud
 
-Depoy and scale containerized applications on Flux Network
+Deploy and scale containerized applications across the globally distributed Flux Network.
 
-* On-chain job scheduling and resource allocation
-* Built-in health checks & failover to maximize application uptime.
+* **Decentralized Infrastructure**: Applications run on 10,000+ independent FluxNodes worldwide
+* **On-chain Coordination**: Job scheduling and resource allocation verified on blockchain
+* **Automatic Failover**: Built-in health checks and redundancy maximize uptime
+* **Cost Effective**: Up to 90% cheaper than AWS/GCP with no egress fees
+* **Enterprise Ready**: Optional managed services with SLAs and 24/7 support
 
 [Learn more →](../fluxcloud/introduction.md)
 
-#### FluxNodes&#x20;
+#### FluxNodes
 
-FluxNodes are the permissionless, community-run servers that form the decentralized infrastructure layer of FluxCloud.
+FluxNodes are the permissionless, community-operated servers that power the FluxCloud network.
 
-* Meet hardware requirements, stake FLUX collateral, and share 50% of block rewards.
-* Nodes not meeting uptime or performance standards are kicked until they comply.
-* [Learn more →](../fluxnodes/what-are-fluxnodes.md)
+* **Open Participation**: Anyone can join by meeting hardware requirements and staking FLUX collateral
+* **Tiered System**: Three node tiers (Cumulus, Nimbus, Stratus) with increasing specs and rewards
+* **Block Rewards**: Earn 50% of block rewards (37.5 FLUX per block) plus parallel asset mining
+* **Progressive Rewards**: ArcaneOS nodes earn additional revenue share from FluxCloud applications
+* **Quality Control**: Nodes not meeting uptime or performance standards are automatically removed
+* **Global Network**: 10,000+ nodes across 66 countries operated by 560+ independent providers
+
+[Learn more →](../fluxnodes/what-are-fluxnodes.md)
 
 #### FluxEdge
 
-A global marketplace of idle NVIDIA GPUs for ML, and AI tasks—managed via Kubernetes.
+A decentralized marketplace connecting GPU renters with providers for AI, ML, rendering, and compute-intensive workloads.
 
-* Access spot-priced GPU nodes worldwide for flexible, on-demand compute.
-* Spin up high-performance NVIDIA GPUs (H100, A100) in minutes and pay-as-you-go.
-* [Learn more →](../fluxedge/overview.md)
+* **Enterprise GPUs**: Access to NVIDIA H100, A100, and other high-performance cards
+* **Kubernetes Integration**: Managed clusters for containerized ML/AI workloads
+* **Pay-As-You-Go**: No upfront commitment, transparent pricing, no hidden fees
+* **Global Capacity**: 15,157+ GPUs available across distributed provider network
+* **Proof-of-Useful-Work**: Maximize GPU utilization while reducing e-waste
+* **Framework Support**: Compatible with PyTorch, TensorFlow, Kubeflow, Apache Spark
+
+[Learn more →](../fluxedge/overview.md)
 
 #### FluxCore
 
-A desktop client — includes mining software and connects your machine to FluxEdge for GPU rentals.
+Desktop application enabling users to contribute idle GPU/CPU resources to FluxEdge while earning rewards.
 
-* Run native Flux mining or rent out CPU/GPU capacity on FluxEdge.
-* Configure availability windows and monitor performance through an intuitive GUI.
-* [Learn more →](../fluxcore/overview.md)
+* **Dual Revenue**: Earn from GPU rentals on FluxEdge or native FLUX mining
+* **User Control**: Set custom availability schedules and pricing
+* **Simple Setup**: Install in minutes with intuitive GUI for monitoring
+* **Multi-Platform**: Available for Windows, Linux, and macOS
+* **Security**: Isolated containerized workloads protect your data
+* **Flexible Earnings**: Switch between rental mode and mining based on profitability
+
+[Learn more →](../fluxcore/overview.md)
 
 ***
 

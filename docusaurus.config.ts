@@ -146,6 +146,27 @@ const config: Config = {
           ],
         },
         {
+          title: 'Products',
+          items: [
+            {
+              label: 'Zelcore Wallet',
+              href: 'https://zelcore.io/',
+            },
+            {
+              label: 'SSP Wallet',
+              href: 'https://sspwallet.io/',
+            },
+            {
+              label: 'Ecko Wallet',
+              href: 'https://ecko.finance/',
+            },
+            {
+              label: 'FluxAI',
+              href: 'https://ai.runonflux.com/',
+            },
+          ],
+        },
+        {
           title: 'Resources',
           items: [
             {
