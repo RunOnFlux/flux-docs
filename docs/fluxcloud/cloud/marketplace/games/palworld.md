@@ -12,7 +12,7 @@ For more information on **Palword Servers** visit: [https://tech.palworldgame.co
 
 1. **Access FluxCloud**
 
-* Visit [cloud.runonflux.com](https://cloud.runonflux.com) and sign in or create an account.\
+* Visit [cloud.runonflux.com](https://cloud.runonflux.com) and sign in or create an account.
 
 
 2. **Find the Palworld Server**
