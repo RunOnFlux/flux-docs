@@ -206,7 +206,12 @@ pre {
 /* Navbar Enhancements */
 .navbar {
   border-bottom: 1px solid var(--ifm-toc-border-color);
-  backdrop-filter: blur(10px);
+  /* disabled it since it was causing height issues with the sidebar. added blur to backdrop below instead
+     see https://github.com/facebook/docusaurus/issues/6996 */
+  /* backdrop-filter: blur(10px); */
+}
+.navbar-sidebar__backdrop {
+backdrop-filter: blur(10px);
 }
 
 .navbar__logo {
