@@ -33,7 +33,7 @@ This section allows you to modify the configuration of your app or its component
 > ⚠️ You **cannot** add new components during an update.\
 > ✅ You **can** change the **owner** field to transfer app ownership.
 
-Refer to the [Register New App](broken-reference) page for details on each configuration field.
+Refer to the [Register New App](../../register-new-app/) page for details on each configuration field.
 
 Once you’ve made the necessary changes, decide whether you also want to extend the subscription period using the toggle.
 

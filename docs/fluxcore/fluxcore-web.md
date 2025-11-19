@@ -17,7 +17,7 @@ We are pleased to introduce SSO (Single Sign-On) external login for managing you
 
 Once you’re signed in, you’ll be welcomed by a selection screen. Here, please choose one of the options below to designate a "local machine." This setting can be adjusted anytime if you need to switch to a different machine. In this view, you can manually sort your machines or use the search function to quickly find the machine you’d like to connect to. You can also add a machine by entering its Machine ID and password if you've just set one up!
 
-Additionally, we offer a [Linux headless installation script](broken-reference) that gets your machines set up and ready in seconds, making it easy to configure systems without a display.
+Additionally, we offer a [Linux headless installation script](installation/linux-headless-installation) that gets your machines set up and ready in seconds, making it easy to configure systems without a display.
 
 <img src="/.gitbook/assets/image (56).png" alt=""/>
 

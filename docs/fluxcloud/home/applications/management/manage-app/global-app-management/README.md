@@ -20,7 +20,7 @@ The **Control** tab is your command center for managing the active state of your
 
 This section empowers you to maintain uptime, manage upgrades, or troubleshoot critical issues—all from one place.
 
-→ Read more about the [Control tab](broken-reference)
+→ Read more about the [Control tab](global-control)
 
 ***
 
@@ -28,15 +28,15 @@ This section empowers you to maintain uptime, manage upgrades, or troubleshoot c
 
 The **Running Instances** tab gives you visibility into where and how your application is currently running across the FluxCloud.
 
-→ Read more about [Running Instances](broken-reference)
+→ Read more about [Running Instances](running-instances)
 
 ***
 
 #### 3. Cancel Subscription
 
-The **Cancel Subscription** tab allows you to terminate your app’s presence on the FluxCloud
+The **Cancel Subscription** tab allows you to terminate your app's presence on the FluxCloud
 
-→ Read more about [Cancel Subscription](broken-reference)
+→ Read more about [Cancel Subscription](cancel-subscription)
 
 ***
 

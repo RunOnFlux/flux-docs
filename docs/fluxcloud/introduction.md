@@ -82,7 +82,7 @@ HOME is the **developer-centric dashboard**, updated in real time with the lates
 * Ideal for technical users, power deployers, and testers
 * Does **not** currently support WordPress or FluxDrive
 
-If you're new to FluxCloud or looking for a consumer-friendly experience, start with [**CLOUD**](broken-reference). For advanced use cases or early access to platform improvements, go with [**HOME**](home/).
+If you're new to FluxCloud or looking for a consumer-friendly experience, start with [**CLOUD**](cloud/). For advanced use cases or early access to platform improvements, go with [**HOME**](home/).
 
 ***
 

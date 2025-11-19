@@ -24,7 +24,7 @@ Whether you're troubleshooting deployment issues, validating system behavior, or
 
 The **Specifications** tab shows how your app is configured on this specific node vs. its global setup—ideal for spotting config mismatches or verifying deployment accuracy.\
 \
-→ Read more about the [Specifications tab](broken-reference)
+→ Read more about the [Specifications tab](specifications)
 
 ***
 
@@ -32,7 +32,7 @@ The **Specifications** tab shows how your app is configured on this specific nod
 
 The **Information** tab gives you raw, detailed metadata directly from the Docker engine running your app.
 
-→ Read more about the [Information tab](broken-reference)
+→ Read more about the [Information tab](information)
 
 ***
 
@@ -43,7 +43,7 @@ You can track stats like CPU, RAM, and storage usage—essential for analyzing t
 
 This tab also includes a **Processes** view, providing a real-time snapshot of active processes running inside the container.
 
-→ Read more about the [Monitoring tab](broken-reference)
+→ Read more about [Stats](monitoring#stats-overview) and [Processes](monitoring#processes-overview)
 
 ***
 
@@ -51,7 +51,7 @@ This tab also includes a **Processes** view, providing a real-time snapshot of a
 
 The **File Changes** tab tracks which files and directories have been created, modified, or deleted inside your container.
 
-→ Read more about the [File Changes tab](broken-reference)
+→ Read more about the [File Changes tab](file-changes)
 
 ***
 
@@ -59,7 +59,7 @@ The **File Changes** tab tracks which files and directories have been created, m
 
 The **Log Files** tab is your window into what your app is saying behind the scenes.&#x20;
 
-→ Read more about the [Log Files tab](broken-reference)
+→ Read more about the [Log Files tab](logs)
 
 ***
 
@@ -67,7 +67,7 @@ The **Log Files** tab is your window into what your app is saying behind the sce
 
 The **Application Control** tab lets you manage the entire lifecycle of the app instance running on the selected FluxNode.
 
-→ Read more about the [Application Control tab](broken-reference)
+→ Read more about the [Application Control tab](application-control)
 
 ***
 
@@ -75,7 +75,7 @@ The **Application Control** tab lets you manage the entire lifecycle of the app 
 
 Secure and safeguard your data by creating manual backups or restoring your container to a previous state.
 
-→ Read more about the [Backup & Restore tab](broken-reference)
+→ Read more about the [Backup & Restore tab](backup-and-restore)
 
 ***
 
@@ -85,7 +85,7 @@ The **Interactive Terminal** tab lets you connect to a live terminal session ins
 You can issue commands, inspect logs, or make real-time changes—all without restarting the app.\
 A volume browser is also available, allowing you to upload, edit, rename, or delete files and folders directly from the UI.
 
-→ Read more about the [Interactive Terminal tab](broken-reference)
+→ Read more about [Interactive Terminal](interactive-terminal) and [Browsing & Managing Files](interactive-terminal#browsing--managing-files)
 
 ***
 

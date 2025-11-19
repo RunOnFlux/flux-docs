@@ -18,21 +18,21 @@ A quick reference to help you choose the right tool for the task, with links to 
 
 | **If you want to…**                         | **Go to…**                                                                       |
 | ------------------------------------------- | -------------------------------------------------------------------------------- |
-| Debug a specific app instance               | [Local App Management](broken-reference)                                         |
-| View or compare node-level specs            | [Specifications](broken-reference)                                               |
-| Inspect container metadata                  | [Information](broken-reference)                                                  |
-| Monitor real-time system usage              | [Resources](broken-reference)                                                    |
-| Analyze historical performance trends       | [Monitoring](broken-reference)                                                   |
-| Track file-system changes                   | [File Changes](broken-reference)                                                 |
-| See running processes inside your container | [Processes](broken-reference)                                                    |
-| Read your app’s logs                        | [Log Files](broken-reference)                                                    |
-| Start, stop, pause, or redeploy single node | [Control](broken-reference)                                                      |
-| Run a terminal or modify files in-container | [Interactive Terminal](broken-reference), and [Volume Browser](broken-reference) |
-| Backup or restore container data            | [Backup & Restore](broken-reference)                                             |
-| Manage global deployment (all nodes)        | [Control](broken-reference)                                                      |
-| View all running instances across the world | [Running Instances](broken-reference)                                            |
-| Cancel or pause billing/subscription        | [Cancel Subscription](broken-reference)                                          |
-| Update your app’s configuration or version  | [Update App](broken-reference)                                                   |
+| Debug a specific app instance               | Local App Management (see tabs below)                                            |
+| View or compare node-level specs            | [Specifications](specifications)                                                 |
+| Inspect container metadata                  | [Information](information)                                                       |
+| Monitor real-time system usage              | [Monitoring](monitoring#stats-overview)                                          |
+| Analyze historical performance trends       | [Monitoring](monitoring#stats-overview)                                          |
+| Track file-system changes                   | [File Changes](file-changes)                                                     |
+| See running processes inside your container | [Monitoring](monitoring#processes-overview)                                      |
+| Read your app's logs                        | [Log Files](logs)                                                                |
+| Start, stop, pause, or redeploy single node | [Control](control)                                                               |
+| Run a terminal or modify files in-container | [Secure Shell](secure-shell), [Volume Browser](secure-shell#volume-browser)     |
+| Backup or restore container data            | [Backup & Restore](backup-and-restore)                                           |
+| Manage global deployment (all nodes)        | [Control](control)                                                               |
+| View all running instances across the world | [Instances](instances)                                                           |
+| Cancel or pause billing/subscription        | [Subscription](subscription#cancel)                                              |
+| Update your app's configuration or version  | [Subscription](subscription#update)                                              |
 
 ***
 
@@ -40,22 +40,22 @@ A quick reference to help you choose the right tool for the task, with links to 
 
 #### How can I update my app after it's deployed?
 
-Read more about [Update App](broken-reference)
+Read more about [Update App](subscription#update)
 
 ***
 
 #### Where do I open a shell inside my container?
 
-You need to access the interactive terminal tool for the FluxNode you want to control. Read more about [Interactive Terminal](broken-reference)
+You need to access the interactive terminal tool for the FluxNode you want to control. Read more about [Secure Shell](secure-shell)
 
 ***
 
 #### How do I back up my data?
 
-Navigate to **Component Control → Backup & Restore** and choose **Create Backup.** Read more about [Backup & Restore](broken-reference)
+Navigate to **Component Control → Backup & Restore** and choose **Create Backup.** Read more about [Backup & Restore](backup-and-restore)
 
 ***
 
 #### How do I cancel my subscription without losing data?
 
-First back up your container via **Component Control → Backup & Restore**, then cancel at **Global App Management → Cancel Subscription**. Read more about [Cancel Subscription](broken-reference)
+First back up your container via **Component Control → Backup & Restore**, then cancel at **Global App Management → Cancel Subscription**. Read more about [Subscription](subscription#cancel)

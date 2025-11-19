@@ -4,8 +4,6 @@ The Component section is where you define your application’s container setting
 
 ***
 
-<img src="broken-reference" alt=""/>
-
 ### Component Name
 
 * Must be at least **3 characters** long
@@ -119,8 +117,6 @@ To add a new component:
 3. A new component panel will appear where you can configure the next container.
 
 You can add or remove components as needed before finalizing the application.
-
-<img src="broken-reference" alt=""/>
 
 ***
 

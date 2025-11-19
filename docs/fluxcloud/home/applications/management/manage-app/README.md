@@ -28,7 +28,7 @@ You’ll find tools for:
 * Browsing and modifying files using the Volume Browser
 * Createing, downloading, or restoring backups of your container data
 
-→ Read more about [Local App Management](broken-reference)
+→ Read more about [Local App Management](local-app-management/)
 
 ***
 
@@ -42,7 +42,7 @@ You can:
 * View all active node instances
 * Cancel or update your app settings, and subscription
 
-→ Read more about [Global App Management](broken-reference)
+→ Read more about [Global App Management](global-app-management/)
 
 ***
 

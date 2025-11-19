@@ -24,7 +24,7 @@ Use this section to define the name, contact email, domain settings, performance
 
 You may assign your own domain to the WordPress deployment
 
-* For setup instructions after successful deployment, refer to the [Custom Domain Setup](broken-reference) guide
+* For setup instructions after successful deployment, refer to the [Custom Domain Setup](custom-domain-setup) guide
 
 ### Payment Length
 

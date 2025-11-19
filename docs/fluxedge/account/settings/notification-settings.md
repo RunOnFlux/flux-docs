@@ -27,7 +27,7 @@ On the top right of the user interface, you will see information regarding the s
 * **If Enabled**: You'll see a confirmation that your anti-phishing code is active.
 * **If Not Enabled**: There’s an easy way to enable it directly from the UI.
 
-For more information about what the anti-phishing code is and how to set it up, please refer to this [guide](broken-reference).
+For more information about what the anti-phishing code is and how to set it up, please refer to this [guide](security-settings/how-to-set-up-an-anti-phishing-code-on-fluxedge).
 
 
 

@@ -73,6 +73,6 @@ _Note: GPU operator support for Windows is not yet available. We are awaiting of
 #### **Troubleshooting**
 
 * If any status remains red or blue for over 6 minutes, an uninstall action button will appear. Click it to confirm uninstallation, which removes all cluster-related software. A 6-minute timer will start before further actions can be taken. After this, manually resubscribe your machine to a service and cluster server.
-* If the node status is **"Cordoned"** and the action button says **"Uncordon"**, manual intervention is required. Uninstall Rancher manually via the **command line** or **FluxCore UI**. For more details, refer to the [Troubleshooting Guide](broken-reference).
+* If the node status is **"Cordoned"** and the action button says **"Uncordon"**, manual intervention is required. Uninstall Rancher manually via the **command line** or **FluxCore UI**. For more details, refer to the [Troubleshooting Guide](../installation/linux-installation/troubleshooting/).
 
 By following these steps, you can effectively subscribe your machines to the FluxEdge marketplace and manage their participation in various services.
