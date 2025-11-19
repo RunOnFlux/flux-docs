@@ -4,8 +4,8 @@ The FluxCloud Dashboard provides a comprehensive overview of your decentralized 
 
 ## Dashboard Sections
 
-- **[Overview](overview.md)** - Get a quick summary of your FluxCloud deployment status
-- **[Map](map.md)** - View the geographic distribution of your applications across the Flux network
-- **[Node List](list.md)** - Browse and manage the nodes hosting your applications
-- **[Resources](resources.md)** - Monitor your resource usage and allocation
-- **[Rewards](rewards.md)** - Track your earnings and rewards from the Flux network
+- **[Overview](overview)** - Get a quick summary of your FluxCloud deployment status
+- **[Map](map)** - View the geographic distribution of your applications across the Flux network
+- **[Node List](list)** - Browse and manage the nodes hosting your applications
+- **[Resources](resources)** - Monitor your resource usage and allocation
+- **[Rewards](rewards)** - Track your earnings and rewards from the Flux network

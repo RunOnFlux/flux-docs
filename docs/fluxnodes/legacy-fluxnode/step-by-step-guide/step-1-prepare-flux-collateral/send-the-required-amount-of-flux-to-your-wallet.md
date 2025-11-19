@@ -9,7 +9,7 @@ In order to create a FluxNode, you must send the **exact amount** of **native Fl
 
 ### Important Guidelines
 
-* **Only Native Flux qualifies as FluxNode collateral**. If you hold Flux on another chain—such as **Flux-BSC** or **Flux-ETH**—you’ll need to **convert it to Native Flux** before proceeding. (See [_Converting Parallel Assets_](send-the-required-amount-of-flux-to-your-wallet.md#converting-parallel-assets-to-native-flux) below.)
+* **Only Native Flux qualifies as FluxNode collateral**. If you hold Flux on another chain—such as **Flux-BSC** or **Flux-ETH**—you'll need to **convert it to Native Flux** before proceeding. (See [_Converting Parallel Assets_](#converting-parallel-assets-to-native-flux) below.)
 * You must send the **precise required amount** for your FluxNode tier in **one transaction** to your receiving address.
 * It is not the total balance that matters, but the amount sent in a **single mined transaction**.
 

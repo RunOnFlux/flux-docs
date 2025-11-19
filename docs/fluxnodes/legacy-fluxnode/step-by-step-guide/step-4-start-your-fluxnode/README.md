@@ -15,7 +15,7 @@ Starting your FluxNode will:
 
 The exact process for starting your node depends on which wallet you are using to manage your FluxNode. Please select the guide that matches your setup:
 
-* [**Start via Zelcore**](start-via-zelcore.md) – For users running their FluxNode with **Zelcore**.
-* [**Start via SSP**](start-via-ssp.md) – For users running their FluxNode with the **SSP Wallet**.
+* [**Start via Zelcore**](start-via-zelcore) – For users running their FluxNode with **Zelcore**.
+* [**Start via SSP**](start-via-ssp) – For users running their FluxNode with the **SSP Wallet**.
 
 > ⚠️ **Important:** Make sure you follow the **correct guide** for your wallet. Using the wrong instructions can prevent your node from starting correctly or cause it to be rejected by the network.

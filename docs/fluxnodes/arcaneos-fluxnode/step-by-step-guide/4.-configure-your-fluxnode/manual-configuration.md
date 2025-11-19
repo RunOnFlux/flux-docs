@@ -30,7 +30,7 @@ To configure your FluxNode manually, you’ll first gather all necessary wallet 
 2. After pasting the Collateral TX ID, the **Output Index** will auto‑populate.
 3. The TX ID is validated against the network to prevent duplicates.
    * ⚠️ If it’s already in use, you may still proceed—just be aware of potential conflicts.
-4. Click **Next** to proceed to [**Configure Notifications**](../5.-configure-notifications.md) in the next chapter.
+4. Click **Next** to proceed to [**Configure Notifications**](../5.-configure-notifications) in the next chapter.
 
 <img src="/.gitbook/assets/3 (1).png" alt=""/>
 

@@ -16,7 +16,7 @@ You can join the Flux network through several deployment options:
 * **Managed Service** – A third-party sets up and operates the node for you while you retain custody of your FLUX collateral. This is ideal for those who prefer a hands-off approach.
 
 > **For full details and setup instructions, see:**\
-> [Legacy FluxNode](legacy-fluxnode/) | [ArcaneOS FluxNode](arcaneos-fluxnode/) | [Titan Node Staking](titan-node-staking.md) | [Managed FluxNode Service](managed-fluxnode-service.md)
+> [Legacy FluxNode](legacy-fluxnode/) | [ArcaneOS FluxNode](arcaneos-fluxnode/) | [Titan Node Staking](titan-node-staking) | [Managed FluxNode Service](managed-fluxnode-service)
 
 ***
 
@@ -53,7 +53,7 @@ Flux uses a **dual-reward model** for node operators:
    * In addition to native FLUX, node operators earn **parallel assets** (tokens on other blockchains such as ETH, BSC, KDA, SOL, etc.).
    * For each parallel asset, **10% of the node reward** (≈ 1.35 FLUX worth) is distributed per block.
    * Once all ten parallel assets are active, this totals **13.5 FLUX worth in parallel assets**, effectively **doubling total earnings**.
-   * Parallel mining rewards are **not** automatically paid to your wallet — they must be manually claimed via the **Fusion** app in **Zelcore**. Follow this [guide](claim-parallel-assets.md) to learn more.
+   * Parallel mining rewards are **not** automatically paid to your wallet — they must be manually claimed via the **Fusion** app in **Zelcore**. Follow this [guide](claim-parallel-assets) to learn more.
 
 #### Timeline & Retroactive Rewards
 

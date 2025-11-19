@@ -24,11 +24,11 @@ Flux is a globally distributed computing network powered by **10,000+ community-
 
 New to Flux? Start with the fundamentals:
 
-* [The Flux Ecosystem](home/flux-ecosystem.md)
-* [How FluxCloud Works](fluxcloud/introduction.md)
-* [Setting Up a FluxNode](fluxnodes/what-are-fluxnodes.md)
-* [How FluxEdge Works](fluxedge/overview.md)
-* [Contributing Compute to FluxEdge](fluxcore/overview.md)
+* [The Flux Ecosystem](home/flux-ecosystem)
+* [How FluxCloud Works](fluxcloud/introduction)
+* [Setting Up a FluxNode](fluxnodes/what-are-fluxnodes)
+* [How FluxEdge Works](fluxedge/overview)
+* [Contributing Compute to FluxEdge](fluxcore/overview)
 
 ***
 
@@ -37,7 +37,7 @@ New to Flux? Start with the fundamentals:
 | Guide | Description |
 |-------|-------------|
 | **[Deploy a custom docker container using FluxCloud](fluxcloud/home/applications/register-new-app/)** | Learn how to deploy your own custom docker container via FluxCloud |
-| **[How to Run a FluxNode](fluxnodes/what-are-fluxnodes.md)** | Learn how to install the FluxNode software on your machine and start earning rewards |
+| **[How to Run a FluxNode](fluxnodes/what-are-fluxnodes)** | Learn how to install the FluxNode software on your machine and start earning rewards |
 
 ***
 
@@ -45,8 +45,8 @@ New to Flux? Start with the fundamentals:
 
 | Product | Description |
 |---------|-------------|
-| **[FluxCloud](fluxcloud/introduction.md)** | Build and deploy scalable applications on FluxCloud, a global decentralized cloud infrastructure for flexible and censorship-resistant development. |
-| **[FluxEdge](fluxedge/overview.md)** | Rent global GPUs on a Web3 cloud for tasks like AI, ML, rendering and beyond! |
+| **[FluxCloud](fluxcloud/introduction)** | Build and deploy scalable applications on FluxCloud, a global decentralized cloud infrastructure for flexible and censorship-resistant development. |
+| **[FluxEdge](fluxedge/overview)** | Rent global GPUs on a Web3 cloud for tasks like AI, ML, rendering and beyond! |
 
 ***
 
@@ -54,8 +54,8 @@ New to Flux? Start with the fundamentals:
 
 | Provider Type | Description |
 |---------------|-------------|
-| **[FluxNodes](fluxnodes/what-are-fluxnodes.md)** | Become a provider for FluxCloud and get incentivized for providing compute |
-| **[FluxCore](fluxcore/overview.md)** | Become a provider for FluxEdge and offer your machine for dedicated pay-as-you-go rentals |
+| **[FluxNodes](fluxnodes/what-are-fluxnodes)** | Become a provider for FluxCloud and get incentivized for providing compute |
+| **[FluxCore](fluxcore/overview)** | Become a provider for FluxEdge and offer your machine for dedicated pay-as-you-go rentals |
 | **[Estimate Your Earnings](https://home.runonflux.com/dashboard/rewards)** | Use our simple calculator to project your potential rewards based on node tier |
 
 ***

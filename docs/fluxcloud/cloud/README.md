@@ -4,4 +4,4 @@ CLOUD is the **consumer-facing interface** for FluxCloud, designed for simplicit
 
 While it doesn't yet include all the advanced features of the HOME dashboard, CLOUD is regularly updated to reflect new platform capabilities.
 
-> 💡 Not sure which front-end to use? [Compare CLOUD vs HOME →](../introduction.md#choosing-your-front-end-cloud-vs.-home)
+> 💡 Not sure which front-end to use? [Compare CLOUD vs HOME →](../introduction#choosing-your-front-end-cloud-vs-home)

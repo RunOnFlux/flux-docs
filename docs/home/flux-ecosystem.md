@@ -24,7 +24,7 @@ Deploy and scale containerized applications across the globally distributed Flux
 * **Cost Effective**: Up to 90% cheaper than AWS/GCP with no egress fees
 * **Enterprise Ready**: Optional managed services with SLAs and 24/7 support
 
-[Learn more →](../fluxcloud/introduction.md)
+[Learn more →](../fluxcloud/introduction)
 
 #### FluxNodes
 
@@ -37,7 +37,7 @@ FluxNodes are the permissionless, community-operated servers that power the Flux
 * **Quality Control**: Nodes not meeting uptime or performance standards are automatically removed
 * **Global Network**: 10,000+ nodes across 66 countries operated by 560+ independent providers
 
-[Learn more →](../fluxnodes/what-are-fluxnodes.md)
+[Learn more →](../fluxnodes/what-are-fluxnodes)
 
 #### FluxEdge
 
@@ -50,7 +50,7 @@ A decentralized marketplace connecting GPU renters with providers for AI, ML, re
 * **Proof-of-Useful-Work**: Maximize GPU utilization while reducing e-waste
 * **Framework Support**: Compatible with PyTorch, TensorFlow, Kubeflow, Apache Spark
 
-[Learn more →](../fluxedge/overview.md)
+[Learn more →](../fluxedge/overview)
 
 #### FluxCore
 
@@ -63,7 +63,7 @@ Desktop application enabling users to contribute idle GPU/CPU resources to FluxE
 * **Security**: Isolated containerized workloads protect your data
 * **Flexible Earnings**: Switch between rental mode and mining based on profitability
 
-[Learn more →](../fluxcore/overview.md)
+[Learn more →](../fluxcore/overview)
 
 ***
 

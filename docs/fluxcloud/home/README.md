@@ -4,4 +4,4 @@ HOME is the **developer-oriented dashboard** for FluxCloud. It provides full acc
 
 HOME does not currently support **WordPress** or **FluxDrive**, but those are planned for future releases.
 
-> 💡 Not sure which front-end to use? [Compare CLOUD vs HOME →](../introduction.md#choosing-your-front-end-cloud-vs.-home)
+> 💡 Not sure which front-end to use? [Compare CLOUD vs HOME →](../introduction#choosing-your-front-end-cloud-vs-home)

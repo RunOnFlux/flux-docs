@@ -17,7 +17,7 @@ Setting up and maintaining a FluxNode requires some basic technical know-how. Yo
 
 Ensure your hardware and internet meet the required specifications for your desired node tier (Cumulus, Nimbus, or Stratus).\
 \
-View the full requirements here: [FluxNode Requirements & Tiers](../what-are-fluxnodes.md#fluxnode-requirements-and-tiers)
+View the full requirements here: [FluxNode Requirements & Tiers](../what-are-fluxnodes#fluxnode-requirements-and-tiers)
 
 ***
 
@@ -53,6 +53,6 @@ Detailed TestNet instructions are available in the `#testnet-instructions` chann
 
 If you decide that managing your own node isn’t right for you, there are still ways to participate:
 
-* Use a [**managed node service**](../managed-fluxnode-service.md) to run your node while retaining full control of your funds
-* Stake your Flux on a [**Titan Node**](../titan-node-staking.md) with just a ZelCore wallet and some Flux
+* Use a [**managed node service**](../managed-fluxnode-service) to run your node while retaining full control of your funds
+* Stake your Flux on a [**Titan Node**](../titan-node-staking) with just a ZelCore wallet and some Flux
 * Use **staking services via Binance or CoinMetro**, which offer convenient options for earning rewards

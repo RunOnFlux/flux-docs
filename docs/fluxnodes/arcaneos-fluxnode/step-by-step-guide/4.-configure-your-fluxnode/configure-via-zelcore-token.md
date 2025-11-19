@@ -21,6 +21,6 @@ Using a ZelCore token allows you to import all node settings in one step. Genera
 2. Click **Import**.
    * ✅ All node fields will auto‑populate.
    * ✅ Any previous notification settings will be restored.
-3. Proceed to [**Configure Notifications**](../5.-configure-notifications.md) in the next chapter.
+3. Proceed to [**Configure Notifications**](../5.-configure-notifications) in the next chapter.
 
 <img src="/.gitbook/assets/3 (3).png" alt=""/>
