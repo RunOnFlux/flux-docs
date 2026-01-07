@@ -100,7 +100,7 @@ Set both the **Exposed Port** and the **Docker Container Port**
 
 Once a **Port Forwarding** rule is added, you can assign a **custom domain**
 
-* For setup instructions, refer to the [Custom Domain Setup](custom-domain-setup) guide
+* For setup instructions, refer to the [Custom Domain Setup](../custom-domain-setup) guide
 
 ### Hardware Resources
 
