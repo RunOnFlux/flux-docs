@@ -60,7 +60,7 @@ Ready to deploy from Git? Head over to the **FluxOrbit documentation** for compl
         <p>Full documentation and guides</p>
       </div>
       <div className="card__footer">
-        <a className="button button--secondary button--block" href="/fluxorbit/introduction">View Documentation</a>
+        <a className="button button--primary button--block" href="/fluxorbit/introduction">View Documentation</a>
       </div>
     </div>
   </div>
