@@ -36,7 +36,7 @@ New to Flux? Start with the fundamentals:
 
 | Guide | Description |
 |-------|-------------|
-| **[Deploy a custom docker container using FluxCloud](fluxcloud/home/applications/register-new-app/)** | Learn how to deploy your own custom docker container via FluxCloud |
+| **[Deploy a custom docker container using FluxCloud](fluxcloud/register-new-app/)** | Learn how to deploy your own custom docker container via FluxCloud |
 | **[How to Run a FluxNode](fluxnodes/what-are-fluxnodes)** | Learn how to install the FluxNode software on your machine and start earning rewards |
 
 ***

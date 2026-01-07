@@ -58,31 +58,16 @@ The Flux network is highly decentralized by design. As of mid-2025, it has over 
 
 ***
 
-### Choosing your Front-End: CLOUD vs. HOME
+### Getting Started
 
-FluxCloud provides two distinct front-end interfaces for accessing the decentralized cloud: **CLOUD** and **HOME**. Both support FLUX and fiat payments, Web2 and Web3 authentication, and core deployment workflows—but they differ in focus and feature availability.
+**URL**: [cloud.runonflux.com](https://cloud.runonflux.com)
 
-**CLOUD**
-
-**URL**: [cloud.runonflux.com](https://cloud.runonflux.com)\
-CLOUD is optimized for **end users and non-technical audiences**, offering a guided, step-by-step UI for launching applications. It's ideal for fast, simplified deployments.
+FluxCloud is optimized for **end users and developers alike**, offering a guided, step-by-step UI for launching applications. It supports FLUX and fiat payments, Web2 and Web3 authentication, and powerful deployment workflows.
 
 * Wizard-based UI for easier onboarding
-* Supports **WordPress** and **FluxDrive** (HOME does not—support coming soon)
-* Best for quick consumer deployments or non-technical users
-* Features roll out here **after** being stabilized in HOME
-
-**HOME**
-
-**URL**: [home.runonflux.com](https://home.runonflux.com)\
-HOME is the **developer-centric dashboard**, updated in real time with the latest backend features. It provides deeper access to FluxCloud’s capabilities and configuration options.
-
+* Supports **WordPress** and **FluxDrive**
+* Best for quick deployments
 * Full access to advanced deployment features
-* Updated more frequently in sync with backend releases
-* Ideal for technical users, power deployers, and testers
-* Does **not** currently support WordPress or FluxDrive
-
-If you're new to FluxCloud or looking for a consumer-friendly experience, start with [**CLOUD**](cloud/). For advanced use cases or early access to platform improvements, go with [**HOME**](home/).
 
 ***
 

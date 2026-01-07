@@ -38,4 +38,4 @@ You can pay using **Stripe (Credit/Debit Card), PayPal, or FLUX**.
 
 * After payment is done, we will monitor for it to complete.
 * Your WordPress application will typically deploy within **10–30 minutes**.
-* Once live, it will appear under `My Applications > My Active Apps`. Learn more about managing your application in the [Applications](https://docs.runonflux.com/fluxcloud/cloud/applications/) section.
+* Once live, it will appear under `My Applications > My Active Apps`. Learn more about managing your application in the [Applications](https://docs.runonflux.com/fluxcloud/applications/) section.

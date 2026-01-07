@@ -24,7 +24,7 @@ Use this section to define the name, contact email, domain settings, performance
 
 You may assign your own domain to the WordPress deployment
 
-* For setup instructions after successful deployment, refer to the [Custom Domain Setup](https://docs.runonflux.com/fluxcloud/cloud/marketplace/wordpress/custom-domain-setup) guide
+* For setup instructions after successful deployment, refer to the [Custom Domain Setup](https://docs.runonflux.com/fluxcloud/marketplace/wordpress/custom-domain-setup) guide
 
 ### Payment Length
 
