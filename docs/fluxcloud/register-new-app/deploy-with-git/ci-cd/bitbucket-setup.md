@@ -34,7 +34,7 @@ Environment Variables:
 1. Go to your Bitbucket repository
 2. Navigate to **Settings** → **Webhooks** → **Add webhook**
 3. Fill in:
-   - **Title**: `Flux Orbit Deploy`
+   - **Title**: `Flux-Orbit Deploy`
    - **URL**: `https://YOUR-APP-9001.app.runonflux.io/webhook`
    - **Triggers**: Choose "Repository push"
 4. Click **Save**

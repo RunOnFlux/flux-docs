@@ -31,4 +31,4 @@ Docker deployment is ideal when:
 
 ### Looking for Git-based Deployment?
 
-If you prefer to deploy directly from a Git repository without managing Docker images, check out **[Deploy with Git](../deploy-with-git/)** powered by FluxOrbit.
+If you prefer to deploy directly from a Git repository without managing Docker images, check out **[Deploy with Git](../deploy-with-git/)** powered by Flux-Orbit.

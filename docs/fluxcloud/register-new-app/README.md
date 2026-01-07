@@ -27,7 +27,7 @@ FluxCloud makes it easy to deploy and manage applications across a global, distr
         <h3>Deploy with Git</h3>
       </div>
       <div className="card__body">
-        <p>Deploy directly from your Git repository. FluxOrbit auto-detects your framework and handles the rest.</p>
+        <p>Deploy directly from your Git repository. Flux-Orbit auto-detects your framework and handles the rest.</p>
         <p><strong>Best for:</strong> Web apps, APIs, Node.js, Python, Ruby, Go, Rust, PHP, .NET, Java</p>
       </div>
       <div className="card__footer">

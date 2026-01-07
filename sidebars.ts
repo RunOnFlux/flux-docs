@@ -91,7 +91,78 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/register-new-app/deploy-with-docker/review',
               ],
             },
-            'fluxcloud/register-new-app/deploy-with-git/README',
+            {
+              type: 'category',
+              label: 'Deploy with Git (Flux-Orbit)',
+              items: [
+                'fluxcloud/register-new-app/deploy-with-git/README',
+                'fluxcloud/register-new-app/deploy-with-git/introduction',
+                {
+                  type: 'category',
+                  label: 'Getting Started',
+                  items: [
+                    'fluxcloud/register-new-app/deploy-with-git/getting-started/quick-start',
+                    'fluxcloud/register-new-app/deploy-with-git/getting-started/installation',
+                    'fluxcloud/register-new-app/deploy-with-git/getting-started/first-deployment',
+                    'fluxcloud/register-new-app/deploy-with-git/getting-started/deployment-guidelines',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Configuration',
+                  items: [
+                    'fluxcloud/register-new-app/deploy-with-git/configuration/environment-reference',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Deployment Hooks',
+                  items: [
+                    'fluxcloud/register-new-app/deploy-with-git/hooks/deployment-hooks',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'CI/CD Integration',
+                  items: [
+                    'fluxcloud/register-new-app/deploy-with-git/ci-cd/github-webhooks',
+                    'fluxcloud/register-new-app/deploy-with-git/ci-cd/gitlab-integration',
+                    'fluxcloud/register-new-app/deploy-with-git/ci-cd/bitbucket-setup',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'API Reference',
+                  items: [
+                    'fluxcloud/register-new-app/deploy-with-git/api/webhook-api',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Troubleshooting',
+                  items: [
+                    'fluxcloud/register-new-app/deploy-with-git/troubleshooting/common-issues',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Deployment Guides',
+                  items: [
+                    'fluxcloud/register-new-app/deploy-with-git/guides/deploying-nodejs',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/deploying-python',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/deploying-ruby',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/deploying-go',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/deploying-bun',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/deploying-rust',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/deploying-java',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/deploying-dotnet',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/deploying-php',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/gpu-ai-applications',
+                    'fluxcloud/register-new-app/deploy-with-git/guides/pr-preview-deployments',
+                  ],
+                },
+              ],
+            },
             'fluxcloud/register-new-app/custom-domain-setup',
           ],
         },
@@ -151,79 +222,6 @@ const sidebars: SidebarsConfig = {
           ],
         },
         // Note: FluxCloud API is an external link (https://docs.runonflux.io/) - skipped
-      ],
-    },
-
-    // FluxOrbit Section
-    {
-      type: 'category',
-      label: 'FluxOrbit',
-      items: [
-        'fluxorbit/introduction',
-        {
-          type: 'category',
-          label: 'Getting Started',
-          items: [
-            'fluxorbit/getting-started/quick-start',
-            'fluxorbit/getting-started/installation',
-            'fluxorbit/getting-started/first-deployment',
-            'fluxorbit/getting-started/deployment-guidelines',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Configuration',
-          items: [
-            'fluxorbit/configuration/environment-reference',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Deployment Hooks',
-          items: [
-            'fluxorbit/hooks/deployment-hooks',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'CI/CD Integration',
-          items: [
-            'fluxorbit/ci-cd/github-webhooks',
-            'fluxorbit/ci-cd/gitlab-integration',
-            'fluxorbit/ci-cd/bitbucket-setup',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'API Reference',
-          items: [
-            'fluxorbit/api/webhook-api',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Troubleshooting',
-          items: [
-            'fluxorbit/troubleshooting/common-issues',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Deployment Guides',
-          items: [
-            'fluxorbit/guides/deploying-nodejs',
-            'fluxorbit/guides/deploying-python',
-            'fluxorbit/guides/deploying-ruby',
-            'fluxorbit/guides/deploying-go',
-            'fluxorbit/guides/deploying-bun',
-            'fluxorbit/guides/deploying-rust',
-            'fluxorbit/guides/deploying-java',
-            'fluxorbit/guides/deploying-dotnet',
-            'fluxorbit/guides/deploying-php',
-            'fluxorbit/guides/gpu-ai-applications',
-            'fluxorbit/guides/pr-preview-deployments',
-          ],
-        },
       ],
     },
 

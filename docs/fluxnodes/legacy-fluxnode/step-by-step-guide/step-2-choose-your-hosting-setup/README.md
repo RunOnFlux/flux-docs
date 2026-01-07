@@ -65,7 +65,7 @@ There are multiple hardware approaches you can take, from repurposing an old PC 
 **Hardware Requirements**
 
 Before proceeding, ensure your device meets the **minimum system and network requirements** for your chosen node tier (Cumulus, Nimbus, or Stratus):\
-[FluxNode Requirements](./#hardware-requirements)
+[FluxNode Requirements](#hardware-requirements-)
 
 ***
 

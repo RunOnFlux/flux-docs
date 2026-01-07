@@ -17,7 +17,7 @@ Setting up and maintaining a FluxNode requires some basic technical know-how. Yo
 
 Ensure your hardware and internet meet the required specifications for your desired node tier (Cumulus, Nimbus, or Stratus).\
 \
-View the full requirements here: [FluxNode Requirements & Tiers](../what-are-fluxnodes#fluxnode-requirements-and-tiers)
+View the full requirements here: [FluxNode Requirements & Tiers](../what-are-fluxnodes#fluxnode-requirements--tiers)
 
 ***
 

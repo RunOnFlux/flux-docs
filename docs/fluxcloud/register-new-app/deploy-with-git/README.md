@@ -1,12 +1,12 @@
 # Deploy with Git
 
-Deploy directly from your Git repository without managing Docker images. **FluxOrbit** automatically detects your framework, installs dependencies, builds, and runs your application.
+Deploy directly from your Git repository without managing Docker images. **Flux-Orbit** automatically detects your framework, installs dependencies, builds, and runs your application.
 
 ---
 
 ### How It Works
 
-FluxOrbit is a smart deployment layer that:
+Flux-Orbit is a smart deployment layer that:
 
 - Automatically detects your framework (Node.js, Python, Ruby, Go, Rust, PHP, .NET, Java, Bun)
 - Installs the correct runtime and dependencies
@@ -35,7 +35,7 @@ No Dockerfile required. Just point to your repository and deploy.
 
 ### Get Started
 
-Ready to deploy from Git? Head over to the **FluxOrbit documentation** for complete setup instructions:
+Ready to deploy from Git? Head over to the **Flux-Orbit documentation** for complete setup instructions:
 
 <div className="row">
   <div className="col col--6">
@@ -47,20 +47,20 @@ Ready to deploy from Git? Head over to the **FluxOrbit documentation** for compl
         <p>Deploy your first app in 5 minutes</p>
       </div>
       <div className="card__footer">
-        <a className="button button--primary button--block" href="/fluxorbit/getting-started/quick-start">Start Deploying</a>
+        <a className="button button--primary button--block" href="./getting-started/quick-start">Start Deploying</a>
       </div>
     </div>
   </div>
   <div className="col col--6">
     <div className="card">
       <div className="card__header">
-        <h3>FluxOrbit Docs</h3>
+        <h3>Flux-Orbit Docs</h3>
       </div>
       <div className="card__body">
         <p>Full documentation and guides</p>
       </div>
       <div className="card__footer">
-        <a className="button button--primary button--block" href="/fluxorbit/introduction">View Documentation</a>
+        <a className="button button--primary button--block" href="./introduction">View Documentation</a>
       </div>
     </div>
   </div>

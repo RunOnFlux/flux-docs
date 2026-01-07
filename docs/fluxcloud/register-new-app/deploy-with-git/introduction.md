@@ -201,7 +201,7 @@ Port: 3000
         <p>Deploy in 5 minutes</p>
       </div>
       <div className="card__footer">
-        <a className="button button--primary button--block" href="/fluxorbit/getting-started/quick-start">Start Now</a>
+        <a className="button button--primary button--block" href="./getting-started/quick-start">Start Now</a>
       </div>
     </div>
   </div>
@@ -214,7 +214,7 @@ Port: 3000
         <p>Framework tutorials</p>
       </div>
       <div className="card__footer">
-        <a className="button button--primary button--block" href="/fluxorbit/guides/deploying-nodejs">View Guides</a>
+        <a className="button button--primary button--block" href="./guides/deploying-nodejs">View Guides</a>
       </div>
     </div>
   </div>
@@ -227,7 +227,7 @@ Port: 3000
         <p>Auto-deployment setup</p>
       </div>
       <div className="card__footer">
-        <a className="button button--primary button--block" href="/fluxorbit/ci-cd/github-webhooks">Setup CI/CD</a>
+        <a className="button button--primary button--block" href="./ci-cd/github-webhooks">Setup CI/CD</a>
       </div>
     </div>
   </div>
