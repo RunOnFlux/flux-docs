@@ -257,6 +257,79 @@ const sidebars: SidebarsConfig = {
       ],
     },
 
+    // FluxOrbit Section
+    {
+      type: 'category',
+      label: 'FluxOrbit',
+      items: [
+        'fluxorbit/introduction',
+        {
+          type: 'category',
+          label: 'Getting Started',
+          items: [
+            'fluxorbit/getting-started/quick-start',
+            'fluxorbit/getting-started/installation',
+            'fluxorbit/getting-started/first-deployment',
+            'fluxorbit/getting-started/deployment-guidelines',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Configuration',
+          items: [
+            'fluxorbit/configuration/environment-reference',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Deployment Hooks',
+          items: [
+            'fluxorbit/hooks/deployment-hooks',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'CI/CD Integration',
+          items: [
+            'fluxorbit/ci-cd/github-webhooks',
+            'fluxorbit/ci-cd/gitlab-integration',
+            'fluxorbit/ci-cd/bitbucket-setup',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'API Reference',
+          items: [
+            'fluxorbit/api/webhook-api',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Troubleshooting',
+          items: [
+            'fluxorbit/troubleshooting/common-issues',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Deployment Guides',
+          items: [
+            'fluxorbit/guides/deploying-nodejs',
+            'fluxorbit/guides/deploying-python',
+            'fluxorbit/guides/deploying-ruby',
+            'fluxorbit/guides/deploying-go',
+            'fluxorbit/guides/deploying-bun',
+            'fluxorbit/guides/deploying-rust',
+            'fluxorbit/guides/deploying-java',
+            'fluxorbit/guides/deploying-dotnet',
+            'fluxorbit/guides/deploying-php',
+            'fluxorbit/guides/gpu-ai-applications',
+            'fluxorbit/guides/pr-preview-deployments',
+          ],
+        },
+      ],
+    },
+
     // FluxNodes Section
     {
       type: 'category',
