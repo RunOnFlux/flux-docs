@@ -1,3 +1,9 @@
+---
+title: ArcaneOS FluxNode
+sidebar_label: ArcaneOS FluxNode
+sidebar_class_name: recommended
+---
+
 # ArcaneOS FluxNode
 
 FluxNode operators now have access to a powerful new tool—**Arcane OS**—purpose-built to elevate security, privacy, and ease of deployment across the Flux network. This page explains what Arcane OS is, how it fits into the FluxNode ecosystem, and why it matters for node operators seeking maximum trust, consistency, and compliance—especially with enterprise-grade applications.
