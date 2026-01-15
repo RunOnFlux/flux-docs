@@ -236,6 +236,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'ArcaneOS FluxNode',
+          classname: 'recommended'
           items: [
             'fluxnodes/arcaneos-fluxnode/README',
             'fluxnodes/arcaneos-fluxnode/how-to-install-arcane-os',
