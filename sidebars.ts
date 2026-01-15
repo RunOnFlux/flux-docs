@@ -231,6 +231,43 @@ const sidebars: SidebarsConfig = {
       label: 'FluxNodes',
       items: [
         'fluxnodes/what-are-fluxnodes',
+
+        // ArcaneOS moved above Legacy
+        {
+          type: 'category',
+          label: 'ArcaneOS FluxNode',
+          items: [
+            'fluxnodes/arcaneos-fluxnode/README',
+            'fluxnodes/arcaneos-fluxnode/how-to-install-arcane-os',
+            {
+              type: 'category',
+              label: 'Step-by-Step Guide',
+              items: [
+                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/README',
+                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/create-a-virtual-machine',
+                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/os-installation',
+                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/platform-key-configuration',
+                {
+                  type: 'category',
+                  label: '4. Configure Your FluxNode',
+                  items: [
+                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/README',
+                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/send-the-required-amount-of-flux-to-your-wallet',
+                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/manual-configuration',
+                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/configure-via-zelcore-token',
+                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/configure-via-ssp-token',
+                  ],
+                },
+                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-notifications',
+                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-ssh-access',
+                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/confirm-settings',
+                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/finalizing-the-configuration',
+                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/accessing-the-system',
+              ],
+            },
+          ],
+        },
+
         {
           type: 'category',
           label: 'Legacy FluxNode',
@@ -331,40 +368,7 @@ const sidebars: SidebarsConfig = {
             },
           ],
         },
-        {
-          type: 'category',
-          label: 'ArcaneOS FluxNode',
-          items: [
-            'fluxnodes/arcaneos-fluxnode/README',
-            'fluxnodes/arcaneos-fluxnode/how-to-install-arcane-os',
-            {
-              type: 'category',
-              label: 'Step-by-Step Guide',
-              items: [
-                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/README',
-                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/create-a-virtual-machine',
-                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/os-installation',
-                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/platform-key-configuration',
-                {
-                  type: 'category',
-                  label: '4. Configure Your FluxNode',
-                  items: [
-                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/README',
-                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/send-the-required-amount-of-flux-to-your-wallet',
-                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/manual-configuration',
-                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/configure-via-zelcore-token',
-                    'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-your-fluxnode/configure-via-ssp-token',
-                  ],
-                },
-                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-notifications',
-                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/configure-ssh-access',
-                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/confirm-settings',
-                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/finalizing-the-configuration',
-                'fluxnodes/arcaneos-fluxnode/step-by-step-guide/accessing-the-system',
-              ],
-            },
-          ],
-        },
+
         'fluxnodes/titan-node-staking',
         'fluxnodes/managed-fluxnode-service',
         'fluxnodes/claim-parallel-assets',
