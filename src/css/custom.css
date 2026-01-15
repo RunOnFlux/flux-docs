@@ -253,6 +253,25 @@ backdrop-filter: blur(10px);
   background-color: var(--ifm-menu-color-background-hover);
 }
 
+/* Sidebar Badge: Recommended */
+.recommended > .menu__link::after {
+  content: "Recommended";
+  margin-left: 8px;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 6px;
+  background: #22c55e; /* green */
+  color: #ffffff;
+  vertical-align: middle;
+}
+
+/* Dark mode tweak (optional but cleaner) */
+[data-theme='dark'] .recommended > .menu__link::after {
+  background: #16a34a;
+}
+
 /* Table of Contents */
 .table-of-contents {
   font-size: 0.875rem;
