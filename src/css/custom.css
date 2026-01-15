@@ -1,3 +1,4 @@
+
 /**
  * Flux Documentation - Custom Styles
  * Design system aligned with runonflux.com, cloud.runonflux.com, ai.runonflux.com, and fluxedge.ai
@@ -253,8 +254,8 @@ backdrop-filter: blur(10px);
   background-color: var(--ifm-menu-color-background-hover);
 }
 
-/* Sidebar Badge: Recommended (category/menu row only) */
-.menu__list-item.recommended > .menu__link::after {
+/* Sidebar Badge: Recommended */
+.recommended > .menu__link::after {
   content: "Recommended";
   margin-left: 8px;
   padding: 2px 6px;
@@ -268,7 +269,7 @@ backdrop-filter: blur(10px);
 }
 
 /* Dark mode tweak (optional but cleaner) */
-[data-theme='dark'] .menu__list-item.recommended > .menu__link::after {
+[data-theme='dark'] .recommended > .menu__link::after {
   background: #16a34a;
 }
 
