@@ -16,7 +16,7 @@ You can join the Flux network through several deployment options:
 * **Managed Service** – A third-party sets up and operates the node for you while you retain custody of your FLUX collateral. This is ideal for those who prefer a hands-off approach.
 
 > **For full details and setup instructions, see:**\
-> [Legacy FluxNode](fluxnodes/legacy-fluxnode/) | [ArcaneOS FluxNode](/fluxnodes/arcaneos-fluxnode/) | [Titan Node Staking](/fluxnodes/titan-node-staking) | [Managed FluxNode Service](/fluxnodes/managed-fluxnode-service)
+> [Legacy FluxNode](/fluxnodes/legacy-fluxnode/) | [ArcaneOS FluxNode](/fluxnodes/arcaneos-fluxnode/) | [Titan Node Staking](/fluxnodes/titan-node-staking) | [Managed FluxNode Service](/fluxnodes/managed-fluxnode-service)
 
 ***
 
