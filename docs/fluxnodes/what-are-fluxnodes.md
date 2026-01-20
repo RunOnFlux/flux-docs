@@ -48,7 +48,7 @@ Flux uses a **dual-reward model** for node operators:
      * **3.5 FLUX** → to one Nimbus node
      * **9 FLUX** → to one Stratus node
      * **0.5 FLUX** → to an ecosystem development fund allocated to the Flux Foundation
-   * Live earnings statistics: [Flux Rewards Dashboard](https://home.runonflux.com/dashboard/rewards)
+   * Live earnings statistics: [Flux Rewards Dashboard](https://cloud.runonflux.com/dashboards/rewards)
 2. **Parallel Mining Rewards**
    * In addition to native FLUX, node operators earn **parallel assets** (tokens on other blockchains such as ETH, BSC, KDA, SOL, etc.).
    * For each parallel asset, **10% of the node reward** (≈ 1.35 FLUX worth) is distributed per block.
@@ -76,7 +76,7 @@ With the launch of **ArcaneOS**, Flux introduced the **Progressive Node Rewards*
 
 The Flux network is highly decentralized by design. As of mid-2025, it has over **10,000 nodes** distributed across **66+ countries** and operated by more than **560 independent infrastructure providers**. This global spread eliminates single points of failure. If a region suffers downtime due to a power outage or natural disaster, the workload is seamlessly redistributed to other nodes, ensuring application uptime and resilience against censorship or disruptions.
 
-**Total Resources** _(Live stats:_ [_home.runonflux.io/dashboard/resources_](https://home.runonflux.io/dashboard/resources)_)_
+**Total Resources** _(Live stats:_ [https://cloud.runonflux.com/dashboards/resources](https://cloud.runonflux.com/dashboards/resources)_)_
 
 * **Total Cores**: 91,370
 * **Total RAM**: 216.62 TB
@@ -84,7 +84,7 @@ The Flux network is highly decentralized by design. As of mid-2025, it has over 
 
 <img src="/.gitbook/assets/Total Resources.png" alt=""/>
 
-**Geolocations & Providers** _(Live stats:_ [_home.runonflux.io/dashboard/map_](https://home.runonflux.io/dashboard/map)_)_
+**Geolocations & Providers** _(Live stats:_ [https://cloud.runonflux.com/dashboards/locations](https://cloud.runonflux.com/dashboards/locations)_)_
 
 * **Geographic Coverage**: 66 countries
 * **Infrastructure Providers**: 560
