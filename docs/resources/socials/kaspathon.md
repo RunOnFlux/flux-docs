@@ -15,7 +15,7 @@ This initiative is **not a partnership**—it’s FluxCloud’s commitment to em
 ## How to Apply for Free Compute Credits
 
 FluxCloud’s Kaspathon compute support is open to **all registered hackers**.  
-To receive free credits, simply fill out the **Kaspathon FluxCloud Compute Form** (link to be added).
+To receive free credits, simply fill out the [**Kaspathon FluxCloud Compute Form**](https://forms.gle/Vp41U4RyRfupbmrY9).
 
 You will need:
 
