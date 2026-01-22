@@ -1,3 +1,9 @@
+---
+id: kaspathon
+title: FluxCloud Compute Support for Kaspathon Builders
+sidebar_label: Kaspathon
+---
+
 # FluxCloud Compute Support for Kaspathon Builders
 
 For **Kaspathon**, FluxCloud is providing **free, censorship-resistant cloud compute**, allowing every team to deploy and scale their projects without worrying about infrastructure constraints.
