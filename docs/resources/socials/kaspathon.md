@@ -8,7 +8,7 @@ sidebar_label: Kaspathon
 
 For **Kaspathon**, FluxCloud is providing **free, censorship-resistant cloud compute**, allowing every team to deploy and scale their projects without worrying about infrastructure constraints.
 
-This initiative is **not a partnership**—it’s FluxCloud’s commitment to empowering builders. By combining a globally distributed compute network with flexible deployment workflows, FluxCloud enables teams to focus on building rather than infrastructure.
+This initiative is **not a partnership**, it’s FluxCloud’s commitment to empowering builders. By combining a globally distributed compute network with flexible deployment workflows, FluxCloud enables teams to focus on building rather than infrastructure.
 
 ---
 
@@ -23,10 +23,9 @@ You will need:
   Credits are distributed on the Flux blockchain. If you don’t have one yet, download **Zelcore**, a secure non-custodial wallet available on desktop, mobile, and browser.
 
 - **Your DoraHacks registration name**  
-  A FluxCloud team member (**kyuubi2709**) will contact you on DoraHacks to verify your FLUX address before credits are sent.
+  A FluxCloud team member (**kyuubi2709**) will contact you on via message at DoraHacks to verify your FLUX address before credits are sent.
 
-For help or questions related to FluxCloud during Kaspathon, builders can reach out to **kyuubi2709** in the **official Kaspa Discord server**, in the **#kaspathon** channel.  
-You can also contact **kyuubi2709 directly on DoraHacks** (**@U_4e9a05a1456b2e**) for support.
+For help or questions related to FluxCloud during Kaspathon, builders can reach out to **kyuubi2709** in the **official Kaspa Discord server**, in the **#kaspathon** channel. You can also contact **kyuubi2709 directly on DoraHacks** (**@U_4e9a05a1456b2e**) for support.
 
 ---
 
@@ -107,8 +106,6 @@ Instead of writing Dockerfiles or configuring CI/CD pipelines, you simply provid
 
 Updates pushed to your repository are deployed automatically, with built-in health checks and safe rollbacks. Deploy with Git supports **100+ frameworks and languages**, including Node.js, Python, Go, Rust, Java, and monorepos.
 
-**Deploy with Git goes live next week.**
+**Deploy with Git goes live next week.** Follow **RunOnFlux’s official channels** for updates on the full release.
 
 [**Deploy with Git Documentation**](https://docs.runonflux.com/fluxcloud/register-new-app/deploy-with-git/)
-
-Follow **RunOnFlux’s official channels** for updates on the full release.
