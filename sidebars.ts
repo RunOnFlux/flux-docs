@@ -630,6 +630,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Resources',
       items: [
+        'resources/socials/kaspathon',
         // Note: External links skipped:
         // - Proof-of-Useful-Work Litepaper (https://pouwlitepaper.app.runonflux.io/)
         // - FluxEdge Economics v1 (https://jetpack2_38080.app.runonflux.io/ipfs/...)
