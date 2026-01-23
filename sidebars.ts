@@ -196,11 +196,11 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'WordPress',
           items: [
-            'fluxcloud/marketplace/wordpress/README',
-            'fluxcloud/marketplace/wordpress/wordpress-details',
-            'fluxcloud/marketplace/wordpress/registration-steps',
-            'fluxcloud/marketplace/wordpress/custom-domain-setup',
-            'fluxcloud/marketplace/wordpress/admin-setup',
+            'fluxcloud/wordpress/README',
+            'fluxcloud/wordpress/wordpress-details',
+            'fluxcloud/wordpress/registration-steps',
+            'fluxcloud/wordpress/custom-domain-setup',
+            'fluxcloud/wordpress/admin-setup',
           ],
         },
         {
