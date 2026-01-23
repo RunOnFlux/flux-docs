@@ -183,23 +183,24 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'WordPress',
-              items: [
-                'fluxcloud/marketplace/wordpress/README',
-                'fluxcloud/marketplace/wordpress/wordpress-details',
-                'fluxcloud/marketplace/wordpress/registration-steps',
-                'fluxcloud/marketplace/wordpress/custom-domain-setup',
-                'fluxcloud/marketplace/wordpress/admin-setup',
-              ],
-            },
-            {
-              type: 'category',
               label: 'Kaspa Nodes',
               items: [
                 'fluxcloud/marketplace/kaspa-nodes/README',
                 'fluxcloud/marketplace/kaspa-nodes/manual-deployment',
               ],
             },
+          ],
+        },
+        // NEW: WordPress as its own section, right after Marketplace
+        {
+          type: 'category',
+          label: 'WordPress',
+          items: [
+            'fluxcloud/marketplace/wordpress/README',
+            'fluxcloud/marketplace/wordpress/wordpress-details',
+            'fluxcloud/marketplace/wordpress/registration-steps',
+            'fluxcloud/marketplace/wordpress/custom-domain-setup',
+            'fluxcloud/marketplace/wordpress/admin-setup',
           ],
         },
         {
