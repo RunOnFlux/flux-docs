@@ -6,7 +6,7 @@ description: Automatic preview builds for pull requests on static sites
 
 # PR Preview Deployments
 
-Flux-Orbit supports automatic preview deployments for pull requests on static sites. This feature allows you to review changes in a live environment before merging to production.
+Deploy with Git supports automatic preview deployments for pull requests on static sites. This feature allows you to review changes in a live environment before merging to production.
 
 ## Overview
 
@@ -169,7 +169,7 @@ Environment Variables:
   GIT_TOKEN: "ghp_xxx"             # Required for GitHub API access
 ```
 
-With polling enabled, Flux-Orbit will automatically:
+With polling enabled, Deploy with Git will automatically:
 - Detect new PRs and build previews
 - Detect PR updates (new commits) and rebuild previews
 - Detect closed PRs and delete previews
@@ -285,7 +285,7 @@ PR previews use the same build configuration as your main deployment:
 - **Package manager**: Auto-detected (npm, yarn, pnpm)
 - **Node version**: From `.nvmrc` or `package.json` engines
 
-During PR preview builds, Flux-Orbit automatically sets the `BASE_URL` environment variable to `/flux-pr-{number}/`. You can use this in your build configuration.
+During PR preview builds, Deploy with Git automatically sets the `BASE_URL` environment variable to `/flux-pr-{number}/`. You can use this in your build configuration.
 
 ```json
 {
@@ -299,7 +299,7 @@ During PR preview builds, Flux-Orbit automatically sets the `BASE_URL` environme
 
 ### 1. Base URL Configuration
 
-Flux-Orbit automatically sets `BASE_URL` during PR preview builds (e.g., `/flux-pr-42/`). Configure your framework to use it:
+Deploy with Git automatically sets `BASE_URL` during PR preview builds (e.g., `/flux-pr-42/`). Configure your framework to use it:
 
 #### Vite (React, Vue, Svelte)
 
@@ -464,7 +464,7 @@ jekyll build --baseurl ${BASE_URL:-/}
 ```
 
 :::tip Fallback Injection
-If your app doesn't configure `BASE_URL`, Flux-Orbit automatically injects a `<base>` tag into HTML files as a fallback. This works for most static sites, but configuring `BASE_URL` in your build is recommended for best results.
+If your app doesn't configure `BASE_URL`, Deploy with Git automatically injects a `<base>` tag into HTML files as a fallback. This works for most static sites, but configuring `BASE_URL` in your build is recommended for best results.
 :::
 
 ### 2. Resource Limits
