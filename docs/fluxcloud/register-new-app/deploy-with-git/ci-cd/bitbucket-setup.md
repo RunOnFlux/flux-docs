@@ -151,7 +151,7 @@ Set `WEBHOOK_URL` in repository variables.
 
 ## Alternative: Polling Mode
 
-Skip webhooks - let Flux-Orbit check for updates:
+Skip webhooks - let Deploy with Git check for updates:
 
 ```yaml
 Environment Variables:
@@ -159,7 +159,7 @@ Environment Variables:
   # No webhook needed!
 ```
 
-Flux-Orbit will pull the latest code automatically.
+Deploy with Git will pull the latest code automatically.
 
 ## Pro Tips
 
