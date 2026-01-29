@@ -1,23 +1,23 @@
 ---
 sidebar_position: 1
-title: Introduction to Flux-Orbit
+title: Introduction to Deploy with Git
 description: Deploy Any Web App in Minutes, Not Hours
 ---
 
-# Flux-Orbit: Your Code. Our Magic. Zero Docker Headaches.
+# Deploy with Git: Your Code. Our Magic. Zero Docker Headaches.
 
-**Flux-Orbit** is the easiest way to deploy React, Next.js, Vue, Django, Rails, Laravel, Gin APIs, Elysia apps, Actix APIs, Rocket apps, Spring Boot services, ASP.NET Core apps, and any Node.js, Python, Ruby, Go, Bun, Rust, Java, .NET Core, or PHP application on Flux Network. No Docker expertise required. No complex configuration. Just point us to your GitHub repo and hit launch.
+**Deploy with Git** is the easiest way to deploy React, Next.js, Vue, Django, Rails, Laravel, Gin APIs, Elysia apps, Actix APIs, Rocket apps, Spring Boot services, ASP.NET Core apps, and any Node.js, Python, Ruby, Go, Bun, Rust, Java, .NET Core, or PHP application on Flux Network. No Docker expertise required. No complex configuration. Just point us to your GitHub repo and hit launch.
 
 ## The Problem We Solve
 
-### Before Flux-Orbit
+### Before Deploy with Git
 
 - **"I need to learn Docker just to deploy my app"** - Writing Dockerfiles is confusing
 - **"Setting up CI/CD is too complicated"** - Configuring webhooks is tedious
 - **"I broke production and don't know how to fix it"** - No automatic recovery
 - **"Different setup for each framework"** - Copy-paste errors everywhere
 
-### After Flux-Orbit
+### After Deploy with Git
 
 - **Deploy in 3 clicks** - Paste GitHub URL, set port, hit launch
 - **Automatic updates from Git** - Push to GitHub → Auto-deploy
@@ -54,17 +54,17 @@ When you give us your repo, here's what happens:
 ### Sarah the Solo Developer
 *"I just want to deploy my side project"*
 
-Sarah built a React app. Before Flux-Orbit: 47 browser tabs trying to figure out Docker. With Flux-Orbit: Deployed in 2 minutes, shipping features same day.
+Sarah built a React app. Before Deploy with Git: 47 browser tabs trying to figure out Docker. With Deploy with Git: Deployed in 2 minutes, shipping features same day.
 
 ### TechCorp Startup
 *"We need reliable deployments without a DevOps team"*
 
-3 developers, 5 microservices (Node + Python + Go APIs). Before: Manual SSH deployments, Friday disasters. With Flux-Orbit: Git push auto-deploys, saved $120k/year on DevOps hire.
+3 developers, 5 microservices (Node + Python + Go APIs). Before: Manual SSH deployments, Friday disasters. With Deploy with Git: Git push auto-deploys, saved $120k/year on DevOps hire.
 
 ### Marcus the Bootcamp Grad
 *"I learned to code, but not Docker"*
 
-Built a Django portfolio. Before: Paying $20/month for managed hosting. With Flux-Orbit: Deployed to decentralized Flux, looks like a senior dev in interviews.
+Built a Django portfolio. Before: Paying $20/month for managed hosting. With Deploy with Git: Deployed to decentralized Flux, looks like a senior dev in interviews.
 
 ## Key Features That Make Your Life Easier
 
@@ -127,7 +127,7 @@ Built a Django portfolio. Before: Paying $20/month for managed hosting. With Flu
 ### Deploy a React App
 ```yaml
 App Name: my-react-app
-Docker Image: runonflux/orbit:latest
+Docker Image: runonflux/:latest
 Git Repo: https://github.com/you/react-app
 Port: 3000
 ```
@@ -135,7 +135,7 @@ Port: 3000
 ### Deploy a Python API
 ```yaml
 App Name: my-api
-Docker Image: runonflux/orbit:latest
+Docker Image: runonflux/:latest
 Git Repo: https://github.com/you/fastapi-app
 Port: 8000
 ```
@@ -143,7 +143,7 @@ Port: 8000
 ### Deploy a Bun Elysia API
 ```yaml
 App Name: my-bun-api
-Docker Image: runonflux/orbit:latest
+Docker Image: runonflux/:latest
 Git Repo: https://github.com/you/elysia-app
 Port: 3000
 ```
@@ -151,7 +151,7 @@ Port: 3000
 ### Deploy a Spring Boot API
 ```yaml
 App Name: my-spring-api
-Docker Image: runonflux/orbit:latest
+Docker Image: runonflux/:latest
 Git Repo: https://github.com/you/spring-boot-app
 Port: 8080
 ```
@@ -159,7 +159,7 @@ Port: 8080
 ### Deploy an ASP.NET Core App
 ```yaml
 App Name: my-dotnet-app
-Docker Image: runonflux/orbit:latest
+Docker Image: runonflux/:latest
 Git Repo: https://github.com/you/aspnet-app
 Port: 5000
 ```
@@ -173,7 +173,7 @@ Port: 3000
 
 ## Pricing & Value
 
-- **Pay only Flux Network rates** - No Flux-Orbit fees
+- **Pay only Flux Network rates** - No additional fees
 - **Typical costs:** Small app ~$3-10/month
 - **Compare to Heroku:** Same app = $25-500/month
 - **Enterprise features at indie hacker prices**
@@ -183,7 +183,7 @@ Port: 3000
 > *"I deployed my first decentralized app in under 5 minutes. I still don't know Docker and that's fine."*
 > — Alex, Frontend Developer
 
-> *"We migrated 8 microservices from AWS in one afternoon. Flux-Orbit just works."*
+> *"We migrated 8 microservices from AWS in one afternoon. Deploy with Git just works."*
 > — Jordan, CTO at GrowthStack
 
 > *"The automatic rollback saved us twice last week. Worth it for that alone."*
