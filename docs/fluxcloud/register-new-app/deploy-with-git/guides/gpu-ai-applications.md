@@ -1,16 +1,16 @@
 ---
 sidebar_position: 11
 title: GPU/AI Applications
-description: Complete guide for deploying GPU-accelerated AI/ML applications with Flux-Orbit
+description: Complete guide for deploying GPU-accelerated AI/ML applications via Deploy with Git
 ---
 
 # GPU/AI Applications
 
-This guide covers everything you need to know about deploying GPU-accelerated AI/ML applications with Flux-Orbit, from simple inference APIs to complex machine learning pipelines using PyTorch, TensorFlow, or JAX.
+This guide covers everything you need to know about deploying GPU-accelerated AI/ML applications via Deploy with Git, from simple inference APIs to complex machine learning pipelines using PyTorch, TensorFlow, or JAX.
 
 ## Overview
 
-Flux-Orbit supports optional GPU/CUDA installation at runtime when `GPU_ENABLED=true`. This keeps the base Docker image small while enabling deployment of AI/ML workloads on GPU-equipped hosts.
+Deploy with Git supports optional GPU/CUDA installation at runtime when `GPU_ENABLED=true`. This keeps the base Docker image small while enabling deployment of AI/ML workloads on GPU-equipped hosts.
 
 **Key Features:**
 - CUDA toolkit installed at runtime
