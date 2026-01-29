@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Introduction to Deploy with Git
+title: Introduction
 description: Deploy Any Web App in Minutes, Not Hours
 ---
 
@@ -241,6 +241,6 @@ Port: 3000
 
 ---
 
-**Flux-Orbit** - Because your code deserves better than a 47-tab Docker tutorial.
+**Deploy with Git** - Because your code deserves better than a 47-tab Docker tutorial.
 
 *Built with ❤️ for developers who just want to ship.*
