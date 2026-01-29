@@ -144,7 +144,7 @@ Set `WEBHOOK_URL` and `WEBHOOK_SECRET` in GitLab CI variables.
 
 ## Alternative: Polling Mode
 
-Skip webhooks entirely - let Flux-Orbit check for updates:
+Skip webhooks entirely - let Deploy with Git check for updates:
 
 ```yaml
 Environment Variables:
