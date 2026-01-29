@@ -1,16 +1,16 @@
 ---
 sidebar_position: 3
 title: Deploying Ruby Applications
-description: Complete guide for deploying Ruby applications with Flux-Orbit
+description: Complete guide for deploying Ruby applications via Deploy with Git
 ---
 
 # Deploying Ruby Applications
 
-This comprehensive guide covers everything you need to know about deploying Ruby applications with Flux-Orbit, from simple Sinatra apps to full Rails applications.
+This comprehensive guide covers everything you need to know about deploying Ruby applications via Deploy with Git, from simple Sinatra apps to full Rails applications.
 
 ## Overview
 
-Flux-Orbit automatically detects Ruby applications by looking for:
+Deploy with Git automatically detects Ruby applications by looking for:
 - `Gemfile` (primary indicator)
 - `Gemfile.lock` for dependency resolution
 - `.ruby-version` for version specification (optional)
@@ -49,7 +49,7 @@ docker run -d \
 
 ### Ruby on Rails
 
-Rails is a full-stack web framework for Ruby. Flux-Orbit automatically detects and optimizes Rails applications:
+Rails is a full-stack web framework for Ruby. Deploy with Git automatically detects and optimizes Rails applications:
 
 ```bash
 docker run -d \
@@ -368,7 +368,7 @@ Or explicitly set Node.js version:
 
 **Problem:** Native extension build errors
 
-**Solution:** Flux-Orbit includes build-essential and common libraries. For additional dependencies, use deployment hooks:
+**Solution:** Deploy with Git includes build-essential and common libraries. For additional dependencies, use deployment hooks:
 
 ```bash
 #!/bin/bash
