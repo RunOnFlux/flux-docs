@@ -1,16 +1,16 @@
 ---
 sidebar_position: 2
 title: Deploying Python Applications
-description: Complete guide for deploying Python applications with Flux-Orbit
+description: Complete guide for deploying Python applications via Deploy with Git
 ---
 
 # Deploying Python Applications
 
-This guide covers everything you need to know about deploying Python applications with Flux-Orbit, from simple Flask apps to complex Django projects.
+This guide covers everything you need to know about deploying Python applications via Deploy with Git, from simple Flask apps to complex Django projects.
 
 ## Overview
 
-Flux-Orbit automatically detects Python applications by looking for:
+Deploy with Git automatically detects Python applications by looking for:
 - `requirements.txt` file
 - `pyproject.toml` file
 - `Pipfile` for Pipenv projects
