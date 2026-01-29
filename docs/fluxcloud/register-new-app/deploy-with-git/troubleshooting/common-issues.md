@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
 title: Common Issues
-description: Solutions to common problems when using Flux-Orbit
+description: Solutions to common problems when using Deploy with Git
 ---
 
 # Common Issues
 
-This guide covers the most common issues users encounter with Flux-Orbit and how to solve them.
+This guide covers the most common issues users encounter via Deploy with Git and how to solve them.
 
 ## Application Won't Start
 
@@ -469,7 +469,7 @@ docker exec -it my-app flux-rollback --force
 - Recovery from edge cases
 
 :::tip Release History
-Flux-Orbit keeps the last 3 releases by default. Older releases are automatically cleaned up to save disk space. You can only rollback to releases that still exist in `/app/production/releases/`.
+Deploy with Git keeps the last 3 releases by default. Older releases are automatically cleaned up to save disk space. You can only rollback to releases that still exist in `/app/production/releases/`.
 :::
 
 :::caution Important Notes
