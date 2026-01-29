@@ -1,16 +1,16 @@
 ---
 sidebar_position: 6
 title: Deploying Rust Applications
-description: Complete guide for deploying Rust applications with Flux-Orbit
+description: Complete guide for deploying Rust applications via Deploy with Git
 ---
 
 # Deploying Rust Applications
 
-This comprehensive guide covers everything you need to know about deploying Rust applications with Flux-Orbit, from simple HTTP servers to complex microservices using Actix-web, Rocket, or Axum.
+This comprehensive guide covers everything you need to know about deploying Rust applications via Deploy with Git, from simple HTTP servers to complex microservices using Actix-web, Rocket, or Axum.
 
 ## Overview
 
-Flux-Orbit automatically detects Rust applications by looking for:
+Deploy with Git automatically detects Rust applications by looking for:
 - `Cargo.toml` file
 - `Cargo.lock` for dependency locking (optional)
 - `rust-toolchain.toml` or `rust-toolchain` for version specification (optional)
@@ -223,7 +223,7 @@ stable
 
 ### Release Mode
 
-By default, Flux-Orbit builds Rust applications in release mode for optimal performance:
+By default, Deploy with Git builds Rust applications in release mode for optimal performance:
 
 ```bash
 # Default: Optimized release build
@@ -435,7 +435,7 @@ HttpServer::new(|| App::new())
 
 ## Performance Tips
 
-1. **Release Mode**: Always use release builds in production (automatic with Flux-Orbit)
+1. **Release Mode**: Always use release builds in production (automatic with Deploy with Git)
 2. **Static Linking**: Rust produces static binaries by default - no runtime dependencies needed
 3. **Binary Size**: Use `strip = true` in Cargo.toml to reduce binary size:
    ```toml
