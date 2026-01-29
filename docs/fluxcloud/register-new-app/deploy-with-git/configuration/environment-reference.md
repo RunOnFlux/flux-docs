@@ -1,16 +1,16 @@
 ---
 sidebar_position: 1
 title: Environment Variables Reference
-description: Complete reference for all Flux-Orbit environment variables
+description: Complete reference for all Deploy with Git environment variables
 ---
 
 # Environment Variables Reference
 
-This page provides a comprehensive reference for all environment variables supported by Flux-Orbit. Use these variables to customize your deployment behavior.
+This page provides a comprehensive reference for all environment variables supported by Deploy with Git. Use these variables to customize your deployment behavior.
 
 ## Required Variables
 
-These variables must be set for Flux-Orbit to function:
+These variables must be set for Deploy with Git to function:
 
 ### `GIT_REPO_URL`
 - **Type**: String (URL)
@@ -386,7 +386,7 @@ Override only if you need specific GC tuning or custom JVM flags.
 ```
 
 :::info Deployment Safety
-Flux-Orbit includes a deployment watchdog that monitors deployment duration. If a deployment gets stuck (network issues, infinite loops, etc.), the system will automatically:
+Deploy with Git includes a deployment watchdog that monitors deployment duration. If a deployment gets stuck (network issues, infinite loops, etc.), the system will automatically:
 1. Detect the timeout
 2. Stop the deployment
 3. Rollback to the last working release
@@ -407,7 +407,7 @@ This prevents deployments from hanging indefinitely and ensures your application
 ```
 
 :::tip Dependency Caching
-Flux-Orbit automatically caches dependencies based on lock file hashes:
+Deploy with Git automatically caches dependencies based on lock file hashes:
 - `package-lock.json`, `yarn.lock`, `pnpm-lock.yaml` (Node.js)
 - `requirements.txt`, `poetry.lock` (Python)
 - `Gemfile.lock` (Ruby)
@@ -472,7 +472,7 @@ This separation allows you to:
 
 ## Health Check Configuration
 
-Flux-Orbit uses a simplified health check system with HTTP-based checks and configurable retries.
+Deploy with Git uses a simplified health check system with HTTP-based checks and configurable retries.
 
 ### `HEALTH_CHECK_RETRIES`
 - **Type**: Integer
