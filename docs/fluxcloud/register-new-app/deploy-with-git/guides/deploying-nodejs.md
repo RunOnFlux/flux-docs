@@ -1,16 +1,16 @@
 ---
 sidebar_position: 1
 title: Deploying Node.js Applications
-description: Complete guide for deploying Node.js applications with Flux-Orbit
+description: Complete guide for deploying Node.js applications via Deploy with Git
 ---
 
 # Deploying Node.js Applications
 
-This comprehensive guide covers everything you need to know about deploying Node.js applications with Flux-Orbit, from simple Express servers to complex Next.js applications.
+This comprehensive guide covers everything you need to know about deploying Node.js applications via Deploy with Git, from simple Express servers to complex Next.js applications.
 
 ## Overview
 
-Flux-Orbit automatically detects Node.js applications by looking for:
+Deploy with Git automatically detects Node.js applications by looking for:
 - `package.json` file
 - `package-lock.json` or `yarn.lock` or `pnpm-lock.yaml`
 - `.nvmrc` for version specification
@@ -25,7 +25,7 @@ docker run -d \
   -e GIT_REPO_URL=https://github.com/expressjs/express \
   -e APP_PORT=3000 \
   -p 3000:3000 \
-  runonflux/orbit:latest
+  runonflux/:latest
 ```
 
 ### What Happens Automatically
@@ -47,7 +47,7 @@ docker run -d \
 
 ### Next.js Applications
 
-Next.js requires building before running. Flux-Orbit handles this automatically:
+Next.js requires building before running. Deploy with Git handles this automatically:
 
 ```bash
 docker run -d \
@@ -263,7 +263,7 @@ Your application will automatically load these with packages like `dotenv`.
 
 ### Build Caching
 
-Flux-Orbit preserves `node_modules` between builds for faster deployments:
+Deploy with Git preserves `node_modules` between builds for faster deployments:
 - First deployment: Full installation
 - Subsequent updates: Only changed dependencies
 
