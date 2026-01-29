@@ -54,7 +54,7 @@ Ready to deploy from Git? Head over to the **Deploy with Git documentation** for
   <div className="col col--6">
     <div className="card">
       <div className="card__header">
-        <h3>Flux-Orbit Docs</h3>
+        <h3>Deploy with Git Docs</h3>
       </div>
       <div className="card__body">
         <p>Full documentation and guides</p>
