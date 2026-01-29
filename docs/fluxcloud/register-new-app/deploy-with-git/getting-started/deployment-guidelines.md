@@ -1,16 +1,16 @@
 ---
 sidebar_position: 4
 title: Deployment Guidelines
-description: What types of apps can be deployed on Flux-Orbit
+description: What types of apps can be deployed via Deploy with Git
 ---
 
 # Deployment Guidelines
 
-This guide helps you understand what types of applications are suitable for deployment on Flux-Orbit and the architectural requirements.
+This guide helps you understand what types of applications are suitable for deployment via Deploy with Git and the architectural requirements.
 
 ## Core Principle: Stateless Applications
 
-Flux-Orbit is designed for **stateless applications** that run in containers on the Flux Network. Your application code and dependencies are containerized, but **persistent data must be stored externally**.
+Deploy with Git is designed for **stateless applications** that run in containers on the Flux Network. Your application code and dependencies are containerized, but **persistent data must be stored externally**.
 
 ### <MDXIcon icon="mdi:check-circle" size={20} color="#22c55e" /> What Can Be Deployed
 
@@ -89,7 +89,7 @@ Environment Variables:
 
 <ArchitectureDiagram
   type="good"
-  title="Flux-Orbit (Your API) - Stateless"
+  title="Deploy with Git (Your API) - Stateless"
   items={[
     { label: 'Express.js App', icon: 'simple-icons:express', status: 'good' },
     { label: 'Stateless Design', icon: 'mdi:check-circle', status: 'good' },
@@ -110,7 +110,7 @@ Environment Variables:
 
 <ArchitectureDiagram
   type="bad"
-  title="Flux-Orbit - Your App"
+  title="Deploy with Git - Your App"
   items={[
     { label: 'SQLite DB', icon: 'simple-icons:sqlite', status: 'bad', note: 'Data lost on redeploy!' },
     { label: 'Local files', icon: 'mdi:folder', status: 'bad', note: 'Uploads lost!' }
@@ -122,7 +122,7 @@ Environment Variables:
 ### E-commerce Application
 
 ```yaml
-# Your Flux-Orbit app
+# Your Git app
 GIT_REPO_URL: https://github.com/you/ecommerce-app
 APP_PORT: 3000
 
@@ -136,7 +136,7 @@ STRIPE_API_KEY: sk_live_...
 **What's external:** Database, cache, file storage, payments
 ### SaaS Dashboard
 ```yaml
-# Your Flux-Orbit app
+# Your Git app
 GIT_REPO_URL: https://github.com/you/saas-dashboard
 APP_PORT: 8000
 
@@ -149,7 +149,7 @@ SMTP_HOST: smtp.sendgrid.net
 **What's external:** User database, session cache, email service
 ### Real-time Chat Application
 ```yaml
-# Your Flux-Orbit app
+# Your Git app
 GIT_REPO_URL: https://github.com/you/chat-app
 APP_PORT: 3000
 
