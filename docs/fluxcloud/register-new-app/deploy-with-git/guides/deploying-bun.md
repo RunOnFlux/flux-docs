@@ -1,16 +1,16 @@
 ---
 sidebar_position: 5
 title: Deploying Bun Applications
-description: Complete guide for deploying Bun applications with Flux-Orbit
+description: Complete guide for deploying Bun applications via Deploy with Git
 ---
 
 # Deploying Bun Applications
 
-This comprehensive guide covers everything you need to know about deploying Bun applications with Flux-Orbit, from simple Elysia APIs to complex applications using Hono, or even Node.js-compatible frameworks running on Bun.
+This comprehensive guide covers everything you need to know about deploying Bun applications via Deploy with Git, from simple Elysia APIs to complex applications using Hono, or even Node.js-compatible frameworks running on Bun.
 
 ## Overview
 
-Flux-Orbit automatically detects Bun applications by looking for:
+Deploy with Git automatically detects Bun applications by looking for:
 - `bun.lockb` file (Bun's binary lockfile)
 - `bunfig.toml` (Bun configuration file)
 - `.bun-version` for version specification (optional)
@@ -48,7 +48,7 @@ docker run -d \
 
 ### Elysia Framework
 
-Elysia is a Bun-native web framework designed for ergonomics and performance. Flux-Orbit automatically detects and optimizes Elysia applications:
+Elysia is a Bun-native web framework designed for ergonomics and performance. Deploy with Git automatically detects and optimizes Elysia applications:
 
 ```bash
 docker run -d \
