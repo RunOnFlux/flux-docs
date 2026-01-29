@@ -65,7 +65,7 @@ Watch your app update automatically! Check the logs in Flux Cloud dashboard to s
 
 When you push code to GitHub:
 1. GitHub sends a webhook to your Flux app
-2. Flux-Orbit pulls the new code
+2. Deploy with Git pulls the new code
 3. Installs dependencies if needed
 4. Builds your app (if needed)
 5. Restarts with the new version
@@ -173,7 +173,7 @@ Environment Variables:
   # No webhook setup needed!
 ```
 
-Flux-Orbit will check for new commits every 5 minutes and deploy automatically.
+Deploy with Git will check for new commits every 5 minutes and deploy automatically.
 
 ## Next Steps
 
