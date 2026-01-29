@@ -93,7 +93,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: 'Deploy with Git (Flux-Orbit)',
+              label: 'Deploy with Git',
               items: [
                 'fluxcloud/register-new-app/deploy-with-git/README',
                 'fluxcloud/register-new-app/deploy-with-git/introduction',
