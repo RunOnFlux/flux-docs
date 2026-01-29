@@ -1,16 +1,16 @@
 ---
 sidebar_position: 7
 title: Deploying Java Applications
-description: Complete guide for deploying Java applications with Flux-Orbit
+description: Complete guide for deploying Java applications via Deploy with Git
 ---
 
 # Deploying Java Applications
 
-This comprehensive guide covers everything you need to know about deploying Java applications with Flux-Orbit, from simple Spring Boot applications to complex microservices using Maven or Gradle.
+This comprehensive guide covers everything you need to know about deploying Java applications via Deploy with Git, from simple Spring Boot applications to complex microservices using Maven or Gradle.
 
 ## Overview
 
-Flux-Orbit automatically detects Java applications by looking for:
+Deploy with Git automatically detects Java applications by looking for:
 - `pom.xml` file (Maven)
 - `build.gradle` or `build.gradle.kts` file (Gradle)
 - `.java-version` for version specification (optional)
@@ -55,7 +55,7 @@ docker run -d \
 
 ### Spring Boot
 
-Spring Boot is the most popular Java framework. Flux-Orbit automatically detects and optimizes Spring Boot applications:
+Spring Boot is the most popular Java framework. Deploy with Git automatically detects and optimizes Spring Boot applications:
 
 ```bash
 docker run -d \
@@ -206,11 +206,11 @@ docker run -d \
 
 ### Maven
 
-Flux-Orbit fully supports Maven projects and automatically handles:
+Deploy with Git fully supports Maven projects and automatically handles:
 
 **Maven Wrapper (Preferred):**
 ```bash
-# If your project has mvnw, Flux-Orbit uses it automatically
+# If your project has mvnw, Deploy with Git uses it automatically
 ./mvnw clean package -DskipTests -B
 ```
 
@@ -230,11 +230,11 @@ docker run -d \
 
 ### Gradle
 
-Flux-Orbit fully supports Gradle projects with both Groovy and Kotlin DSL:
+Deploy with Git fully supports Gradle projects with both Groovy and Kotlin DSL:
 
 **Gradle Wrapper (Preferred):**
 ```bash
-# If your project has gradlew, Flux-Orbit uses it automatically
+# If your project has gradlew, Deploy with Git uses it automatically
 ./gradlew build -x test --no-daemon
 ```
 
@@ -317,7 +317,7 @@ dependencies {
 
 ### Memory Configuration
 
-Flux-Orbit automatically configures JVM memory based on container resources:
+Deploy with Git automatically configures JVM memory based on container resources:
 
 **Automatic Configuration:**
 ```bash
@@ -340,7 +340,7 @@ docker run -d \
 
 ### JAR File Detection
 
-Flux-Orbit automatically finds and runs the correct JAR file:
+Deploy with Git automatically finds and runs the correct JAR file:
 
 **Detection Priority:**
 1. Saved JAR path from build (`/app/.java_jar_file`)
@@ -503,7 +503,7 @@ docker run -d \
 If wrapper has wrong permissions or line endings:
 
 ```bash
-# Flux-Orbit automatically:
+# Deploy with Git automatically:
 # 1. Makes wrapper executable
 # 2. Handles Windows line endings (CRLF)
 ```
@@ -566,7 +566,7 @@ public Map<String, String> health() {
 Always read `APP_PORT` (passed as `--server.port`):
 
 ```java
-// Not needed! Flux-Orbit automatically passes:
+// Not needed! Deploy with Git automatically passes:
 // --server.port=$APP_PORT
 
 // But if you need it in code:
