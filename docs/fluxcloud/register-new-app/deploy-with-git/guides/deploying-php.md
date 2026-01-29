@@ -1,16 +1,16 @@
 ---
 sidebar_position: 8
 title: Deploying PHP Applications
-description: Complete guide for deploying PHP applications with Flux-Orbit
+description: Complete guide for deploying PHP applications via Deploy with Git
 ---
 
 # Deploying PHP Applications
 
-This comprehensive guide covers everything you need to know about deploying PHP applications with Flux-Orbit, from lightweight Slim APIs to full Laravel applications.
+This comprehensive guide covers everything you need to know about deploying PHP applications via Deploy with Git, from lightweight Slim APIs to full Laravel applications.
 
 ## Overview
 
-Flux-Orbit automatically detects PHP applications by looking for:
+Deploy with Git automatically detects PHP applications by looking for:
 - `composer.json` (primary indicator)
 - `composer.lock` for dependency resolution
 - Framework detection via dependencies in composer.json
@@ -48,7 +48,7 @@ docker run -d \
 
 ### Laravel Framework
 
-Laravel is a full-stack PHP framework. Flux-Orbit automatically detects and optimizes Laravel applications:
+Laravel is a full-stack PHP framework. Deploy with Git automatically detects and optimizes Laravel applications:
 
 ```bash
 docker run -d \
@@ -61,7 +61,7 @@ docker run -d \
   runonflux/orbit:latest
 ```
 
-**What Flux-Orbit Does Automatically:**
+**What Deploy with Git Does Automatically:**
 
 1. **Environment Setup**: Copies `.env.example` to `.env` if needed
 2. **Application Key**: Runs `php artisan key:generate` if APP_KEY not set
@@ -72,13 +72,13 @@ docker run -d \
 
 **Laravel Octane Support:**
 
-If Laravel Octane is installed, Flux-Orbit automatically uses it for high-performance serving:
+If Laravel Octane is installed, Deploy with Git automatically uses it for high-performance serving:
 
 ```bash
 # Install Octane in your Laravel project
 composer require laravel/octane
 
-# Deploy - Flux-Orbit detects Octane automatically
+# Deploy - Deploy with Git detects Octane automatically
 docker run -d \
   --name laravel-octane \
   -e GIT_REPO_URL=https://github.com/your-username/laravel-app \
@@ -107,7 +107,7 @@ docker run -d \
 
 ### Lumen Framework
 
-Lumen is Laravel's micro-framework for APIs. Flux-Orbit detects Lumen **before** Laravel (important for correct detection):
+Lumen is Laravel's micro-framework for APIs. Deploy with Git detects Lumen **before** Laravel (important for correct detection):
 
 ```bash
 docker run -d \
@@ -152,7 +152,7 @@ docker run -d \
   runonflux/orbit:latest
 ```
 
-**What Flux-Orbit Does:**
+**What Deploy with Git Does:**
 
 1. **Cache Warmup**: Runs `php bin/console cache:warmup --env=prod`
 2. **Asset Building**: Builds Symfony Encore assets if `webpack.config.js` exists
@@ -213,7 +213,7 @@ docker run -d \
   runonflux/orbit:latest
 ```
 
-**What Flux-Orbit Does:**
+**What Deploy with Git Does:**
 
 1. **Environment Setup**: Copies `env` to `.env` if needed
 2. **Permissions**: Sets proper permissions for `writable/` directory
@@ -232,7 +232,7 @@ docker run -d \
   runonflux/orbit:latest
 ```
 
-**What Flux-Orbit Does:**
+**What Deploy with Git Does:**
 
 1. **Cache Clearing**: Runs `php bin/cake cache clear_all`
 2. **Permissions**: Sets proper permissions for `tmp/` and `logs/` directories
@@ -278,7 +278,7 @@ docker run -d \
 
 ### Install Additional Extensions
 
-Flux-Orbit installs common extensions by default. For additional extensions:
+Deploy with Git installs common extensions by default. For additional extensions:
 
 ```bash
 docker run -d \
@@ -308,7 +308,7 @@ docker run -d \
 
 ### PHP Configuration
 
-Flux-Orbit automatically configures PHP for production:
+Deploy with Git automatically configures PHP for production:
 
 **Memory Limit**: Auto-configured to 75% of container memory
 - Minimum: 128MB
@@ -504,7 +504,7 @@ Ensure `PHP_VERSION` env matches requirements.
 
 **Solution:** Either:
 
-1. Let Flux-Orbit generate it automatically (happens on first deploy if APP_KEY not set in .env)
+1. Let Deploy with Git generate it automatically (happens on first deploy if APP_KEY not set in .env)
 2. Set `SECRET_KEY_BASE` environment variable with pre-generated key
 
 ### Application Not Accessible
@@ -522,7 +522,7 @@ $server->listen('0.0.0.0', $port);
 $server->listen('localhost', $port);
 ```
 
-Laravel, Lumen, Symfony, and other frameworks handled by Flux-Orbit already bind correctly.
+Laravel, Lumen, Symfony, and other frameworks handled by Deploy with Git already bind correctly.
 
 ### High Memory Usage
 
