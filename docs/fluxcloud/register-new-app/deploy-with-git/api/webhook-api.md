@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
 title: Webhook API
-description: API reference for Flux-Orbit webhook endpoints
+description: API reference for Deploy with Git webhook endpoints
 ---
 
 # Webhook API
 
-Complete API reference for Flux-Orbit's webhook endpoints and deployment triggers.
+Complete API reference for Deploy with Git's webhook endpoints and deployment triggers.
 
 ## Base URL
 
@@ -515,7 +515,7 @@ curl -H "Authorization: Bearer your_api_key" http://localhost:9001/logs/1
 
 ### Signature Verification
 
-Flux-Orbit supports signature verification for:
+Deploy with Git supports signature verification for:
 
 #### GitHub (HMAC-SHA256)
 
@@ -826,7 +826,7 @@ docker run -d \
 
 ## Deployment Queue
 
-Flux-Orbit uses a single-slot pending deployment system to prevent conflicts:
+Deploy with Git uses a single-slot pending deployment system to prevent conflicts:
 
 - Multiple webhooks within 5 seconds are debounced (configurable via `DEBOUNCE_DELAY`)
 - Only the **latest** commit is deployed (intermediate commits are skipped)
@@ -864,7 +864,7 @@ Result: Only 2 deployments (A and D), intermediate commits skipped ✅
 
 ## Rate Limiting
 
-Flux-Orbit implements basic rate limiting:
+Deploy with Git implements basic rate limiting:
 
 - Max 10 webhook requests per minute per IP
 - Configurable via `WEBHOOK_RATE_LIMIT`
