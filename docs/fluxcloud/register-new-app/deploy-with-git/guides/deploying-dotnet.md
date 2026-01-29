@@ -1,16 +1,16 @@
 ---
 sidebar_position: 7
 title: Deploying .NET Core Applications
-description: Complete guide for deploying .NET Core applications with Flux-Orbit
+description: Complete guide for deploying .NET Core applications via Deploy with Git
 ---
 
 # Deploying .NET Core Applications
 
-This comprehensive guide covers everything you need to know about deploying .NET Core applications with Flux-Orbit, from lightweight Web APIs to full ASP.NET Core applications with Blazor.
+This comprehensive guide covers everything you need to know about deploying .NET Core applications via Deploy with Git, from lightweight Web APIs to full ASP.NET Core applications with Blazor.
 
 ## Overview
 
-Flux-Orbit automatically detects .NET Core applications by looking for:
+Deploy with Git automatically detects .NET Core applications by looking for:
 - `.csproj` (C# project file)
 - `.fsproj` (F# project file)
 - `.vbproj` (VB.NET project file)
@@ -51,7 +51,7 @@ docker run -d \
 
 ### ASP.NET Core Web API
 
-ASP.NET Core is a cross-platform framework for building modern web APIs. Flux-Orbit automatically detects and optimizes ASP.NET Core applications:
+ASP.NET Core is a cross-platform framework for building modern web APIs. Deploy with Git automatically detects and optimizes ASP.NET Core applications:
 
 ```bash
 docker run -d \
@@ -63,7 +63,7 @@ docker run -d \
   runonflux/orbit:latest
 ```
 
-**What Flux-Orbit Does Automatically:**
+**What Deploy with Git Does Automatically:**
 
 1. **Framework Detection**: Identifies ASP.NET Core via `Microsoft.AspNetCore` or `Microsoft.NET.Sdk.Web` references
 2. **Production Build**: Runs `dotnet publish -c Release -o ./publish`
@@ -119,7 +119,7 @@ docker run -d \
   runonflux/orbit:latest
 ```
 
-**What Flux-Orbit Does:**
+**What Deploy with Git Does:**
 
 1. **Detection**: Identifies Blazor Server via ASP.NET Core detection
 2. **Production Build**: Runs `dotnet publish -c Release -o ./publish`
@@ -138,7 +138,7 @@ docker run -d \
   runonflux/orbit:latest
 ```
 
-**What Flux-Orbit Does:**
+**What Deploy with Git Does:**
 
 1. **Detection**: Identifies Blazor WASM via `Microsoft.AspNetCore.Components.WebAssembly` reference
 2. **Production Build**: Runs `dotnet publish -c Release -o ./publish`
@@ -188,7 +188,7 @@ public class Worker : BackgroundService
 }
 ```
 
-**What Flux-Orbit Does:**
+**What Deploy with Git Does:**
 
 1. **Detection**: Identifies Worker Service via `Microsoft.Extensions.Hosting` reference
 2. **Build**: Runs `dotnet build -c Release` (publish not needed for workers)
@@ -207,7 +207,7 @@ docker run -d \
   runonflux/orbit:latest
 ```
 
-**What Flux-Orbit Does:**
+**What Deploy with Git Does:**
 
 1. **Detection**: Identifies gRPC via `Grpc.AspNetCore` reference
 2. **Production Build**: Runs `dotnet publish -c Release -o ./publish`
@@ -226,7 +226,7 @@ docker run -d \
   runonflux/orbit:latest
 ```
 
-**What Flux-Orbit Does:**
+**What Deploy with Git Does:**
 
 1. **Detection**: Default if no framework-specific references found
 2. **Build**: Runs `dotnet build -c Release`
@@ -270,7 +270,7 @@ docker run -d \
 
 ### Memory Configuration
 
-Flux-Orbit automatically configures .NET for production:
+Deploy with Git automatically configures .NET for production:
 
 **Memory Limit**: Auto-configured to 75% of container memory
 - Minimum: 512MB
@@ -477,7 +477,7 @@ Or add to `.config/dotnet-tools.json`:
 }
 ```
 
-Flux-Orbit automatically runs `dotnet tool restore` if this file exists.
+Deploy with Git automatically runs `dotnet tool restore` if this file exists.
 
 ## CI/CD Integration
 
@@ -558,7 +558,7 @@ Or add `global.json`:
 
 **Solution:** ASP.NET Core must bind to `0.0.0.0` (not `localhost`):
 
-Flux-Orbit automatically sets `ASPNETCORE_URLS=http://0.0.0.0:$APP_PORT`.
+Deploy with Git automatically sets `ASPNETCORE_URLS=http://0.0.0.0:$APP_PORT`.
 
 If using custom Kestrel configuration:
 ```csharp
