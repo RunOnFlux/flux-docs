@@ -1,16 +1,16 @@
 ---
 sidebar_position: 3
 title: First Deployment
-description: Step-by-step guide for your first Flux-Orbit deployment
+description: Step-by-step guide for your first Git deployment
 ---
 
 # First Deployment
 
-This guide walks you through deploying your first application with Flux-Orbit, from start to finish.
+This guide walks you through deploying your first application via Deploy with Git, from start to finish.
 
 ## Overview
 
-We'll deploy a real application and learn how Flux-Orbit:
+We'll deploy a real application and learn how Deploy with Git:
 - Clones your repository
 - Detects the project type
 - Installs dependencies
@@ -21,7 +21,7 @@ We'll deploy a real application and learn how Flux-Orbit:
 
 ### Option 1: Use Our Example (Recommended for First Time)
 
-We'll use a Next.js blog that demonstrates Flux-Orbit's capabilities:
+We'll use a Next.js blog that demonstrates Deploy with Git its capabilities:
 
 ```bash
 docker run -d \
@@ -51,7 +51,7 @@ docker run -d \
 
 ### 1. Watch the Logs
 
-See what Flux-Orbit is doing in real-time:
+See what Deploy with Git is doing in real-time:
 
 ```bash
 docker logs -f my-first-app
@@ -59,7 +59,7 @@ docker logs -f my-first-app
 
 You'll see output like:
 ```
-[SETUP] Starting Flux-Orbit deployment...
+[SETUP] Starting Git deployment...
 [SETUP] Cloning repository: https://github.com/timlrx/tailwind-nextjs-starter-blog
 [SETUP] Repository cloned successfully
 [SETUP] Detected Node.js project (found package.json)
@@ -93,7 +93,7 @@ Once deployment completes (usually 2-5 minutes), access:
 
 1. **Container Started**: Docker created an isolated environment
 2. **Repository Cloned**: Git pulled your code into `/app/src`
-3. **Runtime Detected**: Flux-Orbit identified it as a Node.js project
+3. **Runtime Detected**: Deploy with Git identified it as a Node.js project
 4. **Dependencies Installed**: npm/yarn/pnpm installed packages
 5. **Build Executed**: Production build created
 6. **Application Started**: Supervisor manages the running process
@@ -259,7 +259,7 @@ docker rmi runonflux/orbit:latest
 
 ## What's Next?
 
-Congratulations! You've successfully deployed your first application with Flux-Orbit.
+Congratulations! You've successfully deployed your first application via Deploy with Git.
 
 ### Learn More:
 - [Environment Variables](../configuration/environment-reference) - Configure your deployment
