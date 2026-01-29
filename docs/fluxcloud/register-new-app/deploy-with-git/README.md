@@ -1,12 +1,12 @@
 # Deploy with Git
 
-Deploy directly from your Git repository without managing Docker images. **Flux-Orbit** automatically detects your framework, installs dependencies, builds, and runs your application.
+Deploy directly from your Git repository without managing Docker images. **Deploy with Git** automatically detects your framework, installs dependencies, builds, and runs your application.
 
 ---
 
 ### How It Works
 
-Flux-Orbit is a smart deployment layer that:
+Deploy with Git is a smart deployment layer that:
 
 - Automatically detects your framework (Node.js, Python, Ruby, Go, Rust, PHP, .NET, Java, Bun)
 - Installs the correct runtime and dependencies
@@ -35,7 +35,7 @@ No Dockerfile required. Just point to your repository and deploy.
 
 ### Get Started
 
-Ready to deploy from Git? Head over to the **Flux-Orbit documentation** for complete setup instructions:
+Ready to deploy from Git? Head over to the **Deploy with Git documentation** for complete setup instructions:
 
 <div className="row">
   <div className="col col--6">
