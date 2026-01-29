@@ -1,16 +1,16 @@
 ---
 sidebar_position: 4
 title: Deploying Go Applications
-description: Complete guide for deploying Go applications with Flux-Orbit
+description: Complete guide for deploying Go applications via Deploy with Git
 ---
 
 # Deploying Go Applications
 
-This comprehensive guide covers everything you need to know about deploying Go applications with Flux-Orbit, from simple HTTP servers to complex microservices using Gin, Echo, or Fiber.
+This comprehensive guide covers everything you need to know about deploying Go applications via Deploy with Git, from simple HTTP servers to complex microservices using Gin, Echo, or Fiber.
 
 ## Overview
 
-Flux-Orbit automatically detects Go applications by looking for:
+Deploy with Git automatically detects Go applications by looking for:
 - `go.mod` file
 - `go.sum` for dependency verification
 - `.go-version` for version specification (optional)
@@ -48,7 +48,7 @@ docker run -d \
 
 ### Gin Framework
 
-Gin is a high-performance HTTP web framework for Go. Flux-Orbit automatically detects and optimizes Gin applications:
+Gin is a high-performance HTTP web framework for Go. Deploy with Git automatically detects and optimizes Gin applications:
 
 ```bash
 docker run -d \
@@ -184,7 +184,7 @@ require (
 
 ### CGO Configuration
 
-By default, Flux-Orbit builds static binaries with `CGO_ENABLED=0` for maximum portability:
+By default, Deploy with Git builds static binaries with `CGO_ENABLED=0` for maximum portability:
 
 ```bash
 # Default: Static binary (CGO disabled)
