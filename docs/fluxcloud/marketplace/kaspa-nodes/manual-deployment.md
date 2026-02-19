@@ -127,8 +127,8 @@ The Component tab is where you define your application’s container settings, c
 
 Use the "Import from JSON* button and copy paste the below command to it. 
 
-* Mainnet: `["kaspad","--yes","--nologfiles","--disable-upnp","--utxoindex","--listen=0.0.0.0:15211"--rpclisten=0.0.0.0:15210","--rpclisten-borsh=0.0.0.0:17210","--rpclisten-json=0.0.0.0:18210"]`
-* Testnet: `["kaspad","--yes","--nologfiles","--disable-upnp","--utxoindex","--testnet","--listen=0.0.0.0:15211"--rpclisten=0.0.0.0:15210","--rpclisten-borsh=0.0.0.0:17210","--rpclisten-json=0.0.0.0:18210"]`
+* Mainnet: `["kaspad","--yes","--nologfiles","--disable-upnp","--utxoindex","--listen=0.0.0.0:15211","--rpclisten=0.0.0.0:15210","--rpclisten-borsh=0.0.0.0:17210","--rpclisten-json=0.0.0.0:18210"]`
+* Testnet: `["kaspad","--yes","--nologfiles","--disable-upnp","--utxoindex","--testnet","--listen=0.0.0.0:15211","--rpclisten=0.0.0.0:15210","--rpclisten-borsh=0.0.0.0:17210","--rpclisten-json=0.0.0.0:18210"]`
 * In case you use 16GB for RAM Resources, add the string "--ram-scale=0.8" to the command above. 
 
 **Exposed Port:**
