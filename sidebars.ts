@@ -648,7 +648,6 @@ const sidebars: SidebarsConfig = {
           type: 'link',
           label: 'Flux API',
           href: 'https://docs.runonflux.io/fluxapi',
-          target: '_blank',
         },
         // Note: Additional external links skipped:
         // - Terms of Service (https://runonflux.com/terms-of-service/)
