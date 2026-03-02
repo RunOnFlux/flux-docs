@@ -52,6 +52,8 @@ const config: Config = {
       'data-button-width': '3.75rem',
       'data-button-text-font-size': '0.875rem',
       'data-modal-disclaimer': 'This is a custom LLM for answering questions about all Flux products. The answers are based on the contents of Whitepapers, Documentation, Support articles, API references, website and knowledgebases. Give it a try!',
+      'data-mcp-enabled': 'true',
+      'data-mcp-server-url': 'https://flux.mcp.kapa.ai',
     },
   ],
 
