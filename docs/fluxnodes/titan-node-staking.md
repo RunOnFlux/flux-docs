@@ -15,7 +15,7 @@ This guide walks you through staking FLUX into Titan Nodes to earn rewards while
 Before you begin, ensure you have:
 
 * **Minimum Collateral:** 50 FLUX (main chain)
-* **Maximum Collateral:** 40,000 FLUX total (10,000 FLUX per individual stake)
+* **Maximum Collateral:** 400,000 FLUX total (100,000 FLUX per individual stake)
 * **A Flux-compatible wallet** — one of the following:
   * **Zelcore Wallet** — Download [here](https://zelcore.io/)
   * **SSP Wallet** (browser extension) — Download [here](https://sspwallet.io/)
@@ -43,8 +43,8 @@ Before you begin, ensure you have:
 
 * Navigate to the **"Active Flux"** page using the sidebar. You will see summary cards showing your Total Staked, Total Rewards, Active Stakes, and Min Redeem amounts.
 * Click the **"New Stake"** button (top-right) to open the Create New Stake wizard.
-* Enter your desired FLUX amount (**50–10,000 per stake**).
-  * Please be mindful that a maximum limit of 40,000 FLUX applies per FluxID.
+* Enter your desired FLUX amount (**50–100,000 per stake**).
+  * Please be mindful that a maximum limit of 400,000 FLUX applies per FluxID.
   * You can also check **"Stake from rewards"** to use your accumulated rewards as the stake amount.
 * Click **"Continue"**.
 
