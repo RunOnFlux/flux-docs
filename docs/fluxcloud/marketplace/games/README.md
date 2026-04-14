@@ -15,6 +15,7 @@ You can currently deploy and manage the following game servers:
 * **Satisfactory**
 * **Enshrouded**
 * **Palworld**
+* **Don't Starve Together**
 
 More titles are coming soon!
 

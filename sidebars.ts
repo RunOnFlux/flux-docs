@@ -179,6 +179,7 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/games/palworld',
                 'fluxcloud/marketplace/games/enshrouded',
                 'fluxcloud/marketplace/games/minecraft',
+                'fluxcloud/marketplace/games/dontstarvetogether',
               ],
             },
             {
@@ -189,6 +190,7 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/kaspa-nodes/manual-deployment',
               ],
             },
+            'fluxcloud/marketplace/openclaw',
           ],
         },
         // NEW: WordPress as its own section, right after Marketplace
