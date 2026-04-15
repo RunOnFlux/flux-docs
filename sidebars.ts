@@ -181,6 +181,7 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/games/minecraft',
                 'fluxcloud/marketplace/games/dontstarvetogether',
                 'fluxcloud/marketplace/games/terraria',
+                'fluxcloud/marketplace/games/satisfactory',
               ],
             },
             {
