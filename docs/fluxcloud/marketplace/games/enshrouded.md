@@ -122,6 +122,19 @@ For a smoother and more reliable gaming experience, it’s recommended to **add 
 3. Your Enshrouded server will appear under the **Favorites** tab.
 4. Select your server and connect to start your session seamlessly.
 
+#### Connecting via Domain Instead of IP
+
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+
+* Find your app domain under **Applications → Management → Information**.
+* When adding the server via the Steam **Game Servers → Favorites** dialog, enter the domain in place of the IP. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:15637`:
+
+    ```
+    your-app-domain.app.runonflux.io
+    ```
+
+Using the domain means your favorited entry continues to work automatically after any primary switch.
+
 ***
 
 ### Frequently Asked Questions

@@ -104,6 +104,19 @@ To connect to your server:
 
 <img src="/.gitbook/assets/image (11).png" alt=""/>
 
+#### Connecting via Domain Instead of IP
+
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+
+* Find your app domain under **Applications → Management → Information**.
+* Use it in the Palworld connection field in place of the IP. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:8211`:
+
+    ```
+    your-app-domain.app.runonflux.io
+    ```
+
+Using the domain means you never have to update the address your group uses when the primary switches.
+
 ***
 
 ### Frequently Asked Questions

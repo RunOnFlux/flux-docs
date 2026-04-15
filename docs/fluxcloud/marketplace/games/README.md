@@ -16,6 +16,7 @@ You can currently deploy and manage the following game servers:
 * **Enshrouded**
 * **Palworld**
 * **Don't Starve Together**
+* **Terraria**
 
 More titles are coming soon!
 

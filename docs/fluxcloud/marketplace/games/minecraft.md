@@ -107,6 +107,19 @@ To connect to your server:
 3. Copy the **Primary IP address** and paste it into the server address field.
 4. Click **Done** and start playing!
 
+#### Connecting via Domain Instead of IP
+
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+
+* Find your app domain under **Applications → Management → Information**.
+* Use it in the Minecraft **Server Address** field in place of the IP:
+
+    ```
+    your-app-domain.app.runonflux.io
+    ```
+
+Using the domain means your saved server entry continues to work automatically after any primary switch.
+
 ***
 
 ### Frequently Asked Questions

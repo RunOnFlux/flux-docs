@@ -180,6 +180,7 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/games/enshrouded',
                 'fluxcloud/marketplace/games/minecraft',
                 'fluxcloud/marketplace/games/dontstarvetogether',
+                'fluxcloud/marketplace/games/terraria',
               ],
             },
             {
