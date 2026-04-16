@@ -212,7 +212,7 @@ If your current primary server becomes unavailable or experiences downtime, one 
 
 #### Can I use my own world file?
 
-Yes. Upload your `.wld` file to `/root/.local/share/Terraria/Worlds/` via the Volume Browser and rename it to `FluxWorld.wld` (or update the `WORLD_FILENAME` environment variable in your deployment), then restart the application.
+Yes. Upload your `.wld` file to `/root/.local/share/Terraria/Worlds/` via the Volume Browser and rename it to `FluxWorld.wld`, then restart the application. If your world file has a different name and you prefer to keep it, you can update the `WORLD_FILENAME` environment variable to match: open your application settings, go to the **Specifications** tab and click **Update**, then navigate to the **Component** tab and change the `WORLD_FILENAME` value. Click **Review** in the top-right corner, confirm, and allow several minutes for the update to propagate across the network.
 
 ***
 

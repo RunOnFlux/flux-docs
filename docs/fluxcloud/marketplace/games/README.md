@@ -17,6 +17,7 @@ You can currently deploy and manage the following game servers:
 * **Palworld**
 * **Don't Starve Together**
 * **Terraria**
+* **Valheim**
 
 More titles are coming soon!
 

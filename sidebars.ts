@@ -182,6 +182,7 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/games/dontstarvetogether',
                 'fluxcloud/marketplace/games/terraria',
                 'fluxcloud/marketplace/games/satisfactory',
+                'fluxcloud/marketplace/games/valheim',
               ],
             },
             {
