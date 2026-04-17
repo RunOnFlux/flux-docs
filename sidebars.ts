@@ -179,11 +179,13 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/games/palworld',
                 'fluxcloud/marketplace/games/enshrouded',
                 'fluxcloud/marketplace/games/minecraft',
+                'fluxcloud/marketplace/games/minecraftbedrock',
                 'fluxcloud/marketplace/games/dontstarvetogether',
                 'fluxcloud/marketplace/games/terraria',
                 'fluxcloud/marketplace/games/satisfactory',
                 'fluxcloud/marketplace/games/valheim',
                 'fluxcloud/marketplace/games/garrysmod',
+                'fluxcloud/marketplace/games/factorio',
               ],
             },
             {

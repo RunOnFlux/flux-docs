@@ -2,7 +2,9 @@
 
 This guide walks you through the process of **deploying, managing, and connecting to a Palworld Game Server** using FluxCloud. Whether you’re setting up a new server or maintaining an existing one, this page provides step-by-step instructions and key details for a seamless experience.
 
-For more information on **Palword Servers** visit: [https://tech.palworldgame.com/](https://tech.palworldgame.com/)
+The FluxCloud Palworld template is built on the `thijsvanloef/palworld-server-docker` image, which includes built-in RCON support, scheduled backups, and automatic server updates.
+
+For more information on **Palworld Servers** visit: [https://tech.palworldgame.com/](https://tech.palworldgame.com/). For the server image documentation, see: [https://github.com/thijsvanloef/palworld-server-docker](https://github.com/thijsvanloef/palworld-server-docker).
 
 ***
 
@@ -132,6 +134,14 @@ Simply open the **Applications → Management** section on FluxCloud, select you
 #### What happens if the primary server goes down?
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. All your game data remains intact, so you can continue right where you left off once the switch is complete. You can check which instance is currently the primary from your application’s management panel under the _Instances_ tab.
+
+> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+
+***
+
+#### What ports does Palworld use?
+
+The Palworld dedicated server uses UDP port `8211` for gameplay traffic, UDP port `27015` for Steam server queries, and TCP port `25575` for RCON. FluxCloud exposes all of these automatically. When connecting by IP you must specify port `8211` (e.g. `1.2.3.4:8211`); when connecting via the app domain the port is resolved by DNS and you do not need to append it.
 
 ***
 

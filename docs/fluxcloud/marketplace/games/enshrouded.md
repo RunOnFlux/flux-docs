@@ -1,6 +1,10 @@
 # Enshrouded
 
-This guide walks you through the process of **deploying, managing, and connecting to a Enshrouded Game Server** using FluxCloud. Whether you’re setting up a new server or maintaining an existing one, this page provides step-by-step instructions and key details for a seamless experience.
+This guide walks you through the process of **deploying, managing, and connecting to an Enshrouded Game Server** using FluxCloud. Whether you’re setting up a new server or maintaining an existing one, this page provides step-by-step instructions and key details for a seamless experience.
+
+The FluxCloud Enshrouded template is built on the `sknnr/enshrouded-dedicated-server` image, which handles dedicated server installation and auto-updates via SteamCMD.
+
+For more information on **Enshrouded** visit: [https://enshrouded.com](https://enshrouded.com). For the server image documentation, see: [https://github.com/sknnr/enshrouded-dedicated-server](https://github.com/sknnr/enshrouded-dedicated-server).
 
 ***
 
@@ -34,7 +38,7 @@ This guide walks you through the process of **deploying, managing, and connectin
 
 5. **Deployment Location**
 
-* Configure whether you want your Palworld server to deploy in specific geographic regions:
+* Configure whether you want your Enshrouded server to deploy in specific geographic regions:
   * **Global (Recommended):** No geographic restrictions for best availability.
   * **Custom:** Restrict by continent or country.
 * Click the blue **Continue** arrow to proceed.
@@ -141,9 +145,9 @@ Using the domain means your favorited entry continues to work automatically afte
 
 #### How can I update my game server to the latest version?
 
-Your Palworld server automatically checks for updates during startup and at regular intervals. If you’d like to update immediately, you can do so from your application’s management panel.
+Your Enshrouded server automatically checks for updates during startup and at regular intervals. If you’d like to update immediately, you can do so from your application’s management panel.
 
-Simply open the **Applications → Management** section on FluxCloud, select your Palworld server, and go to the **Control** tab. From there, choose **Global** and click **Restart Application**. This will redeploy your server with the latest available version.
+Simply open the **Applications → Management** section on FluxCloud, select your Enshrouded server, and go to the **Control** tab. From there, choose **Global** and click **Restart Application**. This will redeploy your server with the latest available version.
 
 ***
 
@@ -151,13 +155,21 @@ Simply open the **Applications → Management** section on FluxCloud, select you
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. All your game data remains intact, so you can continue right where you left off once the switch is complete. You can check which instance is currently the primary from your application’s management panel under the _Instances_ tab.
 
+> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+
+***
+
+#### What ports does Enshrouded use?
+
+The Enshrouded dedicated server uses UDP port `15637` for gameplay traffic and UDP port `27015` for Steam server queries. FluxCloud exposes both ports automatically. When adding the server to Steam **Game Servers → Favorites** by IP you must append `:15637` (e.g. `1.2.3.4:15637`); when connecting via the app domain the port is resolved by DNS and you do not need to append it.
+
 ***
 
 #### Can I change the game server settings and/or setup a password to connect to my game server?
 
 Yes, you can customize your Enshrouded server settings just like on a standard VPS. Please note that **basic terminal and Linux proficiency** is required for this process.
 
-Go to **Applications → Management**, select the **settings icon** to manage your **Palworld** server, and open the **Secure Shell** tab. Select the **Enshrouded** component, choose **bin/bash**, and click **Connect**.
+Go to **Applications → Management**, select the **settings icon** to manage your **Enshrouded** server, and open the **Secure Shell** tab. Select the **Enshrouded** component, choose **bin/bash**, and click **Connect**.
 
 <img src="/.gitbook/assets/Screenshot 2025-11-03 145446.jpg" alt=""/>
 

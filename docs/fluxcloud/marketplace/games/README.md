@@ -10,7 +10,8 @@ Whether you're hosting for friends or managing a large community, FluxCloud prov
 
 You can currently deploy and manage the following game servers:
 
-* **Minecraft**
+* **Minecraft** (Java Edition)
+* **Minecraft Bedrock** (mobile, console, Windows 10/11)
 * **Factorio**
 * **Satisfactory**
 * **Enshrouded**
@@ -18,6 +19,7 @@ You can currently deploy and manage the following game servers:
 * **Don't Starve Together**
 * **Terraria**
 * **Valheim**
+* **Garry's Mod**
 
 More titles are coming soon!
 

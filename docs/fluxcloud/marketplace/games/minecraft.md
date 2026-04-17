@@ -1,6 +1,12 @@
 # Minecraft
 
-This guide walks you through the process of **deploying, managing, and connecting to a Minecraft Game Server** using FluxCloud. Whether you’re setting up a new server or maintaining an existing one, this page provides step-by-step instructions and key details for a seamless experience.
+This guide walks you through the process of **deploying, managing, and connecting to a Minecraft Java Edition Game Server** using FluxCloud. Whether you’re setting up a new server or maintaining an existing one, this page provides step-by-step instructions and key details for a seamless experience.
+
+The FluxCloud Minecraft Java template is built on the popular `itzg/minecraft-server` image, which supports Vanilla, Paper, Spigot, Forge, Fabric and many other server types out of the box.
+
+For more information on **Minecraft** visit: [https://www.minecraft.net](https://www.minecraft.net). For the server image documentation, see: [https://github.com/itzg/docker-minecraft-server](https://github.com/itzg/docker-minecraft-server).
+
+> 💡 **Looking for Bedrock Edition?** Deploying a server for phones, consoles, or Windows 10/11 Bedrock clients uses a different template — see the [Minecraft Bedrock](./minecraftbedrock.md) guide.
 
 ***
 
@@ -41,7 +47,7 @@ This guide walks you through the process of **deploying, managing, and connectin
 
 6. **Deployment Location**
 
-* Configure whether you want your Palworld server to deploy in specific geographic regions:
+* Configure whether you want your Minecraft server to deploy in specific geographic regions:
   * **Global (Recommended):** No geographic restrictions for best availability.
   * **Custom:** Restrict by continent or country.
 * Click the blue **Continue** arrow to proceed.
@@ -126,15 +132,23 @@ Using the domain means your saved server entry continues to work automatically a
 
 #### How can I update my game server to the latest version?
 
-Your Palworld server automatically checks for updates during startup and at regular intervals. If you’d like to update immediately, you can do so from your application’s management panel.
+Your Minecraft server automatically checks for updates during startup and at regular intervals. If you’d like to update immediately, you can do so from your application’s management panel.
 
-Simply open the **Applications → Management** section on FluxCloud, select your Palworld server, and go to the **Control** tab. From there, choose **Global** and click **Restart Application**. This will redeploy your server with the latest available version.
+Simply open the **Applications → Management** section on FluxCloud, select your Minecraft server, and go to the **Control** tab. From there, choose **Global** and click **Restart Application**. This will redeploy your server with the latest available version.
+
+***
+
+#### What port does Minecraft Java use?
+
+Minecraft Java Edition dedicated servers use TCP port `25565` for gameplay traffic. FluxCloud exposes this port automatically. When connecting by IP you must specify the port (`1.2.3.4:25565`); when connecting by the app domain the port is resolved by DNS and you do not need to append it.
 
 ***
 
 #### What happens if the primary server goes down?
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. All your game data remains intact, so you can continue right where you left off once the switch is complete. You can check which instance is currently the primary from your application’s management panel under the _Instances_ tab.
+
+> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 
