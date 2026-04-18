@@ -186,6 +186,7 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/games/valheim',
                 'fluxcloud/marketplace/games/garrysmod',
                 'fluxcloud/marketplace/games/factorio',
+                'fluxcloud/marketplace/games/vrising',
               ],
             },
             {

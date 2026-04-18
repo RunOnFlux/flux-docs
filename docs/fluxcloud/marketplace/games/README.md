@@ -20,6 +20,7 @@ You can currently deploy and manage the following game servers:
 * **Terraria**
 * **Valheim**
 * **Garry's Mod**
+* **V Rising**
 
 More titles are coming soon!
 
