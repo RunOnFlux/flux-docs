@@ -167,12 +167,12 @@ Useful command reference:
 | `Password <text>` | Password required to join (remove the line to make the server public) |
 | `Map <name>` | Starting map (`PEI`, `Washington`, `Yukon`, `Russia`, `Germany`, `Hawaii`, `Arid`, `Kuwait`, or a workshop map) |
 | `MaxPlayers <n>` | Concurrent player cap (match your plan's slot count) |
-| `Mode <Easy|Normal|Hard>` | Overall difficulty |
+| `Mode <Easy\|Normal\|Hard>` | Overall difficulty |
 | `PvP` / `PvE` | Combat mode |
-| `Perspective <First|Third|Both|Vehicle>` | Allowed camera perspectives |
+| `Perspective <First\|Third\|Both\|Vehicle>` | Allowed camera perspectives |
 | `Welcome <text>` | Message of the day shown on join |
 | `Gold` | Restrict the server to players who own the Gold Upgrade |
-| `Cheats <on|off>` | Enable or disable cheat commands |
+| `Cheats <on\|off>` | Enable or disable cheat commands |
 | `Save <seconds>` | Auto-save interval |
 | `Port <n>` | Advanced — change the game port (leave at `27015` unless you know what you're doing) |
 
