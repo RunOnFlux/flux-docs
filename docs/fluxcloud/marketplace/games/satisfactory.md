@@ -159,7 +159,7 @@ For advanced tuning (engine flags, network parameters), you can edit the Unreal 
     ```
 
     Common files: `Game.ini`, `Engine.ini`, `Scalability.ini`.
-4. Save your changes, then open the **Control** tab, select **Global**, and click **Restart Application** so the new settings take effect.
+4. Save your changes, then open the **Control** tab, select **Local**, and click **Restart Application** so the new settings take effect.
 
 > ⚠️ **Important:** Invalid config values can prevent the server from starting. Back up any file before editing and revert if the server fails to boot.
 
@@ -224,7 +224,7 @@ Mods are installed into the persistent volume and survive restarts. There are tw
     /tmp/ficsit apply
     ```
 
-6. Restart the server from **Control → Global → Restart Application**.
+6. Restart the server from **Control → Local → Restart Application**.
 
 #### Option 2 — Manual upload (via Volume Browser)
 
@@ -239,7 +239,7 @@ Best if you prefer a graphical workflow or already have mod files downloaded.
     ```
 
 4. Upload the extracted mod folder(s) there.
-5. Restart the server from **Control → Global → Restart Application**.
+5. Restart the server from **Control → Local → Restart Application**.
 
 > ⚠️ **Dependencies must be uploaded manually too.** Each mod page on ficsit.app lists its required dependencies — download and upload them the same way. Missing dependencies will prevent mods from loading.
 
@@ -298,4 +298,4 @@ Yes — see the **Installing Mods** section above for the two supported workflow
 
 #### How can I update my game server to the latest version?
 
-The `wolveix/satisfactory-server` image pulls the latest Satisfactory dedicated server build via SteamCMD on every startup. To update immediately, open **Applications → Management**, select your Satisfactory server, go to the **Control** tab, choose **Global**, and click **Restart Application**.
+The `wolveix/satisfactory-server` image pulls the latest Satisfactory dedicated server build via SteamCMD on every startup. To update immediately, open **Applications → Management**, select your Satisfactory server, go to the **Control** tab, choose **Local**, and click **Restart Application**.

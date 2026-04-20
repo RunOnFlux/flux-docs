@@ -204,7 +204,7 @@ The `lloesche/valheim-server` image includes built-in support for **BepInEx**, t
     /config/bepinex/config/
     ```
 
-5. Restart the server from **Control → Global → Restart Application**.
+5. Restart the server from **Control → Local → Restart Application**.
 
 > ⚠️ **Important:** All players connecting to a modded server must have the same mods installed locally. After any mod change, restart the server for it to take effect. Mods may break after a Valheim game update — wait for mod authors to release compatible versions before updating.
 
@@ -252,4 +252,4 @@ Yes — see the **Installing Mods (BepInEx)** section above. The server image ha
 
 #### How can I update my game server to the latest version?
 
-The `lloesche/valheim-server` image automatically checks for and downloads the latest Valheim dedicated server build on every startup. To update immediately, open **Applications → Management**, select your Valheim server, go to the **Control** tab, choose **Global**, and click **Restart Application**.
+The `lloesche/valheim-server` image automatically checks for and downloads the latest Valheim dedicated server build on every startup. To update immediately, open **Applications → Management**, select your Valheim server, go to the **Control** tab, choose **Local**, and click **Restart Application**.

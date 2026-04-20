@@ -126,7 +126,7 @@ Bedrock server settings (level name, game mode, difficulty, max players, whiteli
     ```
 
 3. Edit the values you want to change (for example `server-name`, `gamemode`, `difficulty`, `max-players`, `allow-cheats`), then save.
-4. Open the **Control** tab, select **Global**, and click **Restart Application** so the new settings take effect.
+4. Open the **Control** tab, select **Local**, and click **Restart Application** so the new settings take effect.
 
 > ⚠️ **Important:** Invalid configuration values can prevent the server from starting. Back up the file before editing and revert if the server fails to boot.
 
@@ -178,4 +178,4 @@ Yes. Upload your world directory to `/data/worlds/` via the Volume Browser, then
 
 #### How can I update my game server to the latest version?
 
-The `itzg/minecraft-bedrock-server` image pulls the latest official Bedrock dedicated server build on every startup. To update immediately, open **Applications → Management**, select your Minecraft Bedrock server, go to the **Control** tab, choose **Global**, and click **Restart Application**.
+The `itzg/minecraft-bedrock-server` image pulls the latest official Bedrock dedicated server build on every startup. To update immediately, open **Applications → Management**, select your Minecraft Bedrock server, go to the **Control** tab, choose **Local**, and click **Restart Application**.

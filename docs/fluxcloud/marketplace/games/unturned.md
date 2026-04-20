@@ -157,7 +157,7 @@ Settings are edited through the **Volume Browser**:
     Save 1200
     ```
 
-5. Save your changes, then open the **Control** tab, select **Global**, and click **Restart Application** so the new settings take effect.
+5. Save your changes, then open the **Control** tab, select **Local**, and click **Restart Application** so the new settings take effect.
 
 Useful command reference:
 
@@ -223,7 +223,7 @@ If you just want to play with friends using direct connect (IP or app domain), y
     GSLT your_token_here
     ```
 
-3. Save the file, then restart the application from **Control → Global → Restart Application**.
+3. Save the file, then restart the application from **Control → Local → Restart Application**.
 
 Alternatively, the token can be set in `/serverdata/serverfiles/Servers/Default/Server/Config.json` under the `Browser` section as `Login_Token` — either location works, but do not set it in both.
 
@@ -245,7 +245,7 @@ To grant yourself admin:
 
 1. Look up your SteamID64 (e.g. via [steamid.io](https://steamid.io)).
 2. In the **Volume Browser**, edit `Adminlist.dat` and add your SteamID64 on a new line. You can use `Owner <steamid64>` in `Commands.dat` instead to make yourself a server owner with full permissions (including the ability to grant admin in-game).
-3. Save the file and restart the application from **Control → Global → Restart Application**.
+3. Save the file and restart the application from **Control → Local → Restart Application**.
 4. In-game, open the chat with `/` and run admin commands such as `/kick`, `/ban`, `/admin <player>`, `/give <item>`, `/vehicle <id>`, etc.
 
 `Banned.dat` and `Whitelist.dat` behave the same way — one SteamID64 per line. In-game `/ban` and `/unban` commands update `Banned.dat` automatically, but manual edits through the Volume Browser also work.
@@ -297,7 +297,7 @@ Unturned has full Steam Workshop integration. The dedicated server can subscribe
     ```
 
 4. If a workshop item is a **custom map**, set `Map <map_folder_name>` in `Commands.dat` to match the folder the map ships under.
-5. Restart the application from **Control → Global → Restart Application**. SteamCMD will download or update the workshop items on boot.
+5. Restart the application from **Control → Local → Restart Application**. SteamCMD will download or update the workshop items on boot.
 
 #### Option 2 — Manual mod upload
 
@@ -332,7 +332,7 @@ Unturned uses UDP port `27015` for gameplay traffic and UDP `27016` for the Stea
 
 #### How do I change the server name or password?
 
-Edit `/serverdata/serverfiles/Servers/Default/Server/Commands.dat` via the Volume Browser. Set (or add) the `Name <text>` and `Password <text>` lines to the values you want. Save, then restart the application from **Control → Global → Restart Application**. Remove the `Password` line entirely to make the server public.
+Edit `/serverdata/serverfiles/Servers/Default/Server/Commands.dat` via the Volume Browser. Set (or add) the `Name <text>` and `Password <text>` lines to the values you want. Save, then restart the application from **Control → Local → Restart Application**. Remove the `Password` line entirely to make the server public.
 
 ***
 
@@ -370,4 +370,4 @@ Yes — see the **Installing Workshop Mods and Custom Maps** section above. Add 
 
 #### How can I update my game server to the latest version?
 
-The `ich777/steamcmd:unturned` image pulls the latest Unturned Dedicated Server build via SteamCMD on every startup (with `VALIDATE=true` to repair any corrupted files). To update immediately, open **Applications → Management**, select your Unturned server, go to the **Control** tab, choose **Global**, and click **Restart Application**.
+The `ich777/steamcmd:unturned` image pulls the latest Unturned Dedicated Server build via SteamCMD on every startup (with `VALIDATE=true` to repair any corrupted files). To update immediately, open **Applications → Management**, select your Unturned server, go to the **Control** tab, choose **Local**, and click **Restart Application**.

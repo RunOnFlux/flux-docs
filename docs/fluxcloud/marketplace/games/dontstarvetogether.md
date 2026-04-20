@@ -155,7 +155,7 @@ Both actions happen through the **Volume Browser**:
 
 4. Locate the `[GAMEPLAY]` section and look for the `password =` line. This is the current server password.
 5. To change it, click **Edit**, replace the value with your own password, and save.
-6. Open the **Control** tab, select **Global**, and click **Restart Application** so the new password takes effect.
+6. Open the **Control** tab, select **Local**, and click **Restart Application** so the new password takes effect.
 
 > ⚠️ **Important:** Be cautious when modifying values in `cluster.ini`. Incorrect changes may prevent your server from starting. If that happens, restore the file to a working state or redeploy.
 
@@ -196,7 +196,7 @@ Yes, the token is **required**. DST dedicated servers must authenticate with Kle
 
 #### How can I update my game server to the latest version?
 
-Your DST server automatically checks for updates from Steam during startup. If you'd like to update immediately, open the **Applications → Management** section, select your DST server, go to the **Control** tab, choose **Global**, and click **Restart Application**. This will pull the latest dedicated server files on the next boot.
+Your DST server automatically checks for updates from Steam during startup. If you'd like to update immediately, open the **Applications → Management** section, select your DST server, go to the **Control** tab, choose **Local**, and click **Restart Application**. This will pull the latest dedicated server files on the next boot.
 
 ***
 

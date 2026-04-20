@@ -157,7 +157,7 @@ Settings are edited through the **Volume Browser**:
     sv_loadingurl ""
     ```
 
-5. Save your changes, then open the **Control** tab, select **Global**, and click **Restart Application** so the new settings take effect.
+5. Save your changes, then open the **Control** tab, select **Local**, and click **Restart Application** so the new settings take effect.
 
 > ⚠️ **Important:** Keep your `rcon_password` secret. Anyone with it can issue server commands remotely.
 
@@ -220,7 +220,7 @@ The cleanest way to distribute maps, gamemodes, and player-side assets is a Work
     ```
 
 3. Upload the addon folder (or `.gma`) there.
-4. Restart the server from **Control → Global → Restart Application**.
+4. Restart the server from **Control → Local → Restart Application**.
 
 > ⚠️ **Client-side content.** Mount packs and custom models shipped only as server-side files won't show up for players unless they also own them or you push them via a Workshop collection / FastDL. Use Option 1 whenever possible.
 
@@ -273,7 +273,7 @@ Garry's Mod uses UDP port `27015` for gameplay and UDP `27005` for the client-si
 
 #### How do I change the server password?
 
-Set `sv_password "yourpassword"` in `/serverdata/serverfiles/garrysmod/cfg/server.cfg` via the Volume Browser, save, then restart the application from **Control → Global → Restart Application**. Set it back to `""` to make the server public.
+Set `sv_password "yourpassword"` in `/serverdata/serverfiles/garrysmod/cfg/server.cfg` via the Volume Browser, save, then restart the application from **Control → Local → Restart Application**. Set it back to `""` to make the server public.
 
 ***
 
@@ -299,4 +299,4 @@ Yes — any gamemode that ships as a Workshop item or addon folder will run on t
 
 #### How can I update my game server to the latest version?
 
-The `ich777/steamcmd:garrysmod` image pulls the latest Garry's Mod Dedicated Server build via SteamCMD on every startup (with `VALIDATE=true` to repair any corrupted files). To update immediately, open **Applications → Management**, select your Garry's Mod server, go to the **Control** tab, choose **Global**, and click **Restart Application**.
+The `ich777/steamcmd:garrysmod` image pulls the latest Garry's Mod Dedicated Server build via SteamCMD on every startup (with `VALIDATE=true` to repair any corrupted files). To update immediately, open **Applications → Management**, select your Garry's Mod server, go to the **Control** tab, choose **Local**, and click **Restart Application**.

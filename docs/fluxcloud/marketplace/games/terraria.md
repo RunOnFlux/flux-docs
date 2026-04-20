@@ -140,7 +140,7 @@ Settings are edited through the **Volume Browser**:
    * `"ServerPassword"` — the password required for players to join.
    * `"MaxSlots"` — the maximum number of concurrent players (keep aligned with your chosen plan).
    * `"DisableHardmode"`, `"PvPMode"`, `"InvasionMultiplier"` — gameplay tuning.
-5. Save your changes, then open the **Control** tab, select **Global**, and click **Restart Application** so the new settings take effect.
+5. Save your changes, then open the **Control** tab, select **Local**, and click **Restart Application** so the new settings take effect.
 
 > ⚠️ **Important:** Be cautious when modifying values in `config.json`. Invalid JSON will prevent the server from starting. If that happens, restore the file to a working state or redeploy.
 
@@ -198,7 +198,7 @@ The default Terraria port is `7777`. FluxCloud exposes this port automatically. 
 
 #### How do I change the server password?
 
-Edit `"ServerPassword"` inside `tshock/config.json` from the Volume Browser, save, then restart the application from **Control → Global → Restart Application**.
+Edit `"ServerPassword"` inside `tshock/config.json` from the Volume Browser, save, then restart the application from **Control → Local → Restart Application**.
 
 ***
 
@@ -224,4 +224,4 @@ The FluxCloud Terraria template runs the **vanilla Terraria server with TShock**
 
 #### How can I update my game server to the latest version?
 
-Your Terraria server automatically pulls the latest TShock release during startup. If you'd like to update immediately, open the **Applications → Management** section, select your Terraria server, go to the **Control** tab, choose **Global**, and click **Restart Application**.
+Your Terraria server automatically pulls the latest TShock release during startup. If you'd like to update immediately, open the **Applications → Management** section, select your Terraria server, go to the **Control** tab, choose **Local**, and click **Restart Application**.

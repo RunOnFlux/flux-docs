@@ -164,7 +164,7 @@ To edit them:
     "ListOnEOS": true
     ```
 
-5. Save your changes, then open the **Control** tab, select **Global**, and click **Restart Application** so the new settings take effect.
+5. Save your changes, then open the **Control** tab, select **Local**, and click **Restart Application** so the new settings take effect.
 
 > ⚠️ **Important:** Both files must remain valid JSON. Back up a file before editing and revert if the server fails to boot.
 
@@ -210,7 +210,7 @@ Each file contains **one SteamID64 per line**. To grant yourself admin:
 
 1. Look up your SteamID64 (e.g. via [steamid.io](https://steamid.io)).
 2. In the **Volume Browser**, edit `adminlist.txt` and add your SteamID64 on a new line.
-3. Save the file and restart the application from **Control → Global → Restart Application**.
+3. Save the file and restart the application from **Control → Local → Restart Application**.
 4. In-game, press the **`** key to open the console, log in (`adminauth`), and use admin commands such as `gamesettings`, `ban_user`, `kick_user`, etc.
 
 `banlist.txt` works the same way — one SteamID64 per line. You can also issue `/ban` from the in-game admin console and the file is updated automatically.
@@ -241,7 +241,7 @@ V Rising mods are typically distributed through **Thunderstore** ([thunderstore.
     /mnt/vrising/server/BepInEx/config/
     ```
 
-6. Restart the server from **Control → Global → Restart Application**.
+6. Restart the server from **Control → Local → Restart Application**.
 
 > ⚠️ **Important:** All players connecting to a modded server must have the same client-side mods installed locally. Server-only mods do not require client installation, but most balance and gameplay mods do. Mods may break after a V Rising update — wait for mod authors to release compatible versions before updating.
 >
@@ -265,7 +265,7 @@ V Rising uses **UDP port `9876`** for gameplay traffic and **UDP port `9877`** f
 
 #### How do I change the server password?
 
-Edit `/mnt/vrising/persistentdata/Settings/ServerHostSettings.json` via the Volume Browser, set `"Password"` to the password you want (or `""` to make the server passwordless), save, then restart the application from **Control → Global → Restart Application**.
+Edit `/mnt/vrising/persistentdata/Settings/ServerHostSettings.json` via the Volume Browser, set `"Password"` to the password you want (or `""` to make the server passwordless), save, then restart the application from **Control → Local → Restart Application**.
 
 ***
 
@@ -297,4 +297,4 @@ Yes — see the **Installing Mods** section above. V Rising uses BepInEx + VRisi
 
 #### How can I update my game server to the latest version?
 
-The `trueosiris/vrising` image checks for and downloads the latest V Rising Dedicated Server build via Steam on every startup. To update immediately, open **Applications → Management**, select your V Rising server, go to the **Control** tab, choose **Global**, and click **Restart Application**.
+The `trueosiris/vrising` image checks for and downloads the latest V Rising Dedicated Server build via Steam on every startup. To update immediately, open **Applications → Management**, select your V Rising server, go to the **Control** tab, choose **Local**, and click **Restart Application**.

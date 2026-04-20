@@ -147,7 +147,7 @@ Using the domain means your favorited entry continues to work automatically afte
 
 Your Enshrouded server automatically checks for updates during startup and at regular intervals. If you’d like to update immediately, you can do so from your application’s management panel.
 
-Simply open the **Applications → Management** section on FluxCloud, select your Enshrouded server, and go to the **Control** tab. From there, choose **Global** and click **Restart Application**. This will redeploy your server with the latest available version.
+Simply open the **Applications → Management** section on FluxCloud, select your Enshrouded server, and go to the **Control** tab. From there, choose **Local** and click **Restart Application**. This will redeploy your server with the latest available version.
 
 ***
 
@@ -202,7 +202,7 @@ nano enshrouded_server.json
 You can now modify settings such as the **server name**, **player limit**, or **password** directly in this file.\
 When finished, save your changes with **Ctrl + S**, then exit Nano using **Ctrl + X**.
 
-After editing, open the **Control** tab in your management panel, select **Global**, and click **Restart Application** to apply your new settings.
+After editing, open the **Control** tab in your management panel, select **Local**, and click **Restart Application** to apply your new settings.
 
 > ⚠️ **Important:** Be cautious when modifying configuration values — incorrect changes may prevent your game server from functioning properly.
 

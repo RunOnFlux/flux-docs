@@ -137,7 +137,7 @@ Factorio server settings (server name, description, max players, password, visib
     ```
 
 3. Edit the values you want to change (for example `name`, `description`, `max_players`, `game_password`, `visibility`), then save.
-4. Open the **Control** tab, select **Global**, and click **Restart Application** so the new settings take effect.
+4. Open the **Control** tab, select **Local**, and click **Restart Application** so the new settings take effect.
 
 > ⚠️ **Important:** `server-settings.json` must remain valid JSON. Back up the file before editing and revert if the server fails to boot.
 
@@ -171,7 +171,7 @@ Mods are installed into the persistent volume and survive restarts.
     /factorio/mods/
     ```
 
-4. Restart the server from **Control → Global → Restart Application** so the new mods are loaded.
+4. Restart the server from **Control → Local → Restart Application** so the new mods are loaded.
 
 > ⚠️ **Client mods must match server mods.** Every player connecting must install the same mods (and versions) locally. Factorio will block the join if the mod lists do not match.
 
@@ -219,4 +219,4 @@ Yes — see the **Installing Mods** section above. Upload mod `.zip` files to `/
 
 #### How can I update my game server to the latest version?
 
-The `factoriotools/factorio` image pulls the latest stable Factorio headless server build on startup. To update immediately, open **Applications → Management**, select your Factorio server, go to the **Control** tab, choose **Global**, and click **Restart Application**.
+The `factoriotools/factorio` image pulls the latest stable Factorio headless server build on startup. To update immediately, open **Applications → Management**, select your Factorio server, go to the **Control** tab, choose **Local**, and click **Restart Application**.

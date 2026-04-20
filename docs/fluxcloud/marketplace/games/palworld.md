@@ -127,7 +127,7 @@ Using the domain means you never have to update the address your group uses when
 
 Your Palworld server automatically checks for updates during startup and at regular intervals. If you’d like to update immediately, you can do so from your application’s management panel.
 
-Simply open the **Applications → Management** section on FluxCloud, select your Palworld server, and go to the **Control** tab. From there, choose **Global** and click **Restart Application**. This will redeploy your server with the latest available version.
+Simply open the **Applications → Management** section on FluxCloud, select your Palworld server, and go to the **Control** tab. From there, choose **Local** and click **Restart Application**. This will redeploy your server with the latest available version.
 
 ***
 
