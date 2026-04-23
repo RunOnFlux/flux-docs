@@ -22,6 +22,8 @@ You can currently deploy and manage the following game servers:
 * **Garry's Mod**
 * **V Rising**
 * **Unturned**
+* **Rust**
+* **Rust - Modded** (Oxide/uMod pre-installed)
 
 More titles are coming soon!
 

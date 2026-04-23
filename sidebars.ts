@@ -188,6 +188,8 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/games/factorio',
                 'fluxcloud/marketplace/games/vrising',
                 'fluxcloud/marketplace/games/unturned',
+                'fluxcloud/marketplace/games/rust',
+                'fluxcloud/marketplace/games/rustmodded',
               ],
             },
             {
