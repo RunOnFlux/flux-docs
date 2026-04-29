@@ -190,6 +190,7 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/games/unturned',
                 'fluxcloud/marketplace/games/rust',
                 'fluxcloud/marketplace/games/rustmodded',
+                'fluxcloud/marketplace/games/windrose',
               ],
             },
             {
