@@ -222,7 +222,7 @@ const sidebars: SidebarsConfig = {
           label: 'FluxDrive',
           items: [
             'fluxcloud/fluxdrive/README',
-            'fluxcloud/fluxdrive/fluxdrive-pro',
+            'fluxcloud/fluxdrive/api-reference',
           ],
         },
         'fluxcloud/cost-calculator',
