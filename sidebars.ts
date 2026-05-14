@@ -204,6 +204,7 @@ const sidebars: SidebarsConfig = {
             'fluxcloud/marketplace/openclaw',
             'fluxcloud/marketplace/vaultwarden',
             'fluxcloud/marketplace/nextcloud',
+            'fluxcloud/marketplace/simplex',
           ],
         },
         // NEW: WordPress as its own section, right after Marketplace
