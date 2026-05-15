@@ -2,7 +2,7 @@
 
 This guide walks you through the process of **deploying, managing, and connecting to a Minecraft Java Edition Game Server** using FluxCloud. Whether you’re setting up a new server or maintaining an existing one, this page provides step-by-step instructions and key details for a seamless experience.
 
-The FluxCloud Minecraft Java template is built on the popular `itzg/minecraft-server` image, which supports Vanilla, Paper, Spigot, Forge, Fabric and many other server types out of the box.
+The FluxCloud Minecraft Java template is built on the popular `itzg/minecraft-server` image, which supports Vanilla, Paper, Spigot, Forge, NeoForge, Fabric and many other server types out of the box.
 
 For more information on **Minecraft** visit: [https://www.minecraft.net](https://www.minecraft.net). For the server image documentation, see: [https://github.com/itzg/docker-minecraft-server](https://github.com/itzg/docker-minecraft-server).
 
@@ -40,8 +40,8 @@ For more information on **Minecraft** visit: [https://www.minecraft.net](https:/
 
 5. **Choose Server Type**
 
-* Select the type of **Minecraft server** you want to deploy, such as **Vanilla**, **Paper**, or another supported version.
-* Enable **Show Advanced** to access additional configuration options, including **difficulty**, **game mode**, and other advanced settings.
+* Select the type of **Minecraft server** you want to deploy: **Vanilla**, **Paper**, **Forge**, **NeoForge**, or **Fabric**.
+* Enable **Show Advanced** to access additional configuration options, including the **Minecraft version** (to pin a specific version — recommended for modded servers), **difficulty**, **game mode**, and other advanced settings.
 
 <img src="/.gitbook/assets/Screenshot 2025-11-03 150332.jpg" alt="" width="563"/>
 
@@ -132,15 +132,40 @@ Using the domain means your saved server entry continues to work automatically a
 
 #### How can I update my game server to the latest version?
 
-Your Minecraft server automatically checks for updates during startup and at regular intervals. If you’d like to update immediately, you can do so from your application’s management panel.
+By default (**VERSION** set to `LATEST`), your Minecraft server automatically checks for updates during startup and at regular intervals. If you’d like to update immediately, you can do so from your application’s management panel.
 
 Simply open the **Applications → Management** section on FluxCloud, select your Minecraft server, and go to the **Control** tab. From there, choose **Local** and click **Restart Application**. This will redeploy your server with the latest available version.
+
+***
+
+#### Can I pin my server to a specific Minecraft version?
+
+Yes. When deploying, expand **Show Advanced** and set the **VERSION** field to the Minecraft version you want (for example `1.21.1`). Any value other than `LATEST` locks the server to that version — auto-update checks are skipped, and your server keeps running that version across restarts and primary failovers.
+
+This is the intended setup for **modded servers** (Forge, NeoForge, Fabric): mods are tied to a specific Minecraft version, so leaving the server on `LATEST` would eventually break mod compatibility when a new Minecraft release lands.
 
 ***
 
 #### What port does Minecraft Java use?
 
 Minecraft Java Edition dedicated servers use TCP port `25565` for gameplay traffic. FluxCloud exposes this port automatically. When connecting by IP you must specify the port (`1.2.3.4:25565`); when connecting by the app domain the port is resolved by DNS and you do not need to append it.
+
+***
+
+#### How do I upload custom mods or plugins to my server?
+
+The management panel for your application includes a **volume browser** that lets you upload, download, and edit files directly in the persistent data folder. To install custom mod or plugin jars:
+
+1. From **Applications → Management**, open your Minecraft server.
+2. Stop the application from the **Control** tab so the files aren't in use.
+3. Open the **volume browser**, navigate to the `mods/` folder (for Forge, NeoForge, or Fabric) or the `plugins/` folder (for Paper).
+4. Upload your `.jar` files.
+5. (Optional) Adjust configuration under `config/` or edit `server.properties` directly in the browser.
+6. Start the application from the **Control** tab.
+
+Because the data folder is automatically replicated across all 3 instances of your application, your uploaded mods sync to the standby instances — you don't need to upload to each one separately.
+
+> 💡 **Tip:** For modded servers, remember to also pin the Minecraft **VERSION** at deploy time (see above) so the server doesn't try to auto-update and break mod compatibility.
 
 ***
 
@@ -152,6 +177,8 @@ If your current primary server becomes unavailable or experiences downtime, one 
 
 ***
 
-#### What if a new version of the game server is released and my server doesn't update automatically?
+#### What if a new version of the game server is released and my server doesn’t update automatically?
 
-Your server normally updates itself automatically during startup or periodic checks. However, if it hasn’t updated yet, a simple restart from the management panel will trigger the update and ensure you’re running the latest version.
+If your server is using the default **VERSION** of `LATEST`, it updates itself automatically during startup or periodic checks. If it hasn’t updated yet, a simple restart from the management panel will trigger the update and ensure you’re running the latest version.
+
+If you pinned a specific **VERSION** at deploy time, this is expected — the server stays on the version you pinned and will not auto-update. To run a different Minecraft version later, deploy a new server with the desired **VERSION** value.

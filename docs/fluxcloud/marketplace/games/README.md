@@ -24,6 +24,7 @@ You can currently deploy and manage the following game servers:
 * **Unturned**
 * **Rust**
 * **Rust - Modded** (Oxide/uMod pre-installed)
+* **FiveM** (GTA V roleplay, with txAdmin + MySQL)
 
 More titles are coming soon!
 
