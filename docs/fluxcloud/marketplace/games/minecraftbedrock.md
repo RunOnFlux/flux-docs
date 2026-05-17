@@ -140,11 +140,31 @@ Bedrock worlds live on the persistent volume at:
 /data/worlds/
 ```
 
-Each world is a directory. You can:
+Each world is a directory.
 
-* **Download a backup** via the Volume Browser before risky changes or major game updates.
-* **Upload an existing world** from a single-player game or another server — drop the world folder into `/data/worlds/`, then update `level-name` in `server.properties` to match the folder name and restart the application.
-* **Roll back** by replacing the current world folder with a backup and restarting the application from the **Control** tab.
+#### Download a backup
+
+Use the **Volume Browser** to download world directories before risky changes or major game updates. Saved directories can be re-uploaded later using the procedure below.
+
+#### Roll back to a previous backup
+
+Replace the current world directory in `/data/worlds/` with your backup, then restart the application from **Control → Local → Restart Application**.
+
+#### Upload an existing world (from a single-player game or another server)
+
+Simply dropping a new world directory onto a running server is unreliable: the server holds its current world files open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the directory in a half-written state. The procedure below pauses the container while you swap files in, then points the server at the new world on the next start.
+
+1. Open **Applications → Management**, select your Minecraft Bedrock app, and switch to **Control → Local → Pause Container**. Pausing stops the server from writing to the current world while you upload.
+2. Open the **Volume Browser** and upload your world directory into:
+
+    ```
+    /data/worlds/
+    ```
+
+3. In the same Volume Browser, edit `server.properties` and set `level-name` to exactly match your uploaded directory's name (case-sensitive, no trailing slash).
+4. Return to **Control → Local → Restart Container**. The server starts with your uploaded world.
+
+> 💡 **Tip:** `level-name` must match the directory name **exactly** — including case. If your folder is `MyOldWorld`, set `level-name=MyOldWorld`, not `myoldworld`.
 
 ***
 
@@ -172,7 +192,7 @@ If your current primary server becomes unavailable or experiences downtime, one 
 
 #### Can I use my own world file?
 
-Yes. Upload your world directory to `/data/worlds/` via the Volume Browser, then update `level-name` in `server.properties` to match the directory name and restart the application from the **Control** tab.
+Yes — for example a backup from a single-player save or another server. Because a running server keeps its world files open and writes autosaves on a timer, follow the **Upload an existing world** procedure under [Managing World Files](#managing-world-files): pause the container, upload the world directory, set `level-name` in `server.properties` to match, then restart.
 
 ***
 

@@ -194,13 +194,32 @@ Windrose persists the entire world (terrain, ship state, player inventories, bui
 /home/steam/server-files/R5/Saved/SaveProfiles/Default/
 ```
 
-You can:
-
-* **Download a backup** via the Volume Browser before risky edits, version updates, or major in-game milestones.
-* **Upload an existing world** by replacing the `RocksDB/<version>/Worlds/<world-id>/` folder, then updating `WorldIslandId` in `ServerDescription.json` to match the world ID and restarting.
-* **Wipe the server** by renaming or deleting the matching `Worlds/<world-id>/` folder and restarting — the server will generate a fresh world on the next boot using the seed in `WorldDescription.json` (or a new one if the file is also removed).
-
 > ⚠️ **Early Access caveat.** Windrose is in Early Access. The dev team occasionally ships world-format changes that mark older saves as incompatible. When that happens the server log will refuse to load the world and ask for a fresh one — back up the `Worlds/` folder before every game update so you can roll back to the previous game build if needed.
+
+#### Download a backup
+
+Use the **Volume Browser** to download the `RocksDB/<version>/Worlds/<world-id>/` folder before risky edits, version updates, or major in-game milestones. Saved folders can be re-uploaded later using the procedure below.
+
+#### Wipe the server
+
+Rename or delete the matching `RocksDB/<version>/Worlds/<world-id>/` folder and restart — the server will generate a fresh world on the next boot using the seed in `WorldDescription.json` (or a new one if the file is also removed).
+
+#### Upload an existing world
+
+Simply dropping a new world folder onto a running server is unreliable: the server holds its current save open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the folder in a half-written state. The procedure below pauses the container while you swap files in, then points the server at the new world on the next start.
+
+1. Open **Applications → Management**, select your Windrose app, and switch to **Control → Local → Pause Container**. Pausing stops the server from writing to the current world while you upload.
+2. Open the **Volume Browser** and upload your world folder into:
+
+    ```
+    /home/steam/server-files/R5/Saved/SaveProfiles/Default/RocksDB/<version>/Worlds/
+    ```
+
+    Use the same `<version>` folder Windrose is currently writing to (the one already present alongside the existing world).
+3. In the same Volume Browser, edit `ServerDescription.json` and set `WorldIslandId` to exactly match your uploaded folder's name — the world ID (case-sensitive).
+4. Return to **Control → Local → Restart Container**. The server starts with your uploaded world.
+
+> 💡 **Tip:** `WorldIslandId` must match the folder name **exactly** — including case. If your folder is `MyOldIsland`, set `"WorldIslandId": "MyOldIsland"`, not `"myoldisland"`.
 
 ***
 
