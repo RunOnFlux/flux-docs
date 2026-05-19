@@ -30,34 +30,39 @@ This guide walks you through the process of **deploying, configuring, and managi
 * Select your desired **subscription duration**.
 * Agree to the **Terms of Use** and **Privacy Policy**, and click the blue **Continue** arrow at the bottom.
 
-5. **Provide a Tailscale Auth Key (Optional)**
+5. **Set a Gateway Password (Required)**
 
-* During deployment you can optionally provide a **Tailscale auth key** to connect your instance to your private Tailscale network.
+* Provide a strong password in the **`OPENCLAW_GATEWAY_PASSWORD`** field. This password protects the OpenClaw Control UI and is the only credential you need to log in to the web interface after deployment.
+* Choose something long and unique — anyone with this password and your app domain can access your assistant.
+
+6. **Provide a Tailscale Auth Key (Optional)**
+
+* You can also optionally provide a **Tailscale auth key** (`TAILSCALE_AUTHKEY`) to connect your instance to your private Tailscale network.
 * This step is **not required** — you can skip it and add it later from the app settings.
 * See the [Tailscale section](#tailscale-optional) below for details on generating a key.
 
-6. **Deployment Location**
+7. **Deployment Location**
 
 * Configure whether you want your OpenClaw instance to deploy in specific geographic regions:
   * **Global (Recommended):** No geographic restrictions for best availability.
   * **Custom:** Restrict by continent or country.
 * Click the blue **Continue** arrow to proceed.
 
-7. **Email Notifications**
+8. **Email Notifications**
 
 * Optionally enter your email address to receive notifications about your app, including:
   * When your application finishes launching.
   * When the primary server changes.
   * When your app expiration date is approaching.
 
-8. **Launching the Application**
+9. **Launching the Application**
 
 * Your application must be **signed and registered** on the Flux network.
   1. Click **Sign and Register**.
   2. Sign the message using the pop-up.
      * If you logged in via Google or Email, this step is completed automatically.
 
-9. **Complete Payment**
+10. **Complete Payment**
 
 * Choose your payment method:
   * **Fiat:** Stripe or PayPal
@@ -75,22 +80,22 @@ This guide walks you through the process of **deploying, configuring, and managi
 
 ***
 
-### Get Your Gateway Token
+### Access the Control UI
 
-OpenClaw's browser Control UI is protected by a gateway token that is generated the first time your container starts. You need this token to access the UI.
+OpenClaw's browser Control UI is protected by the gateway password you set during deployment (`OPENCLAW_GATEWAY_PASSWORD`).
 
 1. Visit [**cloud.runonflux.com**](https://cloud.runonflux.com) and log in.
-2. Go to **Applications → Management** and click the **Settings icon** on your OpenClaw app.
-3. Open the **Secure Shell** menu and use the **Volume Browser**.
-4. Navigate to the app data folder and edit the `openclaw.json` file.
-5. Find the `gateway.auth.token` value — this is your gateway token.
-6. Open your app domain in the browser with the token appended:
+2. Go to **Applications → Management** and open your OpenClaw app.
+3. Click the app domain to launch the Control UI in your browser, for example:
 
     ```
-    https://appname.app.runonflux.io/?token=<your-gateway-token>
+    https://appname.app.runonflux.io
     ```
 
-7. The Control UI will strip the token from the URL and store it for the session.
+4. When prompted, enter the **gateway password** you provided during deployment.
+5. The Control UI stores the session in your browser, so you only need to log in again after clearing cookies or switching devices.
+
+> 💡 **Forgot your password?** You can update `OPENCLAW_GATEWAY_PASSWORD` at any time from **Applications → Management → Settings** on your OpenClaw app. The container will restart with the new password.
 
 ***
 
@@ -112,7 +117,7 @@ This interactive wizard will:
 * Configure your AI model provider and API keys.
 * Select your default AI model.
 
-After completing the wizard, refresh the browser and enter your gateway token to connect. You can run the onboard process again at any time to add additional AI models.
+After completing the wizard, refresh the browser and log in with your gateway password to connect. You can run the onboard process again at any time to add additional AI models.
 
 ***
 
@@ -142,11 +147,11 @@ OpenClaw on Flux includes built-in Tailscale support, allowing you to access you
 1. Generate an auth key from your [Tailscale admin console](https://login.tailscale.com/admin/settings/keys) — use an **ephemeral** and **reusable** key for containers.
 2. Provide the key as `TAILSCALE_AUTHKEY` during deployment, or update it later in the app settings.
 3. Once the container starts, it will automatically join your tailnet.
-4. Access OpenClaw via the Tailscale hostname (default: `openclaw`) on your tailnet.
+4. Access OpenClaw via the Tailscale hostname (default: `openclawflux`) on your tailnet.
 
 **Advanced options (available in deployment settings):**
 
-* `TAILSCALE_HOSTNAME` — customize the device name on your tailnet (default: `openclaw`).
+* `TAILSCALE_HOSTNAME` — customize the device name on your tailnet (default: `openclawflux`).
 * `TAILSCALE_EXTRA_ARGS` — additional flags for `tailscale up` (e.g. `--advertise-tags=tag:server`).
 
 Tailscale runs in **userspace networking mode** because Flux containers do not have kernel-level TUN device access. This has important implications for how you connect to other machines on your tailnet — see below.
