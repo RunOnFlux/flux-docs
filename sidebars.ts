@@ -203,6 +203,7 @@ const sidebars: SidebarsConfig = {
               ],
             },
             'fluxcloud/marketplace/openclaw',
+            'fluxcloud/marketplace/hermes',
             'fluxcloud/marketplace/vaultwarden',
             'fluxcloud/marketplace/nextcloud',
             'fluxcloud/marketplace/simplex',
