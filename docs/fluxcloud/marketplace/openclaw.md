@@ -32,8 +32,8 @@ This guide walks you through the process of **deploying, configuring, and managi
 
 5. **Set a Gateway Password (Required)**
 
-* Provide a strong password in the **`OPENCLAW_GATEWAY_PASSWORD`** field. This password protects the OpenClaw Control UI and is the only credential you need to log in to the web interface after deployment.
-* Choose something long and unique — anyone with this password and your app domain can access your assistant.
+* Provide a strong password in the **`OPENCLAW_GATEWAY_PASSWORD`** field. This password is one of two credentials used to log in to the Control UI — the second is a **gateway token** that is printed later by the `openclaw onboard` wizard (see [Run the Onboard Wizard via SSH](#run-the-onboard-wizard-via-ssh-get-your-gateway-token) below).
+* Choose something long and unique — anyone with both credentials and your app domain can access your assistant.
 
 6. **Provide a Tailscale Auth Key (Optional)**
 
@@ -80,28 +80,9 @@ This guide walks you through the process of **deploying, configuring, and managi
 
 ***
 
-### Access the Control UI
+### Run the Onboard Wizard via SSH (Get Your Gateway Token)
 
-OpenClaw's browser Control UI is protected by the gateway password you set during deployment (`OPENCLAW_GATEWAY_PASSWORD`).
-
-1. Visit [**cloud.runonflux.com**](https://cloud.runonflux.com) and log in.
-2. Go to **Applications → Management** and open your OpenClaw app.
-3. Click the app domain to launch the Control UI in your browser, for example:
-
-    ```
-    https://appname.app.runonflux.io
-    ```
-
-4. When prompted, enter the **gateway password** you provided during deployment.
-5. The Control UI stores the session in your browser, so you only need to log in again after clearing cookies or switching devices.
-
-> 💡 **Forgot your password?** You can update `OPENCLAW_GATEWAY_PASSWORD` at any time from **Applications → Management → Settings** on your OpenClaw app. The container will restart with the new password.
-
-***
-
-### Run the Onboard Wizard via SSH
-
-After your instance is running, complete first-time setup by running the interactive wizard:
+After your instance is running, complete first-time setup by running the interactive wizard. The wizard also **prints your gateway token**, which you need (alongside the gateway password) to log in to the Control UI.
 
 1. Go to **Applications → Management** on [cloud.runonflux.com](https://cloud.runonflux.com) and select your OpenClaw app.
 2. Open the **Secure Shell** menu and use the **Terminal** with bash to SSH into your container.
@@ -116,8 +97,33 @@ This interactive wizard will:
 * Set up device pairing.
 * Configure your AI model provider and API keys.
 * Select your default AI model.
+* Print the **gateway token** required for Control UI login — copy and save it somewhere safe before closing the terminal.
 
-After completing the wizard, refresh the browser and log in with your gateway password to connect. You can run the onboard process again at any time to add additional AI models.
+You can re-run `openclaw onboard` at any time to add additional AI models or to print the gateway token again if you lose it.
+
+***
+
+### Access the Control UI
+
+OpenClaw's browser Control UI is protected by **two credentials**:
+
+* The **gateway password** (`OPENCLAW_GATEWAY_PASSWORD`) you set during deployment.
+* The **gateway token** printed by `openclaw onboard` — see the section above.
+
+The login form asks for both on the same screen, so make sure you have the token before opening the UI.
+
+1. Visit [**cloud.runonflux.com**](https://cloud.runonflux.com) and log in.
+2. Go to **Applications → Management** and open your OpenClaw app.
+3. Click the app domain to launch the Control UI in your browser, for example:
+
+    ```
+    https://appname.app.runonflux.io
+    ```
+
+4. When prompted, enter your **gateway password** and **gateway token**.
+5. The Control UI stores the session in your browser, so you only need to log in again after clearing cookies or switching devices.
+
+> 💡 **Lost your credentials?** You can update `OPENCLAW_GATEWAY_PASSWORD` at any time from **Applications → Management → Settings**; the container restarts with the new password. If you lost the gateway token, re-run `openclaw onboard` from the Secure Terminal to print it again.
 
 ***
 
