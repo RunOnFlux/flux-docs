@@ -150,10 +150,12 @@ Hermes Agent does **not** include an AI model — you bring your own provider ke
 Alternatively, open the **Secure Shell → Terminal** from your app's management page and run the interactive wizard:
 
 ```bash
-hermes model
+/opt/hermes/.venv/bin/hermes model
 ```
 
 It walks you through provider authentication and sets your main model.
+
+> 💡 The `hermes` CLI is **not on `PATH`** in the Secure Terminal — invoke it via the full binary path `/opt/hermes/.venv/bin/hermes`. If you prefer a shorter command for the session, run `export PATH=/opt/hermes/.venv/bin:$PATH` first and then call `hermes` directly.
 
 You can add multiple providers and switch the default model at any time. Without at least one provider credential, the model picker stays empty and the agent cannot complete tasks.
 
@@ -264,7 +266,7 @@ They protect two different entry points. `DASHBOARD_USERNAME` / `DASHBOARD_PASSW
 
 #### The "Set Main Model" picker is empty — no providers or models show up. Why?
 
-The model picker only lists providers that have a **working credential**. An empty filter means no AI provider key has been added yet. Open the **Keys** section in the dashboard sidebar and add an API key (e.g. `ANTHROPIC_API_KEY` or `OPENROUTER_API_KEY`), or run `hermes model` from the SSH terminal. The provider then appears in the picker. See [Configure Your AI Provider](#configure-your-ai-provider) above.
+The model picker only lists providers that have a **working credential**. An empty filter means no AI provider key has been added yet. Open the **Keys** section in the dashboard sidebar and add an API key (e.g. `ANTHROPIC_API_KEY` or `OPENROUTER_API_KEY`), or run `/opt/hermes/.venv/bin/hermes model` from the Secure Terminal (the CLI is not on `PATH`). The provider then appears in the picker. See [Configure Your AI Provider](#configure-your-ai-provider) above.
 
 ***
 
