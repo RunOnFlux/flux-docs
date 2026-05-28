@@ -4,9 +4,6 @@ Fluxcore requires specific versions of the **NVIDIA GPU driver** to run correctl
 
 This page lists all **officially supported NVIDIA drivers**, separated by **Windows** and **Linux**, and grouped by version series (e.g., 550, 560, etc.).
 
-> ⚠️ **AI Benchmarks** and **Service Mode** (offering your machine to the marketplace) may **not be supported on all driver versions**.\
-> For the best experience with these features, we **recommend using the 550 series** drivers marked by recommended in the list⭐.&#x20;
-
 ### 🖥️ Windows Supported Drivers
 
 These drivers are tested and validated on **Windows**. Use the versions below to ensure compatibility with Fluxcore.
