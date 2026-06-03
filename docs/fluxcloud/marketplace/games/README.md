@@ -25,6 +25,7 @@ You can currently deploy and manage the following game servers:
 * **Rust**
 * **Rust - Modded** (Oxide/uMod pre-installed)
 * **FiveM** (GTA V roleplay, with txAdmin + MySQL)
+* **Project Zomboid** (Build 41)
 
 More titles are coming soon!
 

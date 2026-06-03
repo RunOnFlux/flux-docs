@@ -192,6 +192,7 @@ const sidebars: SidebarsConfig = {
                 'fluxcloud/marketplace/games/rustmodded',
                 'fluxcloud/marketplace/games/windrose',
                 'fluxcloud/marketplace/games/fivem',
+                'fluxcloud/marketplace/games/projectzomboid',
               ],
             },
             {
