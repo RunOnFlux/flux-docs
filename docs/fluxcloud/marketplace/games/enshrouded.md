@@ -6,6 +6,8 @@ The FluxCloud Enshrouded template is built on the `sknnr/enshrouded-dedicated-se
 
 For more information on **Enshrouded** visit: [https://enshrouded.com](https://enshrouded.com). For the server image documentation, see: [https://github.com/sknnr/enshrouded-dedicated-server](https://github.com/sknnr/enshrouded-dedicated-server).
 
+> 🚀 **Dedicated Enshrouded hosting portal:** Enshrouded on Flux now has its own purpose-built site at **[enshrouded.runonflux.com](https://enshrouded.runonflux.com)**. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, one-click backups, billing and renewal controls, and a global server-location map. **Clicking the Enshrouded tile in the FluxCloud Marketplace now redirects you there automatically.** The Marketplace walkthrough below still applies — the configuration options are the same, and your server runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 ***
 
 ### How To Install an Enshrouded Server

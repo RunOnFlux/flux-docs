@@ -8,6 +8,8 @@ For more information on **Rust** visit: [https://rust.facepunch.com](https://rus
 
 > 💡 **Vanilla vs. Modded:** If you want an unmodded server, deploy the [Rust (Vanilla)](rust.md) template instead. Everything else — tiers, pricing, ports, and persistence layout — is identical between the two templates, except that Modded uses the `rustoxide` server identity while Vanilla uses `rust`. You can migrate between them by moving your save files onto the other app's volume.
 
+> 🚀 **Dedicated Rust hosting portal:** Rust on Flux now has its own purpose-built site at **[rust.runonflux.com](https://rust.runonflux.com)** — pick the **Oxide/Modded** edition there to deploy this template. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager (for dropping Oxide plugins onto the volume), one-click backups, billing and renewal controls, and a global server-location map. **Clicking the Rust tile in the FluxCloud Marketplace now redirects you there automatically.** The Marketplace walkthrough below still applies — the configuration options are the same, and your server runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 ***
 
 ### How To Install a Rust - Modded Server

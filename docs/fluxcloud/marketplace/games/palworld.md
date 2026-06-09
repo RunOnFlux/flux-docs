@@ -6,6 +6,8 @@ The FluxCloud Palworld template is built on the `thijsvanloef/palworld-server-do
 
 For more information on **Palworld Servers** visit: [https://tech.palworldgame.com/](https://tech.palworldgame.com/). For the server image documentation, see: [https://github.com/thijsvanloef/palworld-server-docker](https://github.com/thijsvanloef/palworld-server-docker).
 
+> 🚀 **Dedicated Palworld hosting portal:** Palworld on Flux now has its own purpose-built site at **[palworld.runonflux.com](https://palworld.runonflux.com)**. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, one-click backups, billing and renewal controls, and a global server-location map. **Clicking the Palworld tile in the FluxCloud Marketplace now redirects you there automatically.** The Marketplace walkthrough below still applies — the configuration options are the same, and your server runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 ***
 
 ### How To Install a Palworld Server

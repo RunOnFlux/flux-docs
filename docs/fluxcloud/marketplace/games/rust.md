@@ -6,6 +6,8 @@ The FluxCloud Rust template is built on the `pfeiffermax/rust-game-server:latest
 
 For more information on **Rust** visit: [https://rust.facepunch.com](https://rust.facepunch.com). For the container image, see: [https://github.com/max-pfeiffer/rust-game-server-docker](https://github.com/max-pfeiffer/rust-game-server-docker).
 
+> 🚀 **Dedicated Rust hosting portal:** Rust on Flux now has its own purpose-built site at **[rust.runonflux.com](https://rust.runonflux.com)**, with an edition switcher for **Vanilla** and **Oxide/Modded** so you can deploy either from one place. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, one-click backups, billing and renewal controls, and a global server-location map. **Clicking the Rust tile in the FluxCloud Marketplace now redirects you there automatically.** The Marketplace walkthrough below still applies — the configuration options are the same, and your server runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 ***
 
 ### How To Install a Rust Server

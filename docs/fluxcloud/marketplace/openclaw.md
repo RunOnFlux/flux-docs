@@ -2,6 +2,8 @@
 
 This guide walks you through the process of **deploying, configuring, and managing an OpenClaw instance** using FluxCloud. OpenClaw is an AI assistant platform that combines a browser Control UI with an interactive setup wizard, multi-provider AI model support, and optional private networking via Tailscale.
 
+> 🚀 **Dedicated OpenClaw portal:** OpenClaw on Flux now has its own purpose-built site at **[openclaw.runonflux.com](https://openclaw.runonflux.com)**, covering both the standard and **Pro** plans. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, billing and renewal controls, and a global server-location map. **Clicking the OpenClaw tile in the FluxCloud Marketplace now redirects you there automatically.** The Marketplace walkthrough below still applies — the configuration options are the same, and your instance runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 ***
 
 ### How To Install OpenClaw

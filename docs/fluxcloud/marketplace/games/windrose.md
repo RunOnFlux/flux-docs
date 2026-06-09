@@ -8,6 +8,8 @@ The FluxCloud Windrose template is built on the `indifferentbroccoli/windrose-se
 
 For more information on **Windrose** visit: [https://playwindrose.com](https://playwindrose.com). For the container image, see: [https://github.com/indifferentbroccoli/windrose-server-docker](https://github.com/indifferentbroccoli/windrose-server-docker).
 
+> 🚀 **Dedicated Windrose hosting portal:** Windrose on Flux now has its own purpose-built site at **[windrose.runonflux.com](https://windrose.runonflux.com)**. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, one-click backups, billing and renewal controls, and a global server-location map. **Clicking the Windrose tile in the FluxCloud Marketplace now redirects you there automatically.** The Marketplace walkthrough below still applies — the configuration options are the same, and your server runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 ***
 
 ### How To Install a Windrose Server

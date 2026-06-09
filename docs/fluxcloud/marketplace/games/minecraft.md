@@ -8,6 +8,8 @@ For more information on **Minecraft** visit: [https://www.minecraft.net](https:/
 
 > 💡 **Looking for Bedrock Edition?** Deploying a server for phones, consoles, or Windows 10/11 Bedrock clients uses a different template — see the [Minecraft Bedrock](./minecraftbedrock.md) guide.
 
+> 🚀 **Dedicated Minecraft hosting portal:** Minecraft on Flux now has its own purpose-built site at **[minecraft.runonflux.com](https://minecraft.runonflux.com)**. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, one-click backups, billing and renewal controls, and a global server-location map. **Clicking the Minecraft tile in the FluxCloud Marketplace now redirects you there automatically.** The Marketplace walkthrough below still applies — the configuration options are the same, and your server runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 ***
 
 ### How To Install a MinecraftServer
