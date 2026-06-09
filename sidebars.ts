@@ -207,6 +207,7 @@ const sidebars: SidebarsConfig = {
             'fluxcloud/marketplace/hermes',
             'fluxcloud/marketplace/vaultwarden',
             'fluxcloud/marketplace/nextcloud',
+            'fluxcloud/marketplace/n8n',
             'fluxcloud/marketplace/simplex',
           ],
         },
