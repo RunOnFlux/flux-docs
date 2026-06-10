@@ -103,6 +103,8 @@ This interactive wizard will:
 
 You can re-run `openclaw onboard` at any time to add additional AI models or to print the gateway token again if you lose it.
 
+> ⚠️ **Re-running the wizard — keep your configuration.** When `openclaw onboard` detects an existing configuration, it asks whether to **Keep current values**, **Review and update**, or **Reset before setup**. Choose **Keep current values** (or **Review and update**). **Do not choose _Reset_:** it deletes your `openclaw.json`, including the Control UI settings that let you reach the dashboard through your `https://appname.app.runonflux.io` domain. After a Reset, the Control UI shows a **"Browser origin not allowed"** error until those settings are restored — see [Why does the Control UI show "Browser origin not allowed"?](#why-does-the-control-ui-show-browser-origin-not-allowed) in the FAQ.
+
 ***
 
 ### Access the Control UI
@@ -229,7 +231,22 @@ Most day-to-day usage works through the browser Control UI. The following featur
 
 #### How do I change my AI provider or add additional models?
 
-Re-run `openclaw onboard` from the **Secure Shell → Terminal** on your app's management page. The wizard is safe to run multiple times and will let you add new providers or switch the default model without losing existing configuration.
+Re-run `openclaw onboard` from the **Secure Shell → Terminal** on your app's management page. The wizard is safe to run multiple times and will let you add new providers or switch the default model without losing existing configuration. When it asks about your existing configuration, choose **Keep current values** or **Review and update** — **never _Reset_**, which removes the settings needed to access the Control UI through your app domain (see the [origin error FAQ](#why-does-the-control-ui-show-browser-origin-not-allowed) below).
+
+***
+
+#### Why does the Control UI show "Browser origin not allowed"?
+
+This error means the gateway is missing the Control UI origin settings that authorize access through your app domain (`https://appname.app.runonflux.io`). The most common cause is choosing **Reset** during `openclaw onboard`, which clears those values.
+
+Restore them from the **Secure Shell → Terminal**:
+
+```bash
+openclaw config set gateway.controlUi.dangerouslyAllowHostHeaderOriginFallback true
+openclaw config set gateway.controlUi.allowInsecureAuth true
+```
+
+Then restart the app from **Applications → Management** (or restart the container) and reload the Control UI. These commands only add the two settings — your AI providers, channels, and other configuration are left untouched.
 
 ***
 
