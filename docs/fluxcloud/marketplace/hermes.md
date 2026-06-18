@@ -288,9 +288,9 @@ Flux containers run Tailscale in **userspace networking mode**, so direct TCP co
 
 ***
 
-#### Can I upgrade specs after deployment?
+#### Can I change my app's hardware specifications after deployment?
 
-Yes. You can change the specs of your Hermes Agent app at any time from **Applications → Management** on FluxCloud to match your usage needs.
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your data is preserved across the change, and you are billed according to the new specifications.
 
 ***
 

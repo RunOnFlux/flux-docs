@@ -305,7 +305,7 @@ The two tiers are sized around different real-world workloads. Here is what each
 | Full-text search across files | ⚠️ Slow on SQLite without Elasticsearch | ⚠️ Same |
 | Face recognition / photo AI | ⚠️ CPU-bound, slow | ⚠️ Slow for 5 users |
 
-If you outgrow the tier, open **Applications → Management → Update** and resize CPU / RAM / storage. Persistent data on `/var/www/html` is preserved across resizes — but always take a fresh backup first (next section).
+If you outgrow the tier — at any time you feel the hardware specifications no longer reflect your needs — open **Applications → Management → Update App Specifications** and adjust CPU / RAM / storage on the **Components** tab. Persistent data on `/var/www/html` is preserved across the change, and you are billed according to the new specifications — but always take a fresh backup first (next section).
 
 ***
 

@@ -392,3 +392,9 @@ Many community servers also wipe blueprints at the same time (delete the `player
 #### Can I install mods or plugins on this (Vanilla) template?
 
 No — this template runs a **pure vanilla** server. If you want Oxide/uMod plugins (Kits, ZLevels, BetterLoot, economy systems, custom maps, skin pickers, etc.), deploy the **Rust - Modded** template instead, which uses the `latest-oxide` image tag with Oxide pre-installed. See the [Rust - Modded guide](rustmodded.md) for the full plugin workflow. Migrating between the two later is possible — copy the world save into the other app's identity folder (`/srv/rust/server/rust/` ⇆ `/srv/rust/server/rustoxide/`).
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.

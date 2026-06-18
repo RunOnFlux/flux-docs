@@ -318,3 +318,9 @@ Yes — see the **Installing Mods** section above. V Rising uses BepInEx + VRisi
 #### How can I update my game server to the latest version?
 
 The `trueosiris/vrising` image checks for and downloads the latest V Rising Dedicated Server build via Steam on every startup. To update immediately, open **Applications → Management**, select your V Rising server, go to the **Control** tab, choose **Local**, and click **Restart Application**.
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.

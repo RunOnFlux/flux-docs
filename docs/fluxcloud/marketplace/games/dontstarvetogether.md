@@ -215,3 +215,9 @@ The default deployment runs a single **Master** shard, which is enough for most 
 #### Can I install mods?
 
 Yes. Add your desired Steam Workshop mod IDs to `DoNotStarveTogether/Cluster_1/Master/modoverrides.lua` via the Volume Browser, then restart the app. Mods are downloaded on the next startup — allow extra time on first launch after adding them.
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.

@@ -24,9 +24,9 @@ For more information on **Satisfactory** visit: [https://www.satisfactorygame.co
 3. **Select Server Configuration**
 
 * Choose your preferred configuration based on expected player count:
-  * **Satisfactory 6GB** — 6GB RAM, 2 CPU cores, 60GB SSD, up to **4 players**. Ideal for small groups of friends.
-  * **Satisfactory 8GB** — 8GB RAM, 2 CPU cores, 80GB SSD, up to **12 players**. Balanced for medium-sized groups.
-  * **Satisfactory 12GB** — 12GB RAM, 2 CPU cores, 90GB SSD, up to **24 players**. Recommended for larger communities or heavily modded saves.
+  * **4 Slots** — 8GB RAM, 2 CPU cores, 60GB SSD, up to **4 players**. Ideal for small groups of friends.
+  * **8 Slots** — 12GB RAM, 4 CPU cores, 80GB SSD, up to **8 players**. Balanced for medium-sized groups.
+  * **16 Slots** — 16GB RAM, 6 CPU cores, 90GB SSD, up to **16 players**. Recommended for larger communities or heavily modded saves.
 * Click **Install Now** to continue.
 
 4. **Choose Subscription**
@@ -299,3 +299,9 @@ Yes — see the **Installing Mods** section above for the two supported workflow
 #### How can I update my game server to the latest version?
 
 The `wolveix/satisfactory-server` image pulls the latest Satisfactory dedicated server build via SteamCMD on every startup. To update immediately, open **Applications → Management**, select your Satisfactory server, go to the **Control** tab, choose **Local**, and click **Restart Application**.
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.

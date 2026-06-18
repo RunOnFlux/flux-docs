@@ -393,3 +393,9 @@ Yes, in the same way as any other FluxCloud app. Follow the [Custom Domain Setup
 * **Tor onion sidecar** — exposes port `5223` over the `.onion` address (no clearnet exposure for the onion side).
 
 There is no separate management port, and there is no HTTP listener on these servers — clients always speak the native SimpleX protocol.
+
+***
+
+#### Can I change my app's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your data is preserved across the change, and you are billed according to the new specifications.

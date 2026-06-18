@@ -327,3 +327,9 @@ The server checks for updates from Steam during startup. To update immediately, 
 * Set `MaxPlayers=` in the `.ini` to match the plan you purchased (8/16/32) instead of leaving the game default of 32 on a smaller plan.
 * Keep `PauseEmpty=true` so the simulation rests while nobody is online.
 * Heavy mod lists (especially map mods) increase RAM usage significantly — consider upgrading to a larger configuration if you run many mods.
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.

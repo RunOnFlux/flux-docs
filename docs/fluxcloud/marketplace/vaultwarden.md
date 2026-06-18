@@ -512,3 +512,9 @@ If you only want to migrate a single user's vault, use the per-user **Export vau
 #### Why does the Bitwarden mobile app sometimes log me out?
 
 Bitwarden mobile clients refresh JWTs frequently. If clock skew between your phone and the Vaultwarden server exceeds a few minutes, JWT validation fails and the client logs out. Verify the **Diagnostics** tab in the admin panel — it shows the server's perceived time and warns if it drifts. Flux nodes are NTP-synced, so this should not happen, but it is the first thing to check if mobile sign-ins randomly fail while desktop is fine.
+
+***
+
+#### Can I change my app's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your data is preserved across the change, and you are billed according to the new specifications.

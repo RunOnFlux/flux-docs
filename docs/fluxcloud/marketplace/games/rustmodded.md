@@ -453,3 +453,9 @@ Yes. Upload:
 #### Can I pin Oxide to a specific version if a new release breaks my plugins?
 
 Not with the `latest-oxide` tag — it always tracks the freshest combined Rust + Oxide build. The upstream repo does publish pinned tags of the form `oxide-build-<id>`, but the FluxCloud Marketplace template is hard-wired to `latest-oxide`. If you need a pinned version, redeploy using a custom app rather than the Marketplace template, or simply wait for plugin authors to ship an updated `.cs` file (this usually happens within a day or two of a forced wipe).
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.

@@ -165,3 +165,9 @@ Locate the **PalWorldSettings.ini** file under **Config → Linux Server → Pal
 #### What if a new version of the game server is released and my server doesn't update automatically?
 
 Your server normally updates itself automatically during startup or periodic checks. However, if it hasn’t updated yet, a simple restart from the management panel will trigger the update and ensure you’re running the latest version.
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.

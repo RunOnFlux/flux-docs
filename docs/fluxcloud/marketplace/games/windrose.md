@@ -293,3 +293,9 @@ The `indifferentbroccoli/windrose-server-docker:latest` image runs SteamCMD with
 #### Are admin commands or RCON available?
 
 The base Windrose dedicated server does not expose a built-in RCON or in-game admin command system at this stage of Early Access — moderation is currently limited to setting a server password and curating who you share it with. A third-party server enhancement called **Windrose+** adds a web RCON dashboard, multipliers, and Lua mods, but it is **not enabled** in the FluxCloud Marketplace template. As Windrose's official server tooling matures the template will be updated to expose any new admin features.
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.

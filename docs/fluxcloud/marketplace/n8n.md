@@ -388,7 +388,7 @@ Yes. Follow the [Custom Domain Setup](../register-new-app/custom-domain-setup.md
 
 #### Can I upgrade from Starter to Standard or Pro after deploying?
 
-Yes. Resize from **Applications → Management** at any time. Your data lives in the PostgreSQL cluster and on the n8n volume, so it's preserved across the resize — you're just giving the containers more CPU, RAM, and disk. Take a backup first as a matter of habit.
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your data lives in the PostgreSQL cluster and on the n8n volume, so it's preserved across the change — you're just giving the containers more CPU, RAM, and disk, and you are billed according to the new specifications. Take a backup first as a matter of habit.
 
 ***
 

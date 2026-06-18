@@ -332,3 +332,9 @@ The FiveM server artifact is managed by txAdmin — open the txAdmin panel and u
 #### Can I edit MariaDB directly?
 
 You should connect through the **Operator** (`operator:3307`), not MariaDB directly. The Operator replicates every write across all three instances; writing straight to one MariaDB instance would desync your data and risk losing it on a failover. Use a MySQL client pointed at `operator:3307` with user `root` and your `MYSQL_ROOT_PASSWORD`.
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.

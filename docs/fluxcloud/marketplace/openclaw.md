@@ -252,7 +252,7 @@ Then restart the app from **Applications → Management** (or restart the contai
 
 #### Can I upgrade from Regular to Pro (or change specs) after deployment?
 
-Yes. You can change the specs of your OpenClaw app at any time from **Applications → Management** on FluxCloud to match your usage needs.
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your data is preserved across the change, and you are billed according to the new specifications.
 
 ***
 

@@ -300,3 +300,9 @@ Yes — any gamemode that ships as a Workshop item or addon folder will run on t
 #### How can I update my game server to the latest version?
 
 The `ich777/steamcmd:garrysmod` image pulls the latest Garry's Mod Dedicated Server build via SteamCMD on every startup (with `VALIDATE=true` to repair any corrupted files). To update immediately, open **Applications → Management**, select your Garry's Mod server, go to the **Control** tab, choose **Local**, and click **Restart Application**.
+
+***
+
+#### Can I change my server's hardware specifications after deployment?
+
+Yes. At any time — if you feel the hardware specifications no longer reflect your needs — you can adjust them from **Applications → Management → Update App Specifications** on the **Components** tab. Your world saves, settings, and data are preserved across the change, and you are billed according to the new specifications.
