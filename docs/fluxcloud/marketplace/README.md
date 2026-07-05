@@ -16,6 +16,23 @@ The FluxCloud Marketplace includes a growing collection of prebuilt application 
 * **Front-end** – Static sites, UIs, dashboards
 * **Masternodes** – Preconfigured node templates for popular crypto projects
 
+***
+
+### Dedicated hosting portals
+
+Several Marketplace apps also have their own purpose-built hosting site, with a streamlined checkout and a dedicated management dashboard:
+
+* [Minecraft Server Hosting](https://minecraft.runonflux.com) — Java & Bedrock
+* [Palworld Server Hosting](https://palworld.runonflux.com) — up to 32 players
+* [Enshrouded Server Hosting](https://enshrouded.runonflux.com) — up to 16 players
+* [Rust Server Hosting](https://rust.runonflux.com) — Vanilla & Oxide, up to 200 players
+* [Windrose Server Hosting](https://windrose.runonflux.com) — 8-player co-op
+* [Web3 WordPress Hosting](https://wordpress.runonflux.com) — decentralized, censorship-resistant
+* [n8n Hosting](https://n8n.runonflux.com) — self-hosted workflow automation
+* [OpenClaw AI Assistant Hosting](https://openclaw.runonflux.com) — self-hosted, model-agnostic
+* [Hermes AI Agent Hosting](https://hermes.runonflux.com) — self-host the Nous Research agent
+* [Orbit — Deploy with Git](https://orbit.runonflux.com) — git push-to-deploy
+
 <img src="/.gitbook/assets/Image 31.10.2025 at 10.19.jpeg" alt=""/>
 
 ***

@@ -1,5 +1,7 @@
 # WordPress
 
+> 🚀 **Dedicated WordPress hosting portal:** WordPress on Flux now has its own purpose-built site at **[wordpress.runonflux.com](https://wordpress.runonflux.com)** — Web3 WordPress hosting that is decentralized and censorship-resistant, with a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard. The walkthrough below still applies — the configuration options are the same, and your site runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 FluxCloud makes it easy to deploy and manage a fully functional WordPress website across a decentralized, high-availability network. This guide walks you through launching and configuring your WordPress instance using the WordPress tab.
 
 You’ll define app settings, choose performance tiers, connect a domain, and complete setup—all in just a few steps.

@@ -1,5 +1,7 @@
 # n8n
 
+> 🚀 **Dedicated n8n hosting portal:** n8n on Flux now has its own purpose-built site at **[n8n.runonflux.com](https://n8n.runonflux.com)** — self-hosted n8n hosting with unlimited workflows and no per-execution fees. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, billing and renewal controls, and a global server-location map. The Marketplace walkthrough below still applies — the configuration options are the same, and your instance runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 This guide walks you through the process of **deploying, configuring, and running n8n** on FluxCloud. n8n (pronounced "n-eight-n") is the open-source, source-available workflow automation platform from [n8n GmbH](https://n8n.io) that lets you connect 500+ apps and services, build AI agents, and automate anything — from a two-step Slack notification to a multi-branch data pipeline with custom JavaScript — through a visual node-based editor, with the option to drop into code whenever you need it.
 
 The FluxCloud n8n templates do something most one-click n8n deployments don't: instead of running n8n against a throwaway SQLite file or a single fragile PostgreSQL container, they pair n8n with a **highly-available PostgreSQL cluster** that survives the loss of an instance with **automatic failover**. Two Docker components are deployed together as one application:

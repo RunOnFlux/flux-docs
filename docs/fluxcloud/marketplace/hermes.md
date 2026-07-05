@@ -1,5 +1,7 @@
 # Hermes Agent
 
+> 🚀 **Dedicated Hermes hosting portal:** Hermes Agent on Flux now has its own purpose-built site at **[hermes.runonflux.com](https://hermes.runonflux.com)** — one-click Hermes AI agent hosting with bring-your-own AI key and privacy-first defaults. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, billing and renewal controls, and a global server-location map. The Marketplace walkthrough below still applies — the configuration options are the same, and your instance runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 This guide walks you through the process of **deploying, configuring, and managing Hermes Agent** using FluxCloud. Hermes Agent is the self-improving AI agent by [Nous Research](https://nousresearch.com) — it ships a browser dashboard for driving the agent and an OpenAI-compatible API server, with optional private networking via Tailscale.
 
 The Marketplace offers Hermes Agent in **two sizes**, both built from the same image:
