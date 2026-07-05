@@ -8,10 +8,12 @@ description: Deploy to Flux Network in 5 minutes
 
 Deploy your first app to Flux Network! No Docker knowledge needed. Just follow these simple steps.
 
+> 🚀 **Tip:** Deploy with Git also has its own dedicated portal — **[orbit.runonflux.com](https://orbit.runonflux.com)** — with a guided deploy wizard, a free tier, and paid plans with dedicated resources. Everything in this quick start works the same from Orbit or from [cloud.runonflux.com](https://cloud.runonflux.com).
+
 ## Step 1: Get a Flux Account
 
-First, you need a Flux Cloud account:
-1. Visit [cloud.runonflux.com](https://cloud.runonflux.com)
+First, you need a Flux account:
+1. Visit [orbit.runonflux.com](https://orbit.runonflux.com) (the dedicated Deploy with Git portal) or [cloud.runonflux.com](https://cloud.runonflux.com)
 2. Login with your preferred method:
    - Email
    - Google
