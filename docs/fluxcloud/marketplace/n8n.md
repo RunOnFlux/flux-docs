@@ -53,7 +53,7 @@ There are three things worth internalising here:
 
 ### Choosing Between Starter, Standard, and Pro
 
-The Marketplace ships **three preconfigured tiers** of the same n8n + HA PostgreSQL stack. They are identical in features and architecture — only the resource envelope and price differ. The figures below are **per instance**, and every tier runs on **3 instances**.
+Both the [n8n.runonflux.com](https://n8n.runonflux.com) portal and the Marketplace offer the same **three preconfigured tiers** of the n8n + HA PostgreSQL stack. They are identical in features and architecture — only the resource envelope and price differ. The figures below are **per instance**, and every tier runs on **3 instances**.
 
 | Tier | n8n RAM | PostgreSQL RAM | Total CPU | Total SSD | Price | Best for |
 | ---- | ------- | -------------- | --------- | --------- | ----- | -------- |
@@ -88,7 +88,54 @@ n8n is a **self-hosted alternative** to Zapier and Make — but unbounded by tas
 
 ### How To Install n8n
 
-#### **Steps**
+There are two ways to deploy the same n8n + HA PostgreSQL stack. **Option A — the dedicated hosting portal at [n8n.runonflux.com](https://n8n.runonflux.com) — is the recommended path**: a purpose-built deployment wizard plus a management dashboard tailored to n8n. **Option B — the FluxCloud Marketplace** — remains fully supported and deploys the identical templates. Whichever you choose, everything else in this guide (architecture, first launch, backups, updating, security) applies unchanged.
+
+#### Option A — Deploy from n8n.runonflux.com (recommended)
+
+The portal walks you through a six-step wizard: **Choose Plan → Configure → Environment → Location → Review → Finalizing**.
+
+1. **Choose Plan**
+
+* Visit [n8n.runonflux.com](https://n8n.runonflux.com), sign in, and pick **n8n Starter**, **n8n Standard**, or **n8n Pro** — the same three tiers described in the [tier comparison](#choosing-between-starter-standard-and-pro) above.
+
+2. **Configure**
+
+* Name your deployment and pick a **subscription duration** — 1, 3, 6, or 12 months, with discounts of 3%, 6%, and 12% on the longer terms.
+
+3. **Environment — Set the Required Passwords**
+
+* These are the **same secrets** as in the Marketplace path — see the field tables in [Option B, step 4](#option-b--deploy-from-the-fluxcloud-marketplace) for what each does: `DB_POSTGRESDB_PASSWORD` / `POSTGRES_SUPERUSER_PASSWORD` (the shared database credential), `POSTGRES_REPLICATION_PASSWORD` (streaming replication), and `SSL_PASSPHRASE` (replication TLS certificates).
+* Use the **Generate** button on each field — it produces a strong 20-character password that deliberately contains **no `$` character** (which can break container startup), with show/hide and copy buttons so you can store each value in your password manager before continuing.
+* The wizard **keeps `DB_POSTGRESDB_PASSWORD` and `POSTGRES_SUPERUSER_PASSWORD` in sync automatically** — typing or generating a value in one mirrors it into the other, so the two can't drift apart at deploy time.
+
+> ⚠️ **The two database passwords MUST match — this is the #1 cause of a failed n8n deployment.** The portal's auto-sync protects you during the wizard, but the rule still stands whenever you touch these values later (for example, editing the app's settings on [cloud.runonflux.com](https://cloud.runonflux.com)): `DB_POSTGRESDB_PASSWORD` and `POSTGRES_SUPERUSER_PASSWORD` are the **same credential viewed from both sides**, and if they differ by even one character n8n cannot log in to its database and the app never finishes starting. And **never use the `$` character** in any of these passwords — stick to letters, digits, and safe symbols like `-` `_` `.`.
+
+4. **Location**
+
+* Optionally restrict where your instances can be placed by adding **continents or countries** to the allowed list. Leave it empty for **global deployment** (recommended) — your instances land on any available node worldwide, which minimises the chance of one regional incident hitting all three cluster members at once.
+
+5. **Review**
+
+* Check the plan, duration, and price summary, then pay:
+  * **Card via Stripe** — either a one-time payment, or enable **auto-renewal** to set up a Stripe subscription that renews automatically each term (with auto-renewal enabled, your **first month is free**).
+  * **FLUX crypto** — expand **Pay with Crypto (FLUX)** and pay from a **ZelCore** or **SSP** wallet. Crypto payments are one-time (no auto-renewal); renew manually before expiry from the dashboard's **Billing** tab. The [FLUX Mainnet payment warning](#option-b--deploy-from-the-fluxcloud-marketplace) at the end of Option B applies here too.
+
+6. **Finalizing**
+
+* The portal registers the app on the Flux network and deploys it — then drops you into your management dashboard.
+
+**Your management dashboard.** Every deployment made through the portal gets a built-in dashboard at [n8n.runonflux.com](https://n8n.runonflux.com) with:
+
+* **Overview** — your app domain, IP, expiry date, and **live CPU/RAM/disk usage**, switchable between the `n8n` and database components.
+* **Workflows** — an n8n-specific view of your instance's workflows.
+* **Console** — an in-browser terminal into your containers.
+* **Files** — a file manager for the component volumes, with upload and download.
+* **Backup** — create, download, and restore per-component snapshots (see [Backups](#backups)).
+* **Billing** — subscription, renewal, and payment controls.
+
+Your instance is still a standard Flux app — you can also manage it from **Applications → Management** on [cloud.runonflux.com](https://cloud.runonflux.com) at any time.
+
+#### Option B — Deploy from the FluxCloud Marketplace
 
 1. **Access FluxCloud**
 
@@ -192,7 +239,7 @@ The first boot is heavier than a single-container app because the PostgreSQL clu
 
 The first time you open your n8n URL you are sent to a **sign-up screen**, not a login screen. This is where you create the **owner account** — the first and highest-privilege user.
 
-1. Open **Applications → Management → Information** on [cloud.runonflux.com](https://cloud.runonflux.com) and copy your application domain (it looks like `n8nstarter_<id>.app.runonflux.io`).
+1. Copy your application domain (it looks like `n8nstarter_<id>.app.runonflux.io`) — from the **Overview** tab of your dashboard at [n8n.runonflux.com](https://n8n.runonflux.com) if you deployed there, or from **Applications → Management → Information** on [cloud.runonflux.com](https://cloud.runonflux.com).
 2. Visit `https://<your-app-domain>` in a browser.
 3. On the **"Set up owner account"** screen, enter:
 
@@ -296,13 +343,15 @@ FluxCloud's built-in **Backup & Restore** tool snapshots a component's persisten
 
 The full reference for this UI is in [Backup & Restore](../applications/management/manage-app/backup-and-restore.md).
 
+> 💡 **Deployed via n8n.runonflux.com?** Your dashboard there has a **Backup** tab offering the same per-component snapshots — create, download, and restore backups for the `n8n` and `pgcluster` components without leaving the portal.
+
 > ⚠️ **For a guaranteed-consistent database snapshot, prefer a logical dump.** A file-level snapshot of a live PostgreSQL data directory can capture an in-progress write. For a clean, portable backup, open **Secure Shell → Terminal** on the `pgcluster` component and run a `pg_dump`:
 >
 > ```bash
 > pg_dump -h pgcluster -p 5433 -U postgres -d n8n -Fc -f /tmp/n8n-$(date +%F).dump
 > ```
 >
-> Then download `/tmp/n8n-YYYY-MM-DD.dump` from the **Volume Browser**. `-Fc` (custom format) restores with `pg_restore`. Connecting through port `5433` guarantees you dump from the current primary.
+> Then download `/tmp/n8n-YYYY-MM-DD.dump` from the **Volume Browser** (or, on an n8n.runonflux.com deployment, run the dump from the **Console** tab and download it from the **Files** tab). `-Fc` (custom format) restores with `pg_restore`. Connecting through port `5433` guarantees you dump from the current primary.
 
 #### Option B — Volume Browser (granular, file-level)
 
@@ -378,7 +427,7 @@ You restored the database but not the matching **encryption key**. n8n encrypts 
 
 #### Can I connect to the PostgreSQL database directly?
 
-Yes — n8n itself uses it via the internal `pgcluster:5433` proxy, and you can run admin queries from **Secure Shell → Terminal** on the `pgcluster` component (e.g. `psql -h pgcluster -p 5433 -U postgres -d n8n`). Connecting through `5433` always lands you on the current primary. Exposing the raw `15432` host port to the public internet is **not recommended** — keep database access internal.
+Yes — n8n itself uses it via the internal `pgcluster:5433` proxy, and you can run admin queries from **Secure Shell → Terminal** on the `pgcluster` component (or the **Console** tab of your dashboard at [n8n.runonflux.com](https://n8n.runonflux.com)) — e.g. `psql -h pgcluster -p 5433 -U postgres -d n8n`. Connecting through `5433` always lands you on the current primary. Exposing the raw `15432` host port to the public internet is **not recommended** — keep database access internal.
 
 ***
 

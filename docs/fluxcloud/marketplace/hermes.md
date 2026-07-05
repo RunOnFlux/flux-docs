@@ -4,7 +4,7 @@
 
 This guide walks you through the process of **deploying, configuring, and managing Hermes Agent** using FluxCloud. Hermes Agent is the self-improving AI agent by [Nous Research](https://nousresearch.com) — it ships a browser dashboard for driving the agent and an OpenAI-compatible API server, with optional private networking via Tailscale.
 
-The Marketplace offers Hermes Agent in **two sizes**, both built from the same image:
+Hermes Agent is offered in **two sizes**, both built from the same image:
 
 | Listing | vCPU | RAM | Disk | Best for |
 | --- | --- | --- | --- | --- |
@@ -36,7 +36,53 @@ Because of this, deployment requires you to set the dashboard **username and pas
 
 ### How To Install Hermes Agent
 
-#### **Steps**
+There are two ways to deploy Hermes Agent on Flux. Both produce the same app with the same configuration options — pick whichever suits you.
+
+#### Option A (Recommended): Deploy from hermes.runonflux.com
+
+The dedicated portal at [**hermes.runonflux.com**](https://hermes.runonflux.com) walks you through deployment in a purpose-built wizard and gives you a built-in management dashboard afterwards. Hosting starts at **$4.02/month**, with your **first month free**.
+
+1. **Sign in**
+
+* Visit [hermes.runonflux.com](https://hermes.runonflux.com) and log in — **Google** or **ZelCore** login is supported.
+* Click **Deploy** to open the deployment wizard.
+
+2. **Choose Plan**
+
+* Pick **Hermes Agent** (2 vCPU / 4 GB RAM / 20 GB disk) or **Hermes Agent Pro** (4 vCPU / 8 GB RAM / 80 GB disk).
+
+3. **Configure**
+
+* Name your instance and select the **subscription duration** — 1, 3, 6, or 12 months, with discounts for longer terms (3% / 6% / 12%).
+
+4. **Environment**
+
+* Set the required secrets — the same rules apply as on the Marketplace:
+  * **`DASHBOARD_USERNAME`** and a strong **`DASHBOARD_PASSWORD`** — together these protect the Hermes dashboard login. Anyone with these credentials and your app domain can drive the agent and read your AI-provider keys.
+  * **`API_SERVER_KEY`** — the bearer token for the OpenAI-compatible API server. You will use this exact value as the API key in external clients. Treat it like a password.
+* Secret fields have a built-in **Generate** button to create strong values for you, plus show/hide and copy controls.
+* Optionally provide a **`TAILSCALE_AUTHKEY`** so the agent can reach private services on your Tailscale network — see the [Tailscale section](#tailscale-optional) below. You can skip this and add it later.
+
+5. **Location**
+
+* Leave the location list empty for **global** deployment (recommended for best availability), or restrict deployment to specific **continents or countries**.
+
+6. **Review & Pay**
+
+* Review your order and choose a payment method:
+  * **Card via Stripe** — with an optional **auto-renewal** toggle so your subscription renews automatically.
+  * **Crypto (FLUX)** — a one-time payment (no auto-renewal); the same FLUX Mainnet warning below applies.
+* The wizard shows a **Finalizing** screen while your instance deploys, then your new server appears in the portal's dashboard.
+
+7. **Manage**
+
+* Your instance gets a built-in management panel right on the portal, with **Overview** (live stats), **Console** (in-browser terminal), **Files**, **Backup**, and **Billing** tabs — see [Managing Your App](#managing-your-app) below.
+
+Your app also runs as a standard Flux application, so everything in this guide — the [security model](#how-the-security-model-works), [dashboard access](#access-the-hermes-dashboard), [AI provider setup](#configure-your-ai-provider), and the [API server](#the-openai-compatible-api-server) — applies identically.
+
+#### Option B: FluxCloud Marketplace
+
+You can also deploy Hermes Agent from the general-purpose FluxCloud Marketplace at [cloud.runonflux.com](https://cloud.runonflux.com).
 
 1. **Access FluxCloud**
 
@@ -231,7 +277,21 @@ Tailscale state is stored inside the app's persistent volume, so the device keep
 
 ### Managing Your App
 
-Most day-to-day usage happens in the dashboard. From **Applications → Management** on [cloud.runonflux.com](https://cloud.runonflux.com) you can also:
+Most day-to-day usage happens in the Hermes dashboard itself. For managing the deployment, you have two panels:
+
+**Dedicated portal — [hermes.runonflux.com](https://hermes.runonflux.com)**
+
+If you deployed via the dedicated portal (or once your instance shows up there), its management panel gives you:
+
+* **Overview** — live server stats at a glance.
+* **Console** — an in-browser terminal into the container.
+* **Files** — a built-in file manager.
+* **Backup** — back up your instance data.
+* **Billing** — payment and renewal controls.
+
+**FluxCloud — [cloud.runonflux.com](https://cloud.runonflux.com)**
+
+Your instance is a standard Flux app, so from **Applications → Management** on [cloud.runonflux.com](https://cloud.runonflux.com) you can also:
 
 * **Update settings** — change `DASHBOARD_USERNAME`, `DASHBOARD_PASSWORD`, `API_SERVER_KEY`, or the Tailscale variables; the container restarts with the new values.
 * **Change specs** — scale between the Hermes Agent and Hermes Agent Pro resource tiers.
