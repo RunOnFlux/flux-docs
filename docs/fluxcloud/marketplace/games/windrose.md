@@ -18,7 +18,7 @@ For more information on **Windrose** visit: [https://playwindrose.com](https://p
 
 1. **Access FluxCloud**
 
-* Visit [cloud.runonflux.com](https://cloud.runonflux.com) and sign in or create an account.
+* Visit **[windrose.runonflux.com](https://windrose.runonflux.com)** — the dedicated Windrose hosting portal — and sign in or create an account. (Going through [cloud.runonflux.com](https://cloud.runonflux.com) works too: clicking the Windrose tile in the Marketplace redirects you there automatically.)
 
 
 2. **Find the Windrose Server**

@@ -16,7 +16,7 @@ For more information on **Enshrouded** visit: [https://enshrouded.com](https://e
 
 1. **Access FluxCloud**
 
-* Visit [cloud.runonflux.com](https://cloud.runonflux.com) and sign in or create an account.
+* Visit **[enshrouded.runonflux.com](https://enshrouded.runonflux.com)** — the dedicated Enshrouded hosting portal — and sign in or create an account. (Going through [cloud.runonflux.com](https://cloud.runonflux.com) works too: clicking the Enshrouded tile in the Marketplace redirects you there automatically.)
 
 
 2. **Find the Enshrouded Server**

@@ -18,7 +18,7 @@ For more information on **Minecraft** visit: [https://www.minecraft.net](https:/
 
 1. **Access FluxCloud**
 
-* Visit [cloud.runonflux.com](https://cloud.runonflux.com) and sign in or create an account.
+* Visit **[minecraft.runonflux.com](https://minecraft.runonflux.com)** — the dedicated Minecraft hosting portal — and sign in or create an account. (Going through [cloud.runonflux.com](https://cloud.runonflux.com) works too: clicking the Minecraft tile in the Marketplace redirects you there automatically.)
 
 
 2. **Find the Minecraft Server**

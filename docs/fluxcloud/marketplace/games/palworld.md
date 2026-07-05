@@ -16,7 +16,7 @@ For more information on **Palworld Servers** visit: [https://tech.palworldgame.c
 
 1. **Access FluxCloud**
 
-* Visit [cloud.runonflux.com](https://cloud.runonflux.com) and sign in or create an account.
+* Visit **[palworld.runonflux.com](https://palworld.runonflux.com)** — the dedicated Palworld hosting portal — and sign in or create an account. (Going through [cloud.runonflux.com](https://cloud.runonflux.com) works too: clicking the Palworld tile in the Marketplace redirects you there automatically.)
 
 
 2. **Find the Palworld Server**

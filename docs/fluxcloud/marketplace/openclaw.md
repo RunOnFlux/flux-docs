@@ -12,7 +12,7 @@ This guide walks you through the process of **deploying, configuring, and managi
 
 1. **Access FluxCloud**
 
-* Visit [cloud.runonflux.com](https://cloud.runonflux.com) and sign in or create an account.
+* Visit **[openclaw.runonflux.com](https://openclaw.runonflux.com)** — the dedicated OpenClaw hosting portal — and sign in or create an account. (Going through [cloud.runonflux.com](https://cloud.runonflux.com) works too: clicking the OpenClaw tile in the Marketplace redirects you there automatically.)
 
 
 2. **Find OpenClaw**

@@ -18,7 +18,7 @@ For more information on **Rust** visit: [https://rust.facepunch.com](https://rus
 
 1. **Access FluxCloud**
 
-* Visit [cloud.runonflux.com](https://cloud.runonflux.com) and sign in or create an account.
+* Visit **[rust.runonflux.com](https://rust.runonflux.com)** — the dedicated Rust hosting portal — and sign in or create an account. (Going through [cloud.runonflux.com](https://cloud.runonflux.com) works too: clicking the Rust tile in the Marketplace redirects you there automatically.)
 
 
 2. **Find the Rust - Modded Server**
