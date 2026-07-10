@@ -101,7 +101,7 @@ Before you begin, ensure you have:
 
 ### How to Redeem or Reinvest Your FLUX Rewards
 
-Titan Nodes allow you to redeem rewards **before** your lock-up period ends, as long as you have **at least 50 FLUX** available for redemption. Rewards are distributed **twice per week**, every **Monday** and **Thursday** morning at around **9:00 AM UTC**.
+Titan Nodes allow you to redeem rewards **before** your lock-up period ends, as long as you have **at least 50 FLUX** available for redemption. Rewards are typically distributed **up to twice per week**, targeting **Monday** and **Thursday** mornings at around **9:00 AM UTC**. Because payouts are signed manually from a multi-signature wallet, timing can vary — delays may occur, and in some cases distribution can take **up to 10 days**.
 
 All payouts are executed from Titan's **multi-signature wallet** by the official Flux team, ensuring an additional layer of security.
 
