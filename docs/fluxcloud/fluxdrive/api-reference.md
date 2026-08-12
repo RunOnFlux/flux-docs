@@ -33,20 +33,29 @@ Sign in at [cloud.runonflux.com/flux-drive](https://cloud.runonflux.com/flux-dri
 
 #### 3. Generate an API Key
 
-In the FluxDrive web UI, open the **API Keys** panel below your storage usage, then:
+Sign in at [cloud.runonflux.com/flux-drive](https://cloud.runonflux.com/flux-drive) and scroll to the **API Keys** panel, below your storage usage.
 
-1. Click **Create key**
-2. Give the key a name you'll recognise later (for example `production backup`)
-3. Click **Generate**
-4. Copy the key — or the ready-made `curl` command — from the dialog that appears
+<img src="/.gitbook/assets/fluxdrive-apikeys-panel.png" alt="The API Keys panel in the FluxDrive web UI, with no keys created yet"/>
+
+**1. Click Create key**, then give the key a name you'll recognise later — something that identifies the app or machine that will use it.
+
+<img src="/.gitbook/assets/fluxdrive-apikeys-create.png" alt="The Create API key dialog with a key name entered"/>
+
+**2. Click Generate.** Your new key is displayed along with a ready-to-run `curl` command that already has your FluxID filled in. Use the copy button to the right of either field.
+
+<img src="/.gitbook/assets/fluxdrive-apikeys-reveal.png" alt="The new API key dialog showing the generated key, a ready-to-run curl command, and a warning that the key is shown only once"/>
 
 > ⚠️ **The key is shown only once.** FluxDrive stores only a hash of it, so it cannot be displayed or recovered again after you close that dialog. If you lose a key, revoke it and create a new one.
+
+**3. Store the key somewhere safe** — a password manager, or your deployment's secret store — then click **I've saved it**.
 
 Custom (PRO) plans can be arranged by contacting the Flux team — fill out the [PRO Plan Request Form](https://runonflux.bitrix24.com/pub/form/33_fluxdrive_pro_request_/2xp87g/?view=preview\&preview=inline) for a custom storage allocation.
 
 #### 4. Managing Your Keys
 
-The same panel lists every key on your account, showing its name, first 8 characters, when it was created, and when it was last used — so you can tell which key an integration is actually using before you touch it.
+The same panel lists every key on your account, showing its name, first 8 characters, when it was created, and when it was last used — so you can tell which key an integration is actually using before you touch it. A key that has never been used shows **Never**.
+
+<img src="/.gitbook/assets/fluxdrive-apikeys-manage.png" alt="The API Keys panel listing two keys with their name, key prefix, creation date, last-used date, and a revoke button"/>
 
 | Action | How | Effect |
 | ------ | --- | ------ |
