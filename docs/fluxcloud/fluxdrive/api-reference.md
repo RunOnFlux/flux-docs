@@ -125,6 +125,15 @@ Every request must include valid Basic auth (`-u "<ZELID>:<API_KEY_SECRET>"`). F
 // 400 — upload request carried no file
 { "error": "No file provided" }
 
+// 400 — `path` contains a relative segment such as `.` or `..`
+{ "error": "Invalid path segment" }
+
+// 400 — `path` is deeper than 32 levels
+{ "error": "Path exceeds 32 levels" }
+
+// 400 — a segment of `path` is longer than 200 characters
+{ "error": "Path segment exceeds 200 characters" }
+
 // 402 — subscription lapsed between auth and upload
 { "error": "Subscription not active" }
 
@@ -184,8 +193,11 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/status" \
 | ----- | ---- | ------- | ----- |
 | `page` | number | `1` | 1-based page number, capped at 10000 |
 | `size` | number | `50` | Results per page, capped at 500 |
-| `currentFolder` | string | `/` | Folder path, or a folder UUID |
+| `currentFolder` | string | `/` | Folder path (`assets/icons`) or a folder UUID — see [Folders](#folders) |
 | `includeFolders` | boolean | `false` | Include folder entries alongside files |
+
+Folder entries carry a `uuid` and have no `hash` or `size`. Pass that `uuid` back as
+`currentFolder` to list what is inside it.
 
 ```bash
 curl "https://api.fluxdrive.runonflux.io/api/v0/ls" \
@@ -223,10 +235,15 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/ls" \
 
 The form field name is not significant — the first uploaded file in the request is used.
 
+**Arguments:**
+
+* `path` _(string, optional)_ — folder to place the file in, e.g. `qdrant/backups`. Missing folders are created; see [Folders](#folders). Omit it to upload to the root.
+
 ```bash
 curl "https://api.fluxdrive.runonflux.io/api/v0/put" \
   -X POST \
   -u "<ZELID>:<API_KEY_SECRET>" \
+  -F path="qdrant/backups" \
   -F file=@"./21045.png"
 ```
 
@@ -252,7 +269,7 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/put" \
 
 **Arguments:**
 
-* `path` _(string, optional)_ — folder path to place the files under; leading and trailing slashes are stripped
+* `path` _(string, optional)_ — folder to place the files under; every file in the request shares it. Missing folders are created; see [Folders](#folders). Leading, trailing and repeated slashes are ignored.
 
 ```bash
 curl "https://api.fluxdrive.runonflux.io/api/v0/putfolder" \
@@ -342,6 +359,49 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/thumb" \
   -d "hash=<HASH>" \
   -o thumbnail.jpg
 ```
+
+***
+
+### Folders
+
+Pass `path` to `/put` or `/putfolder` to organise uploads into folders:
+
+```bash
+curl "https://api.fluxdrive.runonflux.io/api/v0/put" \
+  -X POST \
+  -u "<ZELID>:<API_KEY_SECRET>" \
+  -F path="qdrant/backups" \
+  -F file=@"./snapshot.tar"
+```
+
+Any folder in the path that does not exist yet is created, and one that does — including a
+folder you made in the FluxDrive web interface — is reused rather than duplicated. Folders
+created this way are ordinary folders: they appear in the web interface, and you can rename,
+move or delete them there.
+
+List a folder's contents by passing the same path back to `/ls`:
+
+```bash
+curl "https://api.fluxdrive.runonflux.io/api/v0/ls" \
+  -X POST \
+  -u "<ZELID>:<API_KEY_SECRET>" \
+  -d "currentFolder=qdrant/backups"
+```
+
+**Path rules.** Segments are separated by `/`. Leading, trailing and repeated slashes are
+ignored, so `/qdrant//backups/` and `qdrant/backups` are the same folder. A path may be up to
+32 levels deep, each segment up to 200 characters. Relative segments (`.` and `..`) are
+rejected. A path that breaks these rules returns `400` and nothing is uploaded.
+
+Folder names are unique within their parent: one account cannot hold two folders called
+`backups` in the same place. File names are not — several files in one folder may share a
+name, and each is addressed by its own hash.
+
+> ℹ️ **Listing by path reflects where a file was uploaded, not where it was later moved.**
+> If you move or rename a file or folder in the web interface, the web interface is always
+> correct, but `/ls` with the original path will still list the file at its old location. To
+> follow moves, list by folder `uuid` (set `includeFolders=true`, then pass a folder's `uuid`
+> as `currentFolder`) instead of by path.
 
 ***
 
