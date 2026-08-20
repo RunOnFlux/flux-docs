@@ -154,9 +154,9 @@ Replace the current world directory in `/data/worlds/` with your backup, then re
 
 #### Upload an existing world (from a single-player game or another server)
 
-Simply dropping a new world directory onto a running server is unreliable: the server holds its current world files open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the directory in a half-written state. The procedure below pauses the container while you swap files in, then points the server at the new world on the next start.
+Simply dropping a new world directory onto a running server is unreliable: the server holds its current world files open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the directory in a half-written state. The procedure below stops the container while you swap files in, then points the server at the new world on the next start.
 
-1. Open **Applications → Management**, select your Minecraft Bedrock app, and switch to **Control → Local → Pause Container**. Pausing stops the server from writing to the current world while you upload.
+1. Open **Applications → Management**, select your Minecraft Bedrock app, and switch to **Control → Local → Stop Container**. Stopping releases the world files so the server cannot overwrite your upload.
 2. Open the **Volume Browser** and upload your world directory into:
 
     ```
@@ -164,7 +164,7 @@ Simply dropping a new world directory onto a running server is unreliable: the s
     ```
 
 3. In the same Volume Browser, edit `server.properties` and set `level-name` to exactly match your uploaded directory's name (case-sensitive, no trailing slash).
-4. Return to **Control → Local → Restart Container**. The server starts with your uploaded world.
+4. Return to **Control → Local → Start Container**. The server starts with your uploaded world.
 
 > 💡 **Tip:** `level-name` must match the directory name **exactly** — including case. If your folder is `MyOldWorld`, set `level-name=MyOldWorld`, not `myoldworld`.
 
@@ -194,7 +194,7 @@ If your current primary server becomes unavailable or experiences downtime, one 
 
 #### Can I use my own world file?
 
-Yes — for example a backup from a single-player save or another server. Because a running server keeps its world files open and writes autosaves on a timer, follow the **Upload an existing world** procedure under [Managing World Files](#managing-world-files): pause the container, upload the world directory, set `level-name` in `server.properties` to match, then restart.
+Yes — for example a backup from a single-player save or another server. Because a running server keeps its world files open and writes autosaves on a timer, follow the **Upload an existing world** procedure under [Managing World Files](#managing-world-files): stop the container, upload the world directory, set `level-name` in `server.properties` to match, then restart.
 
 ***
 

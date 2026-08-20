@@ -208,9 +208,9 @@ Rename or delete the matching `RocksDB/<version>/Worlds/<world-id>/` folder and 
 
 #### Upload an existing world
 
-Simply dropping a new world folder onto a running server is unreliable: the server holds its current save open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the folder in a half-written state. The procedure below pauses the container while you swap files in, then points the server at the new world on the next start.
+Simply dropping a new world folder onto a running server is unreliable: the server holds its current save open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the folder in a half-written state. The procedure below stops the container while you swap files in, then points the server at the new world on the next start.
 
-1. Open **Applications → Management**, select your Windrose app, and switch to **Control → Local → Pause Container**. Pausing stops the server from writing to the current world while you upload.
+1. Open **Applications → Management**, select your Windrose app, and switch to **Control → Local → Stop Container**. Stopping releases the world files so the server cannot overwrite your upload.
 2. Open the **Volume Browser** and upload your world folder into:
 
     ```
@@ -219,7 +219,7 @@ Simply dropping a new world folder onto a running server is unreliable: the serv
 
     Use the same `<version>` folder Windrose is currently writing to (the one already present alongside the existing world).
 3. In the same Volume Browser, edit `ServerDescription.json` and set `WorldIslandId` to exactly match your uploaded folder's name — the world ID (case-sensitive).
-4. Return to **Control → Local → Restart Container**. The server starts with your uploaded world.
+4. Return to **Control → Local → Start Container**. The server starts with your uploaded world.
 
 > 💡 **Tip:** `WorldIslandId` must match the folder name **exactly** — including case. If your folder is `MyOldIsland`, set `"WorldIslandId": "MyOldIsland"`, not `"myoldisland"`.
 

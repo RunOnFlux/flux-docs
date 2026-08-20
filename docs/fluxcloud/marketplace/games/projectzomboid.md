@@ -238,9 +238,9 @@ Use the **Volume Browser** to download the world save folder and the `.db` file 
 
 #### Roll back to a previous backup / Upload an existing world
 
-Simply dropping save files onto a running server is unreliable: the server holds the world files open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the world in a half-written state. Pause the container first:
+Simply dropping save files onto a running server is unreliable: the server holds the world files open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the world in a half-written state. Stop the container first:
 
-1. Open **Applications → Management**, select your Project Zomboid app, and switch to **Control → Local → Pause Container**. Pausing stops the server from writing to the world while you upload.
+1. Open **Applications → Management**, select your Project Zomboid app, and switch to **Control → Local → Stop Container**. Stopping releases the world files so the server cannot overwrite your upload.
 2. Open the **Volume Browser** and upload your world folder into:
 
     ```
@@ -248,7 +248,7 @@ Simply dropping save files onto a running server is unreliable: the server holds
     ```
 
     Also upload the matching player database to `/home/steam/Zomboid/db/<SERVERNAME>.db` if you want to keep player accounts and characters.
-3. Return to **Control → Local → Restart Container**. The server starts with the uploaded world.
+3. Return to **Control → Local → Start Container**. The server starts with the uploaded world.
 
 > 💡 **Tip:** When migrating a world from another host, the save folder and database must be renamed to match **your** `SERVERNAME` exactly — Project Zomboid finds them by name.
 

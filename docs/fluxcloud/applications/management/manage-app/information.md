@@ -18,7 +18,7 @@ At the top right you'll find a **FluxNode IP selector**, letting you choose whic
 
 #### What You'll See <a href="#what-youll-see" id="what-youll-see"></a>
 
-* **Container Status**: Indicates if your container is running, paused, or stopped.
+* **Container Status**: Indicates if your container is running or stopped.
 * **Start Time & Uptime**: Tracks when the container started and how long it has been active.
 * **Docker Image Info**: Shows the image name and version used.
 * **Networking Details**: Lists exposed ports and internal IP assignments.

@@ -201,9 +201,9 @@ Replace the current world folder in `/mnt/vrising/persistentdata/Saves/v3/` with
 
 #### Upload an existing world (from a self-hosted server)
 
-Simply dropping a new world folder onto a running server is unreliable: the server holds its current save files open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the folder in a half-written state. The procedure below pauses the container while you swap files in, then points the server at the new world on the next start.
+Simply dropping a new world folder onto a running server is unreliable: the server holds its current save files open and writes autosaves on a timer, so a copy that overlaps with an autosave can leave the folder in a half-written state. The procedure below stops the container while you swap files in, then points the server at the new world on the next start.
 
-1. Open **Applications → Management**, select your V Rising app, and switch to **Control → Local → Pause Container**. Pausing stops the server from writing to the current world while you upload.
+1. Open **Applications → Management**, select your V Rising app, and switch to **Control → Local → Stop Container**. Stopping releases the world files so the server cannot overwrite your upload.
 2. Open the **Volume Browser** and upload your world folder into:
 
     ```
@@ -211,7 +211,7 @@ Simply dropping a new world folder onto a running server is unreliable: the serv
     ```
 
 3. If your uploaded folder's name differs from the current `WorldName`, edit `ServerHostSettings.json` via the Volume Browser and set the `WorldName` field to match your folder's name (case-sensitive).
-4. Return to **Control → Local → Restart Container**. The server starts with your uploaded world.
+4. Return to **Control → Local → Start Container**. The server starts with your uploaded world.
 
 > 💡 **Tip:** `WorldName` must match the folder name **exactly** — including case. If your folder is `MyOldWorld`, set `"WorldName": "MyOldWorld"`, not `"myoldworld"`.
 
@@ -305,7 +305,7 @@ If your current primary server becomes unavailable or experiences downtime, one 
 
 #### Can I use my own world save?
 
-Yes — for example a backup from another self-hosted server. Because a running server keeps its save files open and writes autosaves on a timer, follow the **Upload an existing world** procedure under [Managing the World File](#managing-the-world-file): pause the container, upload the world folder, set `WorldName` in `ServerHostSettings.json` to match, then restart.
+Yes — for example a backup from another self-hosted server. Because a running server keeps its save files open and writes autosaves on a timer, follow the **Upload an existing world** procedure under [Managing the World File](#managing-the-world-file): stop the container, upload the world folder, set `WorldName` in `ServerHostSettings.json` to match, then restart.
 
 ***
 
