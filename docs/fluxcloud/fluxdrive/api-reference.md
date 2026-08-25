@@ -37,7 +37,7 @@ Sign in at [cloud.runonflux.com/flux-drive](https://cloud.runonflux.com/flux-dri
 
 <img src="/.gitbook/assets/fluxdrive-apikeys-panel.png" alt="The API Keys panel in the FluxDrive web UI, with no keys created yet"/>
 
-**1. Click Create key**, then give the key a name you'll recognise later — something that identifies the app or machine that will use it.
+**1. Click Create key**, then give the key a name you'll recognise later — something that identifies the app or machine that will use it. By default the key gets full access; untick any of the four **permissions** (read, write, list, delete) to restrict what it can do — see [Key Permissions](#key-permissions-scopes).
 
 <img src="/.gitbook/assets/fluxdrive-apikeys-create.png" alt="The Create API key dialog with a key name entered"/>
 
@@ -53,7 +53,7 @@ Custom (PRO) plans can be arranged by contacting the Flux team — fill out the 
 
 #### 4. Managing Your Keys
 
-The same panel lists every key on your account, showing its name, first 8 characters, when it was created, and when it was last used — so you can tell which key an integration is actually using before you touch it. A key that has never been used shows **Never**.
+The same panel lists every key on your account, showing its name, first 8 characters, its permissions, when it was created, and when it was last used — so you can tell which key an integration is actually using before you touch it. A key that has never been used shows **Never**.
 
 <img src="/.gitbook/assets/fluxdrive-apikeys-manage.png" alt="The API Keys panel listing two keys with their name, key prefix, creation date, last-used date, and a revoke button"/>
 
@@ -66,9 +66,37 @@ Some practical notes:
 
 * Keys do not expire — they stay valid until you revoke them or the subscription lapses
 * A key only works while the subscription is **active**; an unpaid or expired subscription returns `402` on every request
-* Keys carry full access to your FluxDrive storage, so treat one like a password: keep it out of client-side code and out of version control
+* A key grants at most the permissions selected when it was created (full access unless you restricted it), and permissions cannot be changed afterwards — revoke and re-create instead. Treat every key like a password: keep it out of client-side code and out of version control
 * Use a separate named key per application, so revoking one never takes down the others
 * Keys cannot be used to create or revoke other keys — key management always requires a Zelcore signature from the web UI
+
+***
+
+### Key Permissions (Scopes)
+
+Every key can be restricted to a subset of four permissions, chosen in the **Create API key** dialog (or via the `scopes` field of the key-creation API, as an array or comma-separated string):
+
+| Permission | Allows |
+| ---------- | ------ |
+| `read` | [`/cat`](#5-apiv0cat), [`/get`](#6-apiv0get), [`/thumb`](#8-apiv0thumb) — download file content |
+| `write` | [`/put`](#3-apiv0put), [`/putfolder`](#4-apiv0putfolder) — upload files |
+| `list` | [`/ls`](#2-apiv0ls) — enumerate files and folders |
+| `delete` | [`/rm`](#7-apiv0rm) — remove files |
+
+Any combination is allowed, and [`/status`](#1-apiv0status) works with **any** valid key — so a key holder can always verify their key and check storage usage.
+
+Scoped keys let you segregate security across machines:
+
+* Give an **untrusted node** a **write-only** key (and an obfuscated upload `path`): it can deliver files but can never list your directory structure, read other files, or delete anything.
+* Give a **monitoring or administrative node** a **`list` + `read`** key: it can audit everything but can never modify your system of record, even if the node is compromised.
+
+A request outside the key's permissions returns `403`:
+
+```json
+{ "error": "API key does not have the 'delete' permission" }
+```
+
+Keys created without restricting permissions — including every key created before permissions existed — have **full access**, so existing integrations are unaffected.
 
 ***
 
@@ -112,6 +140,7 @@ Every request must include valid Basic auth (`-u "<ZELID>:<API_KEY_SECRET>"`). F
 | `401` | `Subscription not found` | No FluxDrive subscription exists for that ZELID |
 | `401` | `Invalid API key` | The key is wrong, or it was revoked |
 | `402` | `Subscription payment is not active` | Subscription is unpaid, expired, or cancelled |
+| `403` | `API key does not have the '<permission>' permission` | The key was created without the [permission](#key-permissions-scopes) this endpoint requires |
 | `403` | `IP address is not whitelisted` | Your account has an IP allow-list set and the request came from another address |
 
 > ℹ️ **IP allow-listing is optional and off by default.** If you want your keys usable only from specific addresses, contact the Flux team to have an allow-list applied to your subscription.
@@ -159,6 +188,8 @@ All endpoints are **POST**. Parameters are sent in the **request body** (form-en
 
 **Description:** Get current storage usage, capacity, and subscription state.
 
+**Required permission:** none — works with any valid key.
+
 ```bash
 curl "https://api.fluxdrive.runonflux.io/api/v0/status" \
   -X POST \
@@ -186,6 +217,8 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/status" \
 #### 2. `/api/v0/ls`
 
 **Description:** List files in your FluxDrive storage, newest first. Results are paginated.
+
+**Required permission:** `list`
 
 **Arguments** (all optional):
 
@@ -233,6 +266,8 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/ls" \
 
 **Description:** Upload a **single file**. Subject to the 5 GB per-file limit and your plan's remaining capacity. To upload several files in one request, use `/putfolder`.
 
+**Required permission:** `write`
+
 The form field name is not significant — the first uploaded file in the request is used.
 
 **Arguments:**
@@ -267,6 +302,8 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/put" \
 
 **Description:** Upload multiple files in a single request, optionally into a folder path.
 
+**Required permission:** `write`
+
 **Arguments:**
 
 * `path` _(string, optional)_ — folder to place the files under; every file in the request shares it. Missing folders are created; see [Folders](#folders). Leading, trailing and repeated slashes are ignored.
@@ -300,6 +337,8 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/putfolder" \
 
 **Description:** Stream the contents of a file inline.
 
+**Required permission:** `read`
+
 **Arguments:**
 
 * `hash` _(string, required)_ — IPFS hash of a file in your account
@@ -319,6 +358,8 @@ Responses are served with `X-Content-Type-Options: nosniff`, and HTML/SVG/XML co
 
 **Description:** Download a file as an attachment. Identical to `/cat` except that a `Content-Disposition: attachment` header is set.
 
+**Required permission:** `read`
+
 ```bash
 curl "https://api.fluxdrive.runonflux.io/api/v0/get" \
   -X POST \
@@ -332,6 +373,8 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/get" \
 #### 7. `/api/v0/rm`
 
 **Description:** Remove a file from your FluxDrive account. The hash is unpinned from your subscription; if no other account references it, the cluster will eventually garbage-collect the underlying blocks.
+
+**Required permission:** `delete`
 
 ```bash
 curl "https://api.fluxdrive.runonflux.io/api/v0/rm" \
@@ -351,6 +394,8 @@ curl "https://api.fluxdrive.runonflux.io/api/v0/rm" \
 #### 8. `/api/v0/thumb`
 
 **Description:** Retrieve the generated thumbnail for a file, as `image/jpeg`. Returns `404` with `{ "error": "No thumbnail" }` when the file has none.
+
+**Required permission:** `read`
 
 ```bash
 curl "https://api.fluxdrive.runonflux.io/api/v0/thumb" \
