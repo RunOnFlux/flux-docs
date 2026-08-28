@@ -37,11 +37,11 @@ General options to control running status of Application.
 | **Start Application**   | Launches the application if it's currently stopped.                                                                                                                                |
 | **Stop Application**    | Gracefully stops the running application and terminates its processes.                                                                                                             |
 | **Restart Application** | Stops and immediately starts the app again — useful for applying configuration changes or recovering from temporary issues.                                                        |
-| **Pause Application**   | Suspends all active processes within the app without shutting it down. This is like hitting a “pause button” on execution.                                                         |
-| **Unpause Application** | Resumes previously paused processes and returns the app to its active running state.                                                                                               |
 | **Remove Application**  | Uninstalls the app and deletes all associated data from the current selected FluxNode running the application. This will result in the app being deployed on a different FluxNode. |
 | **Soft Reinstall**      | Restarts the app while preserving persistent data. Ideal for safe updates or config changes.                                                                                       |
 | **Hard Reinstall**      | Wipes persistent data and redeploys the app from scratch. Use with caution — this is best for full resets or destructive testing.                                                  |
+
+> **Pause and Unpause have been removed.** A paused container looked healthy to the network — it stayed listed as running, so the load balancer kept sending traffic to a server that could not answer, and monitoring showed a flat line with no explanation. **Stop Application** replaces it: it does the same job (releases files, frees the app for maintenance), it is visible everywhere as stopped, and it can always be started again.
 
 **Pro tip:** Always use **Soft Redeploy** unless you intentionally want to delete stored application state.
 

@@ -190,21 +190,21 @@ Replace the current `.wld` file in `/root/.local/share/Terraria/Worlds/` with yo
 
 #### Upload an existing world (from another host or a single-player save)
 
-Simply dropping a new `.wld` file onto a running server does **not** work reliably: the server holds the current world file open and, if `WORLD_FILENAME` is changed on a live instance, will generate a fresh world before your upload completes. The procedure below performs a clean redeploy so the server boots with your `WORLD_FILENAME` from the start, then swaps the file in while the container is paused.
+Simply dropping a new `.wld` file onto a running server does **not** work reliably: the server holds the current world file open and, if `WORLD_FILENAME` is changed on a live instance, will generate a fresh world before your upload completes. The procedure below performs a clean redeploy so the server boots with your `WORLD_FILENAME` from the start, then swaps the file in while the container is stopped.
 
 1. Open **Applications → Management**, select your Terraria app, click the **Settings icon** and open the **Specifications** tab.
 2. Switch to the **Component** tab and change `WORLD_FILENAME` to exactly match your world file's filename, including the `.wld` extension. Click **Review** in the top-right corner, confirm, and sign — this update is **free**.
 3. Wait until the cloud marks the update as paid and live on the network.
 4. Open the **Control** tab and choose **Global → Remove Application**. The app uninstalls from its current nodes and is automatically reinstalled with the new `WORLD_FILENAME` already in place.
 5. Wait a few minutes, then return to **Applications → Management**. You should be routed to the new primary instance and see the container status as **running**.
-6. Back on the **Control** tab, choose **Local → Pause Container**. Pausing stops the server from holding the world file open while you upload.
+6. Back on the **Control** tab, choose **Local → Stop Container**. Stopping releases the world file so the server cannot overwrite your upload.
 7. Open the **Volume Browser** and upload your `.wld` file into:
 
     ```
     /root/.local/share/Terraria/Worlds/
     ```
 
-8. Return to **Control → Local → Restart Container**. The server starts with your uploaded world instead of the one it generated on first boot.
+8. Return to **Control → Local → Start Container**. The server starts with your uploaded world instead of the one it generated on first boot. Give it up to a minute to come back.
 
 > 💡 **Tip:** The filename **must** match `WORLD_FILENAME` exactly — including case and the `.wld` extension. If your backup is `MyOldWorld.wld`, set `WORLD_FILENAME` to `MyOldWorld.wld`, not `myoldworld.wld`.
 
@@ -240,7 +240,7 @@ If your current primary server becomes unavailable or experiences downtime, one 
 
 #### Can I use my own world file?
 
-Yes — for example a backup from another host or a single-player save. Because a running server keeps the world file open, you can't just drop a new `.wld` onto a live instance; follow the **Upload an existing world** procedure under [Managing the World File](#managing-the-world-file), which redeploys the app with your `WORLD_FILENAME` set, then has you pause the container, upload the `.wld` file, and restart.
+Yes — for example a backup from another host or a single-player save. Because a running server keeps the world file open, you can't just drop a new `.wld` onto a live instance; follow the **Upload an existing world** procedure under [Managing the World File](#managing-the-world-file), which redeploys the app with your `WORLD_FILENAME` set, then has you stop the container, upload the `.wld` file, and start it again.
 
 ***
 

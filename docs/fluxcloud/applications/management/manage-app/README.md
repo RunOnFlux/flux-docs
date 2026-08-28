@@ -26,7 +26,7 @@ A quick reference to help you choose the right tool for the task, with links to 
 | Track file-system changes                   | [File Changes](file-changes)                                                     |
 | See running processes inside your container | [Monitoring](monitoring#processes-overview)                                      |
 | Read your app's logs                        | [Log Files](logs)                                                                |
-| Start, stop, pause, or redeploy single node | [Control](control)                                                               |
+| Start, stop, restart, or redeploy single node | [Control](control)                                                               |
 | Run a terminal or modify files in-container | [Secure Shell](secure-shell), [Volume Browser](secure-shell#volume-browser)     |
 | Backup or restore container data            | [Backup & Restore](backup-and-restore)                                           |
 | Manage global deployment (all nodes)        | [Control](control)                                                               |

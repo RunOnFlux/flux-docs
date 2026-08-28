@@ -190,21 +190,21 @@ Replace the current world files in `/config/worlds_local/` with a backup from `/
 
 #### Upload an existing world (from another host or a single-player save)
 
-Simply dropping new world files onto a running server does **not** work reliably: the server holds the current world file open and, if `WORLD_NAME` is changed on a live instance, will generate a fresh world before your upload completes. The procedure below performs a clean redeploy so the server boots with your `WORLD_NAME` from the start, then swaps the files in while the container is paused.
+Simply dropping new world files onto a running server does **not** work reliably: the server holds the current world file open and, if `WORLD_NAME` is changed on a live instance, will generate a fresh world before your upload completes. The procedure below performs a clean redeploy so the server boots with your `WORLD_NAME` from the start, then swaps the files in while the container is stopped.
 
 1. Open **Applications → Management**, select your Valheim app, click the **Settings icon** and open the **Specifications** tab.
 2. Switch to the **Component** tab and change `WORLD_NAME` to exactly match your world file's filename, without the `.db` / `.fwl` extension. Click **Review** in the top-right corner, confirm, and sign — this update is **free**.
 3. Wait until the cloud marks the update as paid and live on the network.
 4. Open the **Control** tab and choose **Global → Remove Application**. The app uninstalls from its current nodes and is automatically reinstalled with the new `WORLD_NAME` already in place.
 5. Wait a few minutes, then return to **Applications → Management**. You should be routed to the new primary instance and see the container status as **running**.
-6. Back on the **Control** tab, choose **Local → Pause Container**. Pausing stops the server from holding the world file open while you upload.
+6. Back on the **Control** tab, choose **Local → Stop Container**. Stopping releases the world file so the server cannot overwrite your upload.
 7. Open the **Volume Browser** and upload both your `.db` and `.fwl` files into:
 
     ```
     /config/worlds_local/
     ```
 
-8. Return to **Control → Local → Restart Container**. The server starts with your uploaded world instead of the one it generated on first boot.
+8. Return to **Control → Local → Start Container**. The server starts with your uploaded world instead of the one it generated on first boot.
 
 > 💡 **Tip:** The filename (without extension) **must** match `WORLD_NAME` exactly — including case. If your backup is `MyOldWorld.db` / `MyOldWorld.fwl`, set `WORLD_NAME` to `MyOldWorld`, not `myoldworld`.
 
@@ -264,7 +264,7 @@ If your current primary server becomes unavailable or experiences downtime, one 
 
 #### Can I use my own world file?
 
-Yes — for example a backup from another host or a single-player save. Because a running server keeps the world file open, you can't just drop new files onto a live instance; follow the **Upload an existing world** procedure under [Managing the World File](#managing-the-world-file), which redeploys the app with your `WORLD_NAME` set, then has you pause the container, upload the `.db` / `.fwl` pair, and restart.
+Yes — for example a backup from another host or a single-player save. Because a running server keeps the world file open, you can't just drop new files onto a live instance; follow the **Upload an existing world** procedure under [Managing the World File](#managing-the-world-file), which redeploys the app with your `WORLD_NAME` set, then has you stop the container, upload the `.db` / `.fwl` pair, and start it again.
 
 ***
 
