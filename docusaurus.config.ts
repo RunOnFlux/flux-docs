@@ -35,6 +35,8 @@ const config: Config = {
     locales: ['en'],
   },
 
+  /* Kapa AI widget - DISABLED pending replacement with the in-house FluxAI bot.
+     Re-enable by uncommenting, or delete once the replacement ships.
   // Kapa AI Widget Integration
   scripts: [
     {
@@ -56,6 +58,7 @@ const config: Config = {
       'data-mcp-server-url': 'https://flux.mcp.kapa.ai',
     },
   ],
+  */
 
   presets: [
     [
