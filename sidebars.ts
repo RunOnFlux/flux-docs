@@ -232,6 +232,7 @@ const sidebars: SidebarsConfig = {
           ],
         },
         'fluxcloud/cost-calculator',
+        'fluxcloud/ai-agents-mcp',
         {
           type: 'category',
           label: 'Shared Database',
