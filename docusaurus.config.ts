@@ -35,30 +35,18 @@ const config: Config = {
     locales: ['en'],
   },
 
-  /* Kapa AI widget - DISABLED pending replacement with the in-house FluxAI bot.
-     Re-enable by uncommenting, or delete once the replacement ships.
-  // Kapa AI Widget Integration
+  // Flux AI documentation assistant (self-hosted, https://github.com/RunOnFlux/ownllm).
+  // The script is served by the assistant and uses its own origin as the
+  // endpoint, so this tag is the whole integration. Deferred: it mounts on
+  // DOMContentLoaded and must not block the page.
   scripts: [
     {
-      src: 'https://widget.kapa.ai/kapa-widget.bundle.js',
-      async: true,
-      'data-website-id': 'd6f44093-4ac0-4c62-9cc1-eaad8fef1199',
-      'data-project-name': 'Flux',
-      'data-user-analytics-fingerprint-enabled': 'true',
-      'data-search-mode-enabled': 'true',
-      'data-project-logo': 'https://raw.githubusercontent.com/RunOnFlux/media-logos/refs/heads/master/Flux_Asset_SVG/Flux%20Logo/Symbol/Round%20Symbol/SVG/Flux_symbol_blue-white.svg',
-      'data-modal-image': 'https://raw.githubusercontent.com/RunOnFlux/media-logos/refs/heads/master/Flux_Asset_SVG/Flux%20Logo/Symbol/Round%20Symbol/SVG/Flux_symbol_blue-white.svg',
-      'data-button-image-width': '28',
-      'data-button-image-height': '28',
-      'data-button-height': '4rem',
-      'data-button-width': '3.75rem',
-      'data-button-text-font-size': '0.875rem',
-      'data-modal-disclaimer': 'This is a custom LLM for answering questions about all Flux products. The answers are based on the contents of Whitepapers, Documentation, Support articles, API references, website and knowledgebases. Give it a try!',
-      'data-mcp-enabled': 'true',
-      'data-mcp-server-url': 'https://flux.mcp.kapa.ai',
+      src: 'https://ownllmrouter.app.runonflux.io/widget.js',
+      defer: true,
+      'data-title': 'Ask the Flux docs',
+      'data-subtitle': 'Answers from the Flux documentation, with sources',
     },
   ],
-  */
 
   presets: [
     [
