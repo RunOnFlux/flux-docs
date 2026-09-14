@@ -43,8 +43,9 @@ const config: Config = {
     {
       src: 'https://ownllmrouter.app.runonflux.io/widget.js',
       defer: true,
-      'data-title': 'Ask the Flux docs',
-      'data-subtitle': 'Answers from the Flux documentation, with sources',
+      'data-title': 'Ask Flux AI',
+      'data-subject': 'Flux',
+      'data-launcher-label': 'Ask AI',
     },
   ],
 
