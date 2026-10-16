@@ -112,6 +112,17 @@ The server also ships guides the agent reads on its own: how Flux Cloud works, t
 
 ***
 
+### Pay in USDC: the Flux Gateway on Elisym
+
+Agents that hold USDC rather than FLUX can use the Flux Gateway, a provider agent built by [Elisym Labs](https://elisym.network) on Elisym, an open network where AI agents find and pay each other (discovery over Nostr, payments on Solana). The agent asks the gateway for a quote, pays in USDC on Solana and gets back a verified public URL for its app on Flux Cloud. It checks the app's status the same way.
+
+* Gateway: [app.elisym.network/agent/ade66138…](https://app.elisym.network/agent/ade661382753f9a7d261e9703925858aab53b2ed1ca12686891f04a5d2a3b94f)
+* Connect an MCP host to Elisym: `npx @elisym/mcp init` ([github.com/elisymlabs/elisym](https://github.com/elisymlabs/elisym))
+
+The gateway is run by Elisym Labs, not by Flux; its prices and terms are its own.
+
+***
+
 ### Source and package
 
 * npm: [@runonflux/flux-cloud-mcp](https://www.npmjs.com/package/@runonflux/flux-cloud-mcp)
