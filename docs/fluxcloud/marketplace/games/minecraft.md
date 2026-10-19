@@ -112,21 +112,23 @@ To connect to your server:
 
 1. In Minecraft, go to **Multiplayer**.
 2. Click **Add Server**.
-3. Copy the **Primary IP address** and paste it into the server address field.
+3. Copy the **Primary IP address** and paste it into the server address field, followed by `:` and your server's game port (e.g. `1.2.3.4:25565`; see the note below).
 4. Click **Done** and start playing!
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in the Minecraft **Server Address** field in place of the IP:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in the Minecraft **Server Address** field in place of the IP, followed by your server's public game port: the entry in **Ports** in the same position as `25565` in **Container Ports**:
 
     ```
-    your-app-domain.app.runonflux.io
+    your-app-domain.app.runonflux.io:PORT
     ```
 
 Using the domain means your saved server entry continues to work automatically after any primary switch.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `25565`. Without the right port the game cannot connect.
 
 ***
 
@@ -150,7 +152,7 @@ This is the intended setup for **modded servers** (Forge, NeoForge, Fabric): mod
 
 #### What port does Minecraft Java use?
 
-Minecraft Java Edition dedicated servers use TCP port `25565` for gameplay traffic. FluxCloud exposes this port automatically. When connecting by IP you must specify the port (`1.2.3.4:25565`); when connecting by the app domain the port is resolved by DNS and you do not need to append it.
+Minecraft Java Edition dedicated servers use TCP port `25565` for gameplay traffic. FluxCloud exposes this port automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public game port as listed under **Ports** in the app's **Specifications** (e.g. `your-app-domain.app.runonflux.io:PORT`).
 
 ***
 
@@ -175,7 +177,7 @@ Because the data folder is automatically replicated across all 3 instances of yo
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. All your game data remains intact, so you can continue right where you left off once the switch is complete. You can check which instance is currently the primary from your application’s management panel under the _Instances_ tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 

@@ -106,29 +106,33 @@ To find your server's **primary IP address**:
 To connect to your server from the Garry's Mod client:
 
 1. Launch **Garry's Mod** and open the **developer console** (enable it from `Options → Keyboard → Advanced → Enable developer console` if not already).
-2. In the console, run:
+2. In the console, run (with your server's game port, `27015` by default; see the note below):
 
     ```
     connect <Primary IP>:27015
     ```
 
-3. Alternatively, add the server to your Steam favourites via **View → Game Servers → Favorites → Add a Server** and enter `<Primary IP>:27015`, then join from the in-game **Legacy Browser**.
+3. Alternatively, add the server to your Steam favourites via **View → Game Servers → Favorites → Add a Server** and enter `<Primary IP>:27015` (your server's port), then join from the in-game **Legacy Browser**.
 4. Enter the server password if one has been configured (see below).
 
 > 💡 **Tip:** Garry's Mod uses UDP port **27015** for gameplay traffic and UDP **27005** for the client-side connection.
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards UDP traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in the Garry's Mod client in place of the IP address. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:27015`:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in the Garry's Mod client in place of the IP address. Add your server's public game port after it: the entry in **Ports** in the same position as `27015` in **Container Ports**:
 
     ```
-    connect your-app-domain.app.runonflux.io
+    connect your-app-domain.app.runonflux.io:PORT
     ```
 
 Using the domain means you never have to update your favourites entry when the primary switches.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `27015`. Without the right port the game cannot connect.
+
+For every way to connect, see the [Garry's Mod join guide](https://runonflux.com/games/garrys-mod/guides/join-server).
 
 ***
 
@@ -267,7 +271,7 @@ The first launch downloads the full Garry's Mod Dedicated Server via SteamCMD be
 
 #### What port does Garry's Mod use?
 
-Garry's Mod uses UDP port `27015` for gameplay and UDP `27005` for the client-side connection. FluxCloud exposes both automatically. When connecting by IP you must specify the port (`connect 1.2.3.4:27015`); when connecting by the app domain the port is resolved by DNS and you do not need to append it.
+Garry's Mod uses UDP port `27015` for gameplay and UDP `27005` for the client-side connection. FluxCloud exposes both automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public game port as listed under **Ports** in the app's **Specifications** (e.g. `connect your-app-domain.app.runonflux.io:PORT`).
 
 ***
 
@@ -287,7 +291,7 @@ Gamemode and map are set on the server command line, not in `server.cfg`. Update
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. Your server files, addons, and configuration are preserved on the persistent volume, so the game resumes where you left off once the switch is complete. You can check which instance is currently the primary from your application's management panel under the **Instances** tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 

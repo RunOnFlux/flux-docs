@@ -96,23 +96,25 @@ To connect to your server from a Bedrock client (mobile, console, or Windows 10/
 3. Fill in the fields:
    * **Server Name:** any label you like (e.g. `Flux Bedrock`).
    * **Server Address:** your **Primary IP address**.
-   * **Port:** `19132`.
+   * **Port:** your server's game port (`19132` by default; see the note below).
 4. Save and then tap/click the server to connect.
 
-> 💡 **Tip:** Bedrock uses **UDP port `19132`**. If your client has a separate **Port** field, enter `19132` there — do not append it to the address field.
+> 💡 **Tip:** Bedrock uses **UDP port `19132`** inside the container. If your client has a separate **Port** field, enter your server's port there — do not append it to the address field.
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* In the Bedrock **Add Server** dialog, enter the domain in the **Server Address** field. Bedrock's **Port** field already defaults to `19132`, and the domain's DNS routing targets that same port:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* In the Bedrock **Add Server** dialog, enter the domain in the **Server Address** field. Set the **Port** field to your server's public game port: the entry in **Ports** in the same position as `19132` in **Container Ports** (Bedrock fills in `19132`, which is only right if Flux published the game on that port):
 
     ```
     your-app-domain.app.runonflux.io
     ```
 
 Using the domain means your saved server entry continues to work automatically after any primary switch.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `19132`. Without the right port the game cannot connect.
 
 ***
 
@@ -174,7 +176,7 @@ Simply dropping a new world directory onto a running server is unreliable: the s
 
 #### What ports does Minecraft Bedrock use?
 
-The Bedrock dedicated server listens on UDP port `19132` (IPv4). FluxCloud exposes this port automatically. In the in-game **Add Server** dialog, enter your server’s IP or app domain in **Server Address** and `19132` in **Port**.
+The Bedrock dedicated server listens on UDP port `19132` (IPv4). FluxCloud exposes this port automatically. In the in-game **Add Server** dialog, enter your server’s IP or app domain in **Server Address** and your server's public game port in **Port** (`19132` inside the container; Flux can publish it on a different port, listed under **Ports** in the app's **Specifications**).
 
 ***
 
@@ -188,7 +190,7 @@ No — Java and Bedrock use different protocols and are not natively cross-compa
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. Your worlds and configuration are preserved on the persistent volume, so the game resumes where you left off once the switch is complete. You can check which instance is currently the primary from your application’s management panel under the **Instances** tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`) with port `19132` instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`) with your server's port instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 

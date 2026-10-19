@@ -100,7 +100,7 @@ To connect to your server from the Factorio client:
 
 1. Launch **Factorio** and choose **Multiplayer** from the main menu.
 2. Click **Connect to address**.
-3. Enter your **Primary IP address** followed by the game port — for example:
+3. Enter your **Primary IP address** followed by your server's game port (`34197` by default; see the note below) — for example:
 
     ```
     1.2.3.4:34197
@@ -112,16 +112,20 @@ To connect to your server from the Factorio client:
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in the Factorio **Connect to address** field in place of the IP. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:34197`:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in the Factorio **Connect to address** field in place of the IP. Add your server's public game port after it: the entry in **Ports** in the same position as `34197` in **Container Ports**:
 
     ```
-    your-app-domain.app.runonflux.io
+    your-app-domain.app.runonflux.io:PORT
     ```
 
 Using the domain means you never have to update the address your group uses when the primary switches.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `34197`. Without the right port the game cannot connect.
+
+For every way to connect, see the [Factorio join guide](https://runonflux.com/games/factorio/guides/join-server).
 
 ***
 
@@ -187,7 +191,7 @@ The first launch downloads the Factorio dedicated server binaries and generates 
 
 #### What port does Factorio use?
 
-The Factorio headless server uses UDP port `34197` for gameplay traffic. FluxCloud exposes this port automatically. When connecting by IP you must specify the port (`1.2.3.4:34197`); when connecting by the app domain the port is resolved by DNS and you do not need to append it.
+The Factorio headless server uses UDP port `34197` for gameplay traffic. FluxCloud exposes this port automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public game port as listed under **Ports** in the app's **Specifications** (e.g. `your-app-domain.app.runonflux.io:PORT`).
 
 ***
 
@@ -201,7 +205,7 @@ Edit `server-settings.json` via the Volume Browser, set `"game_password"` to the
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. Your saves, mods, and server settings are preserved on the persistent volume, so the game resumes where you left off once the switch is complete. You can check which instance is currently the primary from your application's management panel under the **Instances** tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 

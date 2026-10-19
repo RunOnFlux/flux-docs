@@ -6,7 +6,7 @@ The FluxCloud Palworld template is built on the `thijsvanloef/palworld-server-do
 
 For more information on **Palworld Servers** visit: [https://tech.palworldgame.com/](https://tech.palworldgame.com/). For the server image documentation, see: [https://github.com/thijsvanloef/palworld-server-docker](https://github.com/thijsvanloef/palworld-server-docker).
 
-> 🚀 **Dedicated Palworld hosting portal:** Palworld on Flux now has its own purpose-built site at **[palworld.runonflux.com](https://palworld.runonflux.com)**. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, one-click backups, billing and renewal controls, and a global server-location map. **Clicking the Palworld tile in the FluxCloud Marketplace now redirects you there automatically.** The Marketplace walkthrough below still applies — the configuration options are the same, and your server runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
+> 🚀 **Dedicated Palworld hosting portal:** Palworld on Flux now has its own purpose-built site at **[runonflux.com/games/palworld](https://runonflux.com/games/palworld)**. It gives you a streamlined checkout (pay by card or subscription via Stripe, or with FLUX crypto) and a dedicated management dashboard — live CPU/RAM/disk stats, an in-browser terminal and file manager, one-click backups, billing and renewal controls, and a global server-location map. **Clicking the Palworld tile in the FluxCloud Marketplace now redirects you there automatically.** The Marketplace walkthrough below still applies — the configuration options are the same, and your server runs as a standard Flux app you can also manage from [cloud.runonflux.com](https://cloud.runonflux.com).
 
 ***
 
@@ -16,7 +16,7 @@ For more information on **Palworld Servers** visit: [https://tech.palworldgame.c
 
 1. **Access FluxCloud**
 
-* Visit **[palworld.runonflux.com](https://palworld.runonflux.com)** — the dedicated Palworld hosting portal — and sign in or create an account. (Going through [cloud.runonflux.com](https://cloud.runonflux.com) works too: clicking the Palworld tile in the Marketplace redirects you there automatically.)
+* Visit **[runonflux.com/games/palworld](https://runonflux.com/games/palworld)** — the dedicated Palworld hosting portal — and sign in or create an account. (Going through [cloud.runonflux.com](https://cloud.runonflux.com) works too: clicking the Palworld tile in the Marketplace redirects you there automatically.)
 
 
 2. **Find the Palworld Server**
@@ -102,7 +102,7 @@ To find your server’s **primary IP address**:
 To connect to your server:
 
 * In Palworld, go to **Join Multiplayer Game**.
-* Enter your **primary IP** followed by `:8211`.
+* Enter your **primary IP** followed by your server's game port (`:8211` by default — see the note below).
 * Example: `123.45.67.89:8211`
 * Leave the password field empty unless you have configured one.
 
@@ -110,16 +110,20 @@ To connect to your server:
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in the Palworld connection field in place of the IP. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:8211`:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in the Palworld connection field in place of the IP. Add your server's public game port after it: the entry in **Ports** in the same position as `8211` in **Container Ports**:
 
     ```
-    your-app-domain.app.runonflux.io
+    your-app-domain.app.runonflux.io:PORT
     ```
 
 Using the domain means you never have to update the address your group uses when the primary switches.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `8211`. Without the right port the game cannot connect.
+
+For every way to connect, see the [Palworld join guide](https://runonflux.com/games/palworld/guides/join-server).
 
 ***
 
@@ -137,13 +141,13 @@ Simply open the **Applications → Management** section on FluxCloud, select you
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. All your game data remains intact, so you can continue right where you left off once the switch is complete. You can check which instance is currently the primary from your application’s management panel under the _Instances_ tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 
 #### What ports does Palworld use?
 
-The Palworld dedicated server uses UDP port `8211` for gameplay traffic, UDP port `27015` for Steam server queries, and TCP port `25575` for RCON. FluxCloud exposes all of these automatically. When connecting by IP you must specify port `8211` (e.g. `1.2.3.4:8211`); when connecting via the app domain the port is resolved by DNS and you do not need to append it.
+The Palworld dedicated server uses UDP port `8211` for gameplay traffic, UDP port `27015` for Steam server queries, and TCP port `25575` for RCON. FluxCloud exposes all of these automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public game port as listed under **Ports** in the app's **Specifications** (e.g. `your-app-domain.app.runonflux.io:PORT`).
 
 ***
 
