@@ -118,7 +118,7 @@ To connect to your server from the Valheim client:
 
 1. Launch **Valheim** and click **Start Game**, then select your character.
 2. Click **Join Game** and switch to the **Join IP** tab.
-3. Enter your **Primary IP address** followed by the game port — for example:
+3. Enter your **Primary IP address** followed by your server's game port (`2456` by default; see the note below) — for example:
 
     ```
     1.2.3.4:2456
@@ -130,16 +130,18 @@ To connect to your server from the Valheim client:
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in the Valheim client in place of the IP address. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:2456`:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in the Valheim client in place of the IP address. Add your server's public game port after it: the entry in **Ports** in the same position as `2456` in **Container Ports**:
 
     ```
-    your-app-domain.app.runonflux.io
+    your-app-domain.app.runonflux.io:PORT
     ```
 
 Using the domain means you never have to update your saved server entry when the primary switches.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `2456`. Without the right port the game cannot connect.
 
 ***
 
@@ -244,7 +246,7 @@ The first launch downloads the Valheim dedicated server and generates a world be
 
 #### What ports does Valheim use?
 
-Valheim uses UDP ports `2456` and `2457` for gameplay traffic. FluxCloud exposes these ports automatically. When connecting by IP you must specify port `2456` (e.g. `1.2.3.4:2456`); when connecting by the app domain the port is resolved by DNS and you do not need to append it.
+Valheim uses UDP ports `2456` and `2457` for gameplay traffic. FluxCloud exposes these ports automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public game port as listed under **Ports** in the app's **Specifications** (e.g. `your-app-domain.app.runonflux.io:PORT`).
 
 ***
 
@@ -258,7 +260,7 @@ Open your application settings, go to the **Specifications** tab and click **Upd
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. Your world saves, backups, and mod configuration are preserved on the persistent volume, so the game resumes where you left off once the switch is complete. You can check which instance is currently the primary from your application's management panel under the **Instances** tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 

@@ -127,7 +127,7 @@ To connect to your server from the Rust client:
 
 1. Launch **Rust** from Steam.
 2. From the main menu, press **F1** to open the in-game console.
-3. Type the direct-connect command using your **Primary IP** and the game port `28015`:
+3. Type the direct-connect command using your **Primary IP** and your server's game port (`28015` by default; see the note below):
 
     ```
     client.connect 1.2.3.4:28015
@@ -141,16 +141,18 @@ Alternatively, find the server in the in-game **Community** server browser by se
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards UDP traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in the Rust client in place of the IP address. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:28015`:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in the Rust client in place of the IP address. Add your server's public game port after it: the entry in **Ports** in the same position as `28015` in **Container Ports**:
 
     ```
-    client.connect your-app-domain.app.runonflux.io
+    client.connect your-app-domain.app.runonflux.io:PORT
     ```
 
 Using the domain means you never have to update your saved favourite when the primary switches after a failover.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `28015`. Without the right port the game cannot connect.
 
 ***
 
@@ -256,7 +258,7 @@ Connect via:
     ws://<primary-ip>:28016/<your-rcon-password>
     ```
 
-> 💡 **Prefer the app domain for RCON too.** Just like game traffic, `<your-app-domain>.app.runonflux.io:28016` points at the current primary, so your admin tooling keeps working after a failover.
+> 💡 **Prefer the app domain for RCON too.** Just like game traffic, `<your-app-domain>.app.runonflux.io` with your server's public RCON port (the entry in **Ports** in the same position as `28016`) points at the current primary, so your admin tooling keeps working after a failover.
 
 If you ever need to rotate the RCON password:
 
@@ -334,7 +336,7 @@ On first boot the container has to generate a procedural map before opening the 
 
 #### What ports does Rust use?
 
-Rust uses UDP port **28015** for gameplay traffic, TCP port **28016** for RCON / WebRCON, and UDP port **28017** for the Steam server-browser query. FluxCloud exposes all three automatically. When connecting by IP you must specify the game port (`client.connect 1.2.3.4:28015`); when connecting by the app domain the port is resolved by DNS and you do not need to append it.
+Rust uses UDP port **28015** for gameplay traffic, TCP port **28016** for RCON / WebRCON, and UDP port **28017** for the Steam server-browser query. FluxCloud exposes all three automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public game port as listed under **Ports** in the app's **Specifications** (e.g. `client.connect your-app-domain.app.runonflux.io:PORT`).
 
 ***
 
@@ -358,7 +360,7 @@ Add a line like `ownerid 76561198000000000 "YourName" "Owner"` to `/srv/rust/ser
 
 #### Is RCON enabled? How do I connect?
 
-Yes. WebRCON listens on TCP port 28016 and uses the `RCON_PASSWORD` you set at deployment. Connect via [facepunch.com/rust/rcon](https://facepunch.com/rust/rcon) or a desktop tool like RustAdmin using `<primary-ip>:28016` (or `<your-app-domain>.app.runonflux.io:28016`) and your password.
+Yes. WebRCON listens on TCP port 28016 and uses the `RCON_PASSWORD` you set at deployment. Connect via [facepunch.com/rust/rcon](https://facepunch.com/rust/rcon) or a desktop tool like RustAdmin using your primary IP or app domain with your server's public RCON port (`28016` by default, e.g. `<your-app-domain>.app.runonflux.io:<RCON port>`) and your password.
 
 ***
 
@@ -366,7 +368,7 @@ Yes. WebRCON listens on TCP port 28016 and uses the `RCON_PASSWORD` you set at d
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. Your world save, configuration, admin/ban lists, and player data are preserved on the persistent volume, so the game resumes where you left off once the switch is complete. You can check which instance is currently the primary from your application's management panel under the **Instances** tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 

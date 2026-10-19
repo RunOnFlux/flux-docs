@@ -114,7 +114,7 @@ For a smoother and more reliable gaming experience, it’s recommended to **add 
 
 3. In the _Game Servers_ window, go to the **Favorites** tab.
 4. Click the **“+”** icon in the bottom-right corner.
-5. Enter your server’s **IP address** and **port number** (`15637`).
+5. Enter your server’s **IP address** and **port number** (`15637` by default; see the note below).
 6. Click **Add This Address to Favorites**.
 
 <img src="/.gitbook/assets/image (14).png" alt="" width="563"/>
@@ -130,16 +130,20 @@ For a smoother and more reliable gaming experience, it’s recommended to **add 
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* When adding the server via the Steam **Game Servers → Favorites** dialog, enter the domain in place of the IP. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:15637`:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* When adding the server via the Steam **Game Servers → Favorites** dialog, enter the domain in place of the IP. Add your server's public game port after it: the entry in **Ports** in the same position as `15637` in **Container Ports**:
 
     ```
-    your-app-domain.app.runonflux.io
+    your-app-domain.app.runonflux.io:PORT
     ```
 
 Using the domain means your favorited entry continues to work automatically after any primary switch.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `15637`. Without the right port the game cannot connect.
+
+For every way to connect, see the [Enshrouded join guide](https://runonflux.com/games/enshrouded/guides/join-server).
 
 ***
 
@@ -157,13 +161,13 @@ Simply open the **Applications → Management** section on FluxCloud, select you
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. All your game data remains intact, so you can continue right where you left off once the switch is complete. You can check which instance is currently the primary from your application’s management panel under the _Instances_ tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 
 #### What ports does Enshrouded use?
 
-The Enshrouded dedicated server uses UDP port `15637` for gameplay traffic and UDP port `27015` for Steam server queries. FluxCloud exposes both ports automatically. When adding the server to Steam **Game Servers → Favorites** by IP you must append `:15637` (e.g. `1.2.3.4:15637`); when connecting via the app domain the port is resolved by DNS and you do not need to append it.
+The Enshrouded dedicated server uses UDP port `15637` for gameplay traffic and UDP port `27015` for Steam server queries. FluxCloud exposes both ports automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public game port as listed under **Ports** in the app's **Specifications** (e.g. `your-app-domain.app.runonflux.io:PORT`).
 
 ***
 

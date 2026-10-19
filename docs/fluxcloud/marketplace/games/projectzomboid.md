@@ -132,25 +132,29 @@ To connect to your server from the Project Zomboid client:
 1. Launch **Project Zomboid** and click **Join**.
 2. Open the **Favorites** tab and add your server:
    * **IP:** your Primary IP address
-   * **Port:** `36261`
+   * **Port:** your server's game port (`36261` by default; see the note below)
 3. Alternatively, find your server in the **Internet** tab of the server browser by searching for your `DISPLAYNAME` (available after the post-deploy restart), or join through a **Steam friend invite**.
 4. Enter an **Account Username** and **Account Password** of your choice — Project Zomboid creates a per-server character account for each player on first join. Remember these credentials; you'll need them to log back in as the same character.
 5. If you configured a join password, enter it in the **Server Password** field.
 
-> 💡 **Tip:** Your server uses UDP ports `36261` (main game port) and `36262` (direct-connection port). Both are exposed automatically by FluxCloud — players only ever need to enter `36261`.
+> 💡 **Tip:** Your server uses UDP ports `36261` (main game port) and `36262` (direct-connection port). Both are exposed automatically by FluxCloud — players only ever need to enter the game port (`36261` by default).
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards UDP traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in the **IP field** of the Favorites tab in place of the IP address. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:36261`:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in the **IP field** of the Favorites tab in place of the IP address, and put your server's public game port (the entry in **Ports** in the same position as `36261` in **Container Ports**) in the **Port** field:
 
     ```
     your-app-domain.app.runonflux.io
     ```
 
 Using the domain means you never have to update your saved server entry when the primary switches.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `36261`. Without the right port the game cannot connect.
+
+For every way to connect, see the [Project Zomboid join guide](https://runonflux.com/games/zomboid/guides/play-with-friends).
 
 ***
 
@@ -286,7 +290,7 @@ Both are applied on the **second** server start. The configuration file the pass
 
 #### What ports does Project Zomboid use?
 
-The server uses UDP port `36261` as the main game port and UDP port `36262` as the direct-connection port. FluxCloud exposes both automatically. When connecting by IP, players enter port `36261`; when connecting via the app domain, the port is resolved by DNS and does not need to be specified.
+The server uses UDP port `36261` as the main game port and UDP port `36262` as the direct-connection port. FluxCloud exposes both automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public game port as listed under **Ports** in the app's **Specifications** (e.g. `your-app-domain.app.runonflux.io:PORT`).
 
 ***
 
@@ -312,7 +316,7 @@ Project Zomboid names every server file — configuration, sandbox settings, wor
 
 If your current primary server becomes unavailable or experiences downtime, the standby instance automatically takes over as the new primary after a short delay. Your world save, player database, and configuration are preserved on the persistent volume, so the game resumes where you left off once the switch is complete. You can check which instance is currently the primary from your application's management panel under the **Instances** tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 

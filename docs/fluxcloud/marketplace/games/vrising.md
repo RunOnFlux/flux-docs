@@ -107,7 +107,7 @@ To connect to your server from the V Rising client:
 
 1. Launch **V Rising** and click **Play**, then choose **Online Play**.
 2. Open the **Servers** tab and switch to the **Direct Connect** sub-tab (or click the **Direct Connect** button).
-3. Enter your **Primary IP address** followed by the query port — for example:
+3. Enter your **Primary IP address** followed by your server's query port (`9877` by default; see the note below) — for example:
 
     ```
     1.2.3.4:9877
@@ -119,16 +119,20 @@ To connect to your server from the V Rising client:
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards UDP traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in V Rising's **Direct Connect** field in place of the IP address. The query port is already baked into the domain's DNS routing, so you do **not** need to append `:9877`:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in V Rising's **Direct Connect** field in place of the IP address. Add your server's public query port after it: the entry in **Ports** in the same position as `9877` in **Container Ports**:
 
     ```
-    your-app-domain.app.runonflux.io
+    your-app-domain.app.runonflux.io:PORT
     ```
 
 Using the domain means you never have to update your saved server entry when the primary switches.
+
+> ⚠️ **Use your server's own port.** Flux can publish the query port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `9877`. Without the right port the game cannot connect.
+
+For every way to connect, see the [V Rising join guide](https://runonflux.com/games/vrising/guides/join-server).
 
 ***
 
@@ -279,7 +283,7 @@ The first launch downloads the full V Rising Dedicated Server via SteamCMD and g
 
 #### What ports does V Rising use?
 
-V Rising uses **UDP port `9876`** for gameplay traffic and **UDP port `9877`** for the server query/browser. FluxCloud exposes both automatically. When connecting by IP you must specify the query port (`1.2.3.4:9877`); when connecting by the app domain the port is resolved by DNS and you do not need to append it.
+V Rising uses **UDP port `9876`** for gameplay traffic and **UDP port `9877`** for the server query/browser. FluxCloud exposes both automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public query port as listed under **Ports** in the app's **Specifications** (e.g. `your-app-domain.app.runonflux.io:PORT`).
 
 ***
 
@@ -299,7 +303,7 @@ Those rules live in `ServerGameSettings.json`. Open it in the Volume Browser and
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. Your world saves, configuration, admin/ban lists, and mods are preserved on the persistent volume, so the game resumes where you left off once the switch is complete. You can check which instance is currently the primary from your application's management panel under the **Instances** tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 

@@ -101,7 +101,7 @@ To find your server's **primary IP address**:
 To connect to your server from the Unturned client:
 
 1. Launch **Unturned** and click **Play → Connect**.
-2. Enter your **Primary IP address** and the game port — for example:
+2. Enter your **Primary IP address** and your server's game port (`27015` by default; see the note below) — for example:
 
     ```
     IP:   1.2.3.4
@@ -115,16 +115,21 @@ To connect to your server from the Unturned client:
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards UDP traffic over DNS and is already configured with the correct game port, so you keep a stable address even when the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so you keep a stable address even when the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in the Unturned client in place of the IP address. The game port is already baked into the domain's DNS routing, so you do **not** need to append `:27015`:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in the Unturned client in place of the IP address, with the **Port** set to your server's public game port (the entry in **Ports** in the same position as `27015` in **Container Ports**):
 
     ```
-    your-app-domain.app.runonflux.io
+    IP:   your-app-domain.app.runonflux.io
+    Port: PORT
     ```
 
 Using the domain means you never have to update your saved server entry when the primary switches.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `27015`. Without the right port the game cannot connect.
+
+For every way to connect, see the [Unturned join guide](https://runonflux.com/games/unturned/guides/join-server).
 
 ***
 
@@ -326,7 +331,7 @@ The first launch downloads the full Unturned Dedicated Server via SteamCMD befor
 
 #### What ports does Unturned use?
 
-Unturned uses UDP port `27015` for gameplay traffic and UDP `27016` for the Steam query port. FluxCloud exposes both automatically. When connecting by IP you must specify the game port (`1.2.3.4` on port `27015`); when connecting by the app domain the port is resolved by DNS and you do not need to append it.
+Unturned uses UDP port `27015` for gameplay traffic and UDP `27016` for the Steam query port. FluxCloud exposes both automatically. These are the ports inside the container: Flux publishes each one on a public port of your server, which can differ. Whether you connect by IP or by the app domain, use your server's public game port as listed under **Ports** in the app's **Specifications** (e.g. `your-app-domain.app.runonflux.io:PORT`).
 
 ***
 
@@ -346,7 +351,7 @@ Edit `Commands.dat` and update the `Map <name>` and `Mode <Easy|Normal|Hard>` / 
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. Your world saves, admin lists, workshop items, and server configuration are preserved on the persistent volume, so the game resumes where you left off once the switch is complete. You can check which instance is currently the primary from your application's management panel under the **Instances** tab.
 
-> 💡 **Tip:** If you connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** If you connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, your client will keep reaching the correct primary automatically after a failover.
 
 ***
 

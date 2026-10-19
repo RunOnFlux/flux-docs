@@ -202,21 +202,23 @@ That's the easiest route for you and your players — no IP or port to remember,
 
 You can also connect directly without searching the list:
 
-* **By app domain (recommended)** — Flux's load balancer forwards game traffic over DNS with the correct port already baked in, so you do **not** append `:30120`. Find your app domain under **Applications → Management → Information**, then in the FiveM **F8 console** type:
+* **By app domain (recommended)** — the domain always points at the current primary instance. Find it under **Applications → Management → Specifications** (**Automatic Domains**), together with your server's public game port: the entry in **Ports** in the same position as `30120` in **Container Ports**. Then in the FiveM **F8 console** type:
 
     ```
-    connect <your-app-domain>.app.runonflux.io
+    connect <your-app-domain>.app.runonflux.io:<port>
     ```
 
   Using the domain means you never have to update a saved favourite when the primary switches after a failover.
 
-* **By primary IP** — find the **Primary IP address** under **Applications → Management → Instances**, then connect with the game port `30120`:
+* **By primary IP** — find the **Primary IP address** under **Applications → Management → Instances**, then connect with your server's game port (`30120` by default; see the note below):
 
     ```
     connect <primary-ip>:30120
     ```
 
   You can also enter `<primary-ip>:30120` in the FiveM **Direct Connect** tab. Note the IP changes if the primary instance fails over — the domain does not.
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `30120`. Without the right port the game cannot connect.
 
 > 💡 **Tip:** FiveM uses port **30120** for game traffic (both TCP and UDP) and port **40120** for the txAdmin web UI. Both are exposed by the FluxCloud template automatically.
 
@@ -319,7 +321,7 @@ The easiest way is to pick the framework as a **recipe** in the txAdmin setup wi
 
 If your current primary server becomes unavailable or experiences downtime, one of the standby instances automatically takes over as the new primary after a short delay. Your `server.cfg`, resources, and txAdmin data are preserved on the persistent volume, and the **Flux-Shared-DB Operator** keeps the MariaDB database synced across instances — so RP data (characters, money, vehicles) is preserved and the server resumes where it left off once the switch completes. You can check which instance is currently primary from your application's management panel under the **Instances** tab.
 
-> 💡 **Tip:** Connect via the app domain (`your-app-domain.app.runonflux.io`, no port suffix) instead of the raw IP, and use the port-`40120` domain (`https://<your-app-name>_40120.app.runonflux.io`) for txAdmin — both keep reaching the correct primary automatically after a failover.
+> 💡 **Tip:** Connect via the app domain with your server's port (`your-app-domain.app.runonflux.io:PORT`) instead of the raw IP, and use the port-`40120` domain (`https://<your-app-name>_40120.app.runonflux.io`) for txAdmin — both keep reaching the correct primary automatically after a failover.
 
 ***
 

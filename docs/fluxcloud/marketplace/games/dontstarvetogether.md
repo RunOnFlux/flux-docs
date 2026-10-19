@@ -123,19 +123,23 @@ To connect to your server from the DST client:
 * Launch **Don't Starve Together** and click **Browse Games**.
 * Open the **Servers** tab and search for your `CLUSTER_NAME`, **or** add your server directly by IP:
   * Click **Dedicated** / **Add Dedicated Server**.
-  * Enter your **Primary IP** with port `11000` (e.g. `123.45.67.89:11000`).
+  * Enter your **Primary IP** with your server's game port (`11000` by default, e.g. `123.45.67.89:11000`; see the note below).
 * Enter the server password when prompted (see below for how to retrieve or change it).
 
 #### Connecting via Domain Instead of IP
 
-Every FluxCloud Marketplace game server is also reachable through its **application domain**. Flux's load balancer forwards UDP traffic over DNS and is already configured with the correct game port, so you do **not** need to append a port when using the domain — this keeps working even if the primary instance changes due to failover.
+Every FluxCloud Marketplace game server is also reachable through its **application domain**. The domain always points at the current primary instance, so it keeps working even if the primary changes due to failover. Like the IP, it is used together with your server's **port**.
 
-* Find your app domain under **Applications → Management → Information**.
-* Use it in the DST client in place of the IP, without specifying a port:
+* Find your app domain and port under **Applications → Management → Specifications**: **Automatic Domains** shows the domain, and **Ports** lists your server's public ports in the same order as **Container Ports**. Flux Games customers see the full address, port included and ready to copy, in the [games dashboard](https://runonflux.com/games/dashboard).
+* Use it in the DST client in place of the IP, followed by your server's public game port: the entry in **Ports** in the same position as `11000` in **Container Ports**:
 
     ```
-    your-app-domain.app.runonflux.io
+    your-app-domain.app.runonflux.io:PORT
     ```
+
+> ⚠️ **Use your server's own port.** Flux can publish the game port on a different public port (for example `your-app-domain.app.runonflux.io:49485`), so it may **not** be `11000`. Without the right port the game cannot connect.
+
+For every way to connect, see the [Don't Starve Together join guide](https://runonflux.com/games/dont-starve-together/guides/join-server).
 
 ***
 
