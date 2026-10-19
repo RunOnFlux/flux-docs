@@ -74,7 +74,7 @@ Specify where your shared database app can be deployed. You can select one or mo
 
 ### Forbidden Locations (Optional)
 
-Specify where your app can be deployed. You can select one or more by clicking the plus icon:
+Specify where your shared database app **should not** be deployed. You can select one or more by clicking the plus icon:
 
 * Continents
 * Countries
