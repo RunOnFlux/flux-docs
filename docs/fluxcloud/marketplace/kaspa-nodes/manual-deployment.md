@@ -92,7 +92,7 @@ Specify where your app can be deployed. You can select one or more by clicking t
 
 **Forbidden Locations (Optional):**
 
-Specify where your app can be deployed. You can select one or more by clicking the plus icon:
+Specify where your app **should not** be deployed. You can select one or more by clicking the plus icon:
 
 * Continents
 * Countries
