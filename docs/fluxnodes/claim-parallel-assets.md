@@ -7,8 +7,8 @@ These are rewards distributed on other blockchains (such as Ethereum, Binance Sm
 
 ### Overview
 
-* **Additional Earnings** – For each active parallel asset, you receive **10% of your FluxNode reward** (≈ 3.75 FLUX worth) in that asset.
-* **Potential to Double Rewards** – With the 9 active parallel assets, this adds up to ≈ **33.75 FLUX worth** in parallel assets on top of your normal FLUX earnings.
+* **Additional Earnings** – For each active parallel asset, you receive **10% of your FluxNode reward** in that asset (for example, ≈ 0.81 FLUX worth for each 8.1 FLUX Stratus payout from block 3,071,200).
+* **Potential to Double Rewards** – With the 9 active parallel assets, this adds up to **90% of your FluxNode reward** in parallel assets on top of your normal FLUX earnings.
 * **Manual Claim Required** – Parallel Assets are **not** automatically sent to your wallet; you must claim them using the **Fusion** app in Zelcore.
 * **Claiming Fees** – Each claim has a network fee. To reduce fees, it’s best to claim occasionally instead of after every reward. Claiming is only possible if your accumulated amount is greater than the fee.
 * **Fee Adjustments** – Claim fees are subject to change and are periodically reviewed by the Flux Team.
