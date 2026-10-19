@@ -1,6 +1,6 @@
 # Proxmox Fractus Node Setup
 
-_Credit to community members Mowat and Gus Diaz. For questions, visit #community-support on Discord._
+_Credit to community members Mowat and Gus Diaz. For questions, visit #nodes-support on Discord._
 
 Follow these steps to add a dedicated **Thunder** (storage) pool and virtual disk on Proxmox for your FluxNode (Fractus) setup.
 

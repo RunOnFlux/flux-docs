@@ -6,6 +6,8 @@ description: How to install and set up Flux-Orbit
 
 # Installation
 
+> This page describes installing **Flux-Orbit itself** (the engine behind Deploy with Git) on your own machine, for development or self-hosting. To deploy an application on FluxCloud you do not need any of this - use **Register New App → Deploy with Git** and see [First Deployment](./first-deployment).
+
 Learn how to install Flux-Orbit and prepare your environment for deploying applications to the Flux Network.
 
 ## Prerequisites
@@ -103,17 +105,14 @@ docker-compose up -d
 
 ## Flux Network Setup
 
-### Creating a Flux Node
+### Deploying on the Flux Network
 
-To deploy on the Flux Network:
+You do **not** need to run a FluxNode to deploy an application. Deploy with Git is built into FluxCloud:
 
-1. **Set up a Flux Node**
-   - Visit [Flux Documentation](https://docs.runonflux.io)
-   - Follow the node setup guide
+1. Open [FluxCloud](https://cloud.runonflux.com), sign in with your Flux ID and choose **Register New App**.
+2. Pick **Deploy with Git**, point it at your repository and follow the [First Deployment](./first-deployment) guide.
 
-2. **Deploy Flux-Orbit**
-   - Use FluxOS marketplace
-   - Or deploy manually via Docker
+The rest of this page is only for running your own Flux-Orbit instance locally, for development or self-hosting.
 
 ### Flux Deployment Configuration
 

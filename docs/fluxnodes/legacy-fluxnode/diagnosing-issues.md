@@ -42,6 +42,6 @@ When the menu appears, use these options:
 ### Getting Help
 
 * **Official Support:** [Flux Helpdesk](https://support.runonflux.io/support/home)
-* **Community Support:** `#community-support` channel on the [official Flux Discord](https://discord.com/invite/runonflux)
+* **Community Support:** `#nodes-support` channel on the [official Flux Discord](https://discord.com/invite/runonflux)
 
 > ⚠️ Beware of scams—never share private keys or sensitive information in DMs. Always verify you’re using official support channels.
