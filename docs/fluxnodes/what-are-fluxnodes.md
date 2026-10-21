@@ -43,16 +43,17 @@ FluxNodes are financially incentivized to remain online, meet performance benchm
 Flux uses a **dual-reward model** for node operators:
 
 1. **Native FLUX Block Rewards**
-   * Each block produces **14 FLUX**, split evenly:
-     * **1 FLUX** → to one Cumulus node
-     * **3.5 FLUX** → to one Nimbus node
-     * **9 FLUX** → to one Stratus node
-     * **0.5 FLUX** → to an ecosystem development fund allocated to the Flux Foundation
+   * The block reward launched at **14 FLUX** per block (block 2,020,000, October 2025) and is reduced by **10% every 1,051,200 blocks** (about once a year). The split between tiers stays the same.
+   * From block **3,071,200** (late October 2026), each block produces **12.6 FLUX**:
+     * **0.9 FLUX** → to one Cumulus node (1 FLUX at launch)
+     * **3.15 FLUX** → to one Nimbus node (3.5 FLUX at launch)
+     * **8.1 FLUX** → to one Stratus node (9 FLUX at launch)
+     * **0.45 FLUX** → to an ecosystem development fund allocated to the Flux Foundation (0.5 FLUX at launch)
    * Live earnings statistics: [Flux Rewards Dashboard](https://cloud.runonflux.com/dashboards/rewards)
 2. **Parallel Mining Rewards**
    * In addition to native FLUX, node operators earn **parallel assets** (tokens on other blockchains such as ETH, BSC, KDA, SOL, etc.).
-   * For each parallel asset, **10% of the node reward** (≈ 1.35 FLUX worth) is distributed per block.
-   * Once all ten parallel assets are active, this totals **13.5 FLUX worth in parallel assets**, effectively **doubling total earnings**.
+   * For each parallel asset, **10% of the node reward** is distributed per block (≈ 1.215 FLUX worth from block 3,071,200; ≈ 1.35 FLUX worth at the 14 FLUX launch rate).
+   * Once all ten parallel assets are active, this totals **100% of the node reward in parallel assets** (≈ 12.15 FLUX worth per block from block 3,071,200), effectively **doubling total earnings**.
    * Parallel mining rewards are **not** automatically paid to your wallet — they must be manually claimed via the **Fusion** app in **Zelcore**. Follow this [guide](claim-parallel-assets) to learn more.
 
 #### Timeline & Retroactive Rewards

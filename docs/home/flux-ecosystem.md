@@ -32,7 +32,7 @@ FluxNodes are the permissionless, community-operated servers that power the Flux
 
 * **Open Participation**: Anyone can join by meeting hardware requirements and staking FLUX collateral
 * **Tiered System**: Three node tiers (Cumulus, Nimbus, Stratus) with increasing specs and rewards
-* **Block Rewards**: Earn 50% of block rewards (37.5 FLUX per block) plus parallel asset mining
+* **Block Rewards**: Nodes receive about 96% of every block reward (the rest funds the Flux Foundation) plus parallel asset mining. The reward launched at 14 FLUX per block and is reduced by 10% each year: 12.6 FLUX per block from block 3,071,200 (late October 2026)
 * **Progressive Rewards**: ArcaneOS nodes earn additional revenue share from FluxCloud applications
 * **Quality Control**: Nodes not meeting uptime or performance standards are automatically removed
 * **Global Network**: 10,000+ nodes across 66 countries operated by 560+ independent providers
