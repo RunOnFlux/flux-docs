@@ -1,7 +1,7 @@
 # Custom Domain Setup
 
 You can point a custom domain of your choice—such as `yourdapp.com`—to your WordPress app using a **Flux Domain Name (FDN)**, e.g., `yourdapp.app.runonflux.io`.\
-We recommend using **Cloudflare** as your DNS provider for simplicity and reliability. You’ll only need to add a **CNAME** record.
+We recommend using **Cloudflare** as your DNS provider for simplicity and reliability. You’ll add a **CNAME** record that points the domain at your app, and a **TXT** record that proves the domain is yours.
 
 ***
 
@@ -44,6 +44,16 @@ In this setup, Cloudflare acts as a secure middleman between your domain registr
      * **Proxy Status**: Enabled (orange cloud checked)
 
 <img src="/.gitbook/assets/Custom Domain 2 (1).png" alt=""/>
+
+5. **Add a TXT Record to Prove the Domain Is Yours**
+   * FluxCloud routes a custom domain to the app that the domain's own DNS points at. That matters if another app ever lists your domain: the app your DNS names keeps it, however early the other app claimed it.
+   * With the proxy enabled (orange cloud), your CNAME is hidden from public DNS, so add a TXT record that names your app:
+     * **Type**: `TXT`
+     * **Name**: `_flux` for the root domain, or `_flux.yourapp` for a subdomain (Cloudflare adds your domain, so this becomes `_flux.yourapp.yourdomain.com`)
+     * **Content**: `flux-app=yourdapp`, where `yourdapp` is your app's name: the first part of your FluxCloud generated domain (`yourdapp` in `yourdapp.app.runonflux.io`)
+   * The record also covers the `www.` and `test.` versions of the domain.
+   * If you turned the proxy off (grey cloud), the CNAME already shows which app the domain belongs to and the TXT record is optional.
+   * To check it, run `dig TXT _flux.yourapp.yourdomain.com +short`. The answer should be `"flux-app=yourdapp"`.
 
 ***
 
