@@ -1,3 +1,0 @@
-# Installation
-
-The FluxCore application currently supports both Linux and Windows operating systems. Additionally, two specific installation configurations are available: one for setting up a dedicated PoUW (Proof of Useful Work) server intended for full-time use on the Flux network, and another that allows you to manually start and stop FluxCore, enabling you to use your personal system for PoUW or mining when you are not actively using it. These two options provide users with ultimate control over their hardware and accommodate a variety of usage scenarios, ensuring flexibility and efficiency in managing their computational resources.
