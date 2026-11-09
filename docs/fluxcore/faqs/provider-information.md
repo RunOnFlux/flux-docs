@@ -1,4 +1,0 @@
-# Provider Information
-
-1. **Will FluxCore switch from PoW to FluxEdge Lease when it is more profitable?** Currently, profitability is not a consideration. If you have enabled the Auto-Switch feature for your machine, it will be available for rent on FluxEdge, and the PoW mining configuration and applied OC profile (if applicable) will automatically stop during the lease.
-2. **If my machine is on lease and the system goes down, reboots, has an internet outage, or any other issue, does the rental stop instantly?** If there are any reboots, internet outages, or similar issues, the machine rental will stop, affecting your reliability score. A 20% fee of your accrued rewards for that lease will be taken and given back to the customer as compensation for the disruption. Additionally, you have 5 minutes to be back online, or your machine will be removed from the cluster, requiring manual rejoining.

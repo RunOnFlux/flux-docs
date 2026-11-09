@@ -16,7 +16,7 @@ Flux is a globally distributed computing network powered by **10,000+ community-
 - **Cost Effective**: Save up to 90% compared to centralized cloud providers with no egress fees
 - **Censorship Resistant**: Deploy applications that can't be taken down or controlled by any single entity
 - **Developer Friendly**: Docker-based deployments with familiar APIs and comprehensive tooling
-- **Earn While You Contribute**: Run nodes or provide GPU resources and earn FLUX rewards
+- **Earn While You Contribute**: Run FluxNodes and earn FLUX rewards
 
 ***
 
@@ -27,8 +27,6 @@ New to Flux? Start with the fundamentals:
 * [The Flux Ecosystem](home/flux-ecosystem)
 * [How FluxCloud Works](fluxcloud/introduction)
 * [Setting Up a FluxNode](fluxnodes/what-are-fluxnodes)
-* [How FluxEdge Works](fluxedge/overview)
-* [Contributing Compute to FluxEdge](fluxcore/overview)
 
 ***
 
@@ -46,7 +44,6 @@ New to Flux? Start with the fundamentals:
 | Product | Description |
 |---------|-------------|
 | **[FluxCloud](fluxcloud/introduction)** | Build and deploy scalable applications on FluxCloud, a global decentralized cloud infrastructure for flexible and censorship-resistant development. |
-| **[FluxEdge](fluxedge/overview)** | Rent global GPUs on a Web3 cloud for tasks like AI, ML, rendering and beyond! |
 
 ***
 
@@ -55,7 +52,6 @@ New to Flux? Start with the fundamentals:
 | Provider Type | Description |
 |---------------|-------------|
 | **[FluxNodes](fluxnodes/what-are-fluxnodes)** | Become a provider for FluxCloud and get incentivized for providing compute |
-| **[FluxCore](fluxcore/overview)** | Become a provider for FluxEdge and offer your machine for dedicated pay-as-you-go rentals |
 | **[Estimate Your Earnings](https://home.runonflux.com/dashboard/rewards)** | Use our simple calculator to project your potential rewards based on node tier |
 
 ***
@@ -68,7 +64,7 @@ The Flux ecosystem extends beyond cloud infrastructure with powerful tools for W
 |---------|-------------|
 | **[Zelcore Wallet](https://zelcore.io/)** | All-in-one, non-custodial desktop & mobile wallet for FLUX and dozens of other chains. Manage multiple cryptocurrencies, instantly exchange assets, stake FLUX for rewards, and operate FluxNodes directly within the wallet. |
 | **[SSP Wallet](https://sspwallet.io/)** | Secure browser-extension wallet with BIP48-based dual-signature transactions. Streamlined interface for both new and experienced Web3 users with built-in FluxNode management capabilities. |
-| **[FluxAI](https://ai.runonflux.com/)** | Privacy-focused AI platform leveraging Flux's global GPU network. Includes FluxGPT, FluxONE, and FluxINTEL—scalable to enterprise workloads while ensuring data sovereignty and private AI inference. |
+| **[FluxAI](https://ai.runonflux.com/)** | Privacy-focused AI platform, currently being upgraded. Includes FluxGPT, FluxONE, and FluxINTEL—scalable to enterprise workloads while ensuring data sovereignty and private AI inference. |
 | **[Flux Exchange](https://fusionx.runonflux.com/)** | Multi-chain, no-KYC decentralized exchange for trustless cross-chain swaps. No account registration required, supports WalletConnect and popular Web3 wallets, aggregates liquidity from multiple chains. |
 
 ***

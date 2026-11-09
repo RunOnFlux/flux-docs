@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import fluxedgeFluxcorePaths from './fluxedge-fluxcore-redirects.json';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -74,6 +75,10 @@ const config: Config = {
       {
         // Redirect old GitBook URLs (with /flux/ prefix) to new Docusaurus URLs
         createRedirects(existingPath: string) {
+          // FluxEdge and FluxCore were shut down in November 2026; their old pages all land on the notice
+          if (existingPath === '/fluxedge-fluxcore-shutdown') {
+            return [existingPath, ...fluxedgeFluxcorePaths].flatMap((p) => [p, `/flux${p}`]).slice(1);
+          }
           // For any existing path, also handle requests with /flux/ prefix
           // This maps old URLs like /flux/fluxcloud/home to new URLs like /fluxcloud/home
           if (!existingPath.startsWith('/flux/')) {
@@ -138,16 +143,6 @@ const config: Config = {
           position: 'left',
         },
         {
-          to: '/fluxedge/overview',
-          label: 'FluxEdge',
-          position: 'left',
-        },
-        {
-          to: '/fluxcore/overview',
-          label: 'FluxCore',
-          position: 'left',
-        },
-        {
           href: 'https://github.com/runonflux',
           label: 'GitHub',
           position: 'right',
@@ -167,14 +162,6 @@ const config: Config = {
             {
               label: 'FluxNodes',
               to: '/fluxnodes/what-are-fluxnodes',
-            },
-            {
-              label: 'FluxEdge',
-              to: '/fluxedge/overview',
-            },
-            {
-              label: 'FluxCore',
-              to: '/fluxcore/overview',
             },
           ],
         },

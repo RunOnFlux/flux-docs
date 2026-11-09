@@ -12,7 +12,7 @@ Flux is a decentralized computing network consisting of over **10,000 community-
 
 ### Core Cloud Services
 
-A unified portfolio of decentralized compute, storage, and GPU rental products designed for Docker containers, AI workloads, blockchain validators, and any cloud-native application.
+A unified portfolio of decentralized compute and storage products designed for Docker containers, AI workloads, blockchain validators, and any cloud-native application.
 
 #### FluxCloud
 
@@ -39,31 +39,9 @@ FluxNodes are the permissionless, community-operated servers that power the Flux
 
 [Learn more →](../fluxnodes/what-are-fluxnodes)
 
-#### FluxEdge
+#### FluxEdge and FluxCore
 
-A decentralized marketplace connecting GPU renters with providers for AI, ML, rendering, and compute-intensive workloads.
-
-* **Enterprise GPUs**: Access to NVIDIA H100, A100, and other high-performance cards
-* **Kubernetes Integration**: Managed clusters for containerized ML/AI workloads
-* **Pay-As-You-Go**: No upfront commitment, transparent pricing, no hidden fees
-* **Global Capacity**: 15,157+ GPUs available across distributed provider network
-* **Proof-of-Useful-Work**: Maximize GPU utilization while reducing e-waste
-* **Framework Support**: Compatible with PyTorch, TensorFlow, Kubeflow, Apache Spark
-
-[Learn more →](../fluxedge/overview)
-
-#### FluxCore
-
-Desktop application enabling users to contribute idle GPU/CPU resources to FluxEdge while earning rewards.
-
-* **Dual Revenue**: Earn from GPU rentals on FluxEdge or native FLUX mining
-* **User Control**: Set custom availability schedules and pricing
-* **Simple Setup**: Install in minutes with intuitive GUI for monitoring
-* **Multi-Platform**: Available for Windows, Linux, and macOS
-* **Security**: Isolated containerized workloads protect your data
-* **Flexible Earnings**: Switch between rental mode and mining based on profitability
-
-[Learn more →](../fluxcore/overview)
+FluxEdge (GPU rentals) and FluxCore (its provider agent) have been shut down. If you ran FluxCore, see [how to remove it](./fluxedge-fluxcore-shutdown.md).
 
 ***
 
@@ -91,7 +69,7 @@ Secure, Simple, Powerful browser-extension wallet designed for ease of use and r
 
 #### FluxAI
 
-A privacy-focused AI platform leveraging Flux's global GPU network of FluxEdge.
+A privacy-focused AI platform. FluxAI is currently being upgraded.
 
 * **FluxGPT**, **FluxONE**, **FluxINTEL**
 * Scales to enterprise workloads while ensuring data sovereignty.
